@@ -1,72 +1,37 @@
-import {
-  CaseStudyCta,
-  CaseStudyImageHero,
-  CaseStudyIntro,
-  CaseStudyResults,
-  CaseStudyReto,
-  CaseStudyWhatWeDid,
-} from "@/components/case-study/CaseStudySections";
-
-const gallery = [
-  "/images/monoloco-1.png",
-  "/images/monoloco-2.png",
-  "/images/monoloco-3.png",
-  "/images/monoloco-4.png",
-] as const;
+import { CaseStudyCta } from "@/components/case-study/CaseStudySections";
+import MonoLocoContent from "./MonoLocoContent";
 
 export default function MonoLocoFestivalPage() {
   return (
     <>
-      <CaseStudyImageHero
-        src="/images/monoloco-1.png"
-        alt="Mono Loco Festival"
-        badge="Gestión Integral de Evento · León · 2024"
-        title="Mono Loco Festival"
-        subtitle="16.000 personas. Un solo escenario."
-        gradient
-      />
-
-      <section className="section-pad section-alt reveal">
-        <div className="grid grid-cols-1 gap-px bg-[var(--border)] sm:grid-cols-2">
-          {gallery.map((src) => (
-            <div key={src} className="relative aspect-[4/3] overflow-hidden bg-[var(--bg)]">
-              <img src={src} alt="Mono Loco Festival" loading="lazy" className="h-full w-full object-cover" />
-            </div>
-          ))}
+      <section className="relative min-h-[85vh] overflow-hidden">
+        <img
+          src="/images/monoloco-1.png"
+          alt="Mono Loco Festival"
+          loading="lazy"
+          className="absolute inset-0 h-full w-full object-cover"
+        />
+        <div
+          className="pointer-events-none absolute inset-0"
+          style={{
+            background:
+              "linear-gradient(to bottom, transparent 0%, transparent 40%, rgba(5,5,11,0.95) 100%)",
+          }}
+        />
+        <div className="relative z-10 flex min-h-[85vh] flex-col justify-end px-6 pb-14 pt-32 md:px-[52px] md:pb-16">
+          <span className="mb-4 inline-block w-fit border border-[#F5E614]/40 bg-[#05050b]/80 px-3 py-1 text-[9px] uppercase tracking-[0.18em] text-[#F5E614] backdrop-blur-sm">
+            Gestión Integral de Evento · León · 2024
+          </span>
+          <h1 className="title-display max-w-4xl text-white drop-shadow-[0_2px_24px_rgba(0,0,0,0.5)]">
+            Mono Loco Festival
+          </h1>
+          <p className="mt-4 max-w-2xl font-[var(--font-instrument)] text-[clamp(1.25rem,3vw,2rem)] italic text-[#F5E614] drop-shadow-[0_2px_16px_rgba(0,0,0,0.45)]">
+            16.000 personas. Un solo escenario.
+          </p>
         </div>
       </section>
 
-      <CaseStudyIntro>
-        El Mono Loco Festival es uno de los eventos de música y ocio más grandes de León. Con un aforo de 16.000
-        personas, la organización exige un nivel de coordinación, comunicación y logística que va mucho más allá de lo
-        que cualquier agencia convencional puede ofrecer. MYRAL asumió la gestión integral del evento.
-      </CaseStudyIntro>
-
-      <CaseStudyReto>
-        Coordinar un evento de 16.000 personas requiere sistemas, no improvisación. La comunicación tiene que llegar al
-        público correcto en el momento correcto, las entradas tienen que venderse con antelación suficiente para cubrir
-        costes fijos, y el día del evento todo tiene que funcionar como un reloj.
-      </CaseStudyReto>
-
-      <CaseStudyWhatWeDid
-        items={[
-          "Estrategia de comunicación y campaña en redes sociales",
-          "Gestión de la comunidad online antes, durante y después del evento",
-          "Campañas Meta Ads segmentadas por edad, intereses y localización",
-          "Producción de contenido audiovisual para promoción",
-          "Cobertura en directo del evento en redes sociales",
-          "Gestión de RRPP y relaciones con medios locales",
-        ]}
-      />
-
-      <CaseStudyResults
-        stats={[
-          ["16.000", "Asistentes — aforo completo"],
-          ["Top", "Evento del año en León"],
-          ["Sold out", "Entradas agotadas antes del evento"],
-        ]}
-        quote="Uno de los eventos más grandes de León gestionado por MYRAL. Cuando el aforo importa, los sistemas importan más."
-      />
+      <MonoLocoContent />
 
       <CaseStudyCta />
     </>
