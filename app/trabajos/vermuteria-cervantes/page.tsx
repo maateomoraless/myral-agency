@@ -17,17 +17,23 @@ export default function CervantesPage() {
     <>
       <section className="relative min-h-screen overflow-hidden">
         <ParallaxBackground className="absolute inset-0 h-[115%] w-full">
-          <iframe
-            src="https://www.youtube.com/embed/a1m5ssvZ65k?autoplay=1&mute=1&loop=1&playlist=a1m5ssvZ65k&controls=0&showinfo=0&rel=0"
-            className="absolute inset-0 h-full w-full"
-            style={{ border: "none", pointerEvents: "none" }}
-            allow="autoplay"
-            allowFullScreen
-            title="Vermutería Cervantes"
-          />
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="absolute inset-0 z-0 h-full w-full object-cover"
+            aria-label="Vermutería Cervantes"
+          >
+            <source
+              src="https://pub-b4af313647b6409d962b89eaf287e84c.r2.dev/cervantes-video.mp4"
+              type="video/mp4"
+            />
+          </video>
         </ParallaxBackground>
-        <div className="pointer-events-none absolute inset-0 bg-[rgba(5,5,11,0.55)]" />
-        <div className="relative z-10 flex min-h-screen flex-col justify-end px-6 pb-20 pt-32 md:px-[52px]">
+        <div className="pointer-events-none absolute inset-0 z-[1] bg-transparent" aria-hidden />
+        <div className="pointer-events-none absolute inset-0 z-[2] bg-[rgba(5,5,11,0.55)]" />
+        <div className="relative z-[2] flex min-h-screen flex-col justify-end px-6 pb-20 pt-32 md:px-[52px]">
           <span className="mb-4 text-[9px] uppercase tracking-[0.18em] text-[#F5E614]">
             Social Media · León · 2023-2024
           </span>
@@ -51,7 +57,7 @@ export default function CervantesPage() {
         <h2 className="mb-12 text-center font-[var(--font-syne)] text-[32px] font-extrabold text-white">
           El antes y el después.
         </h2>
-        <div className="grid grid-cols-1 items-start gap-12 lg:grid-cols-2">
+        <div className="grid grid-cols-1 items-start gap-12 overflow-visible lg:grid-cols-2">
           <InstagramBrowserMockup
             imageSrc="/images/cervantes-antes.png"
             label="Antes"
@@ -67,14 +73,18 @@ export default function CervantesPage() {
 
       <section className="relative min-h-[70vh] border-t border-[var(--border)] bg-[#05050b]">
         <video
-          src="/images/cervantes-video.mp4"
           autoPlay
           muted
           loop
           playsInline
           className="absolute inset-0 h-full w-full object-cover"
           aria-label="Vermutería Cervantes en el local"
-        />
+        >
+          <source
+            src="https://pub-b4af313647b6409d962b89eaf287e84c.r2.dev/cervantes-video.mp4"
+            type="video/mp4"
+          />
+        </video>
         <div className="absolute inset-0 bg-[rgba(5,5,11,0.6)]" />
         <div className="relative z-10 flex min-h-[70vh] flex-col items-center justify-center px-6 py-24 text-center md:px-[52px]">
           <p className="mb-6 text-[9px] uppercase tracking-[0.18em] text-[#F5E614]">En el local</p>

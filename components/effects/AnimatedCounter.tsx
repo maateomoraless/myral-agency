@@ -82,6 +82,7 @@ export type AnimatedStatItem = {
   format?: (n: number) => string;
   valueClassName?: string;
   valueStyle?: React.CSSProperties;
+  cellClassName?: string;
 };
 
 export function AnimatedStatStack({
@@ -135,20 +136,22 @@ export function AnimatedStatsGrid({
   wrapperClassName = "",
   gridClassName = "grid grid-cols-1 gap-px bg-[var(--border)] md:grid-cols-3",
   cellClassName = "bg-[#05050b] p-8 md:p-10",
+  valueContainerClassName,
 }: {
   items: AnimatedStatItem[];
   wrapperClassName?: string;
   gridClassName?: string;
   cellClassName?: string;
+  valueContainerClassName?: string;
 }) {
   const { ref, active } = useInViewOnce();
 
   return (
     <div ref={ref} className={wrapperClassName}>
       <div className={gridClassName}>
-        {items.map((item) => (
-          <div key={item.label} className={cellClassName}>
-            {item.staticValue != null ? (
+        {items.map((item) => {
+          const valueEl =
+            item.staticValue != null ? (
               <div
                 className={
                   item.valueClassName ??
@@ -170,12 +173,24 @@ export function AnimatedStatsGrid({
                 }
                 style={item.valueStyle}
               />
-            )}
-            <div className="mt-3 text-[9px] uppercase tracking-[0.16em] text-[var(--muted)]">
-              {item.label}
+            );
+
+          return (
+            <div
+              key={item.label}
+              className={[cellClassName, item.cellClassName].filter(Boolean).join(" ")}
+            >
+              {valueContainerClassName ? (
+                <div className={valueContainerClassName}>{valueEl}</div>
+              ) : (
+                valueEl
+              )}
+              <div className="mt-3 shrink-0 text-[9px] uppercase tracking-[0.16em] text-[var(--muted)]">
+                {item.label}
+              </div>
             </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
     </div>
   );

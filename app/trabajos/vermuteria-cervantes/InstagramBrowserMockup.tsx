@@ -13,7 +13,7 @@ export default function InstagramBrowserMockup({
         {label}
       </span>
 
-      <div className="flex w-full flex-col items-center">
+      <div className="relative flex w-full flex-col items-center transition-transform duration-500 ease-out hover:z-10 hover:scale-105">
         <div
           className="flex w-full flex-col overflow-hidden rounded-lg border-[3px] border-[#333] bg-[#111] shadow-[0_20px_60px_rgba(0,0,0,0.5)]"
           style={{ aspectRatio: "16 / 10" }}

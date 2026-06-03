@@ -50,17 +50,23 @@ export default function IchiPage() {
 
       <IchiStats />
 
-      <section className="relative min-h-screen">
-        <iframe
-          src="https://www.youtube.com/embed/UF3Zg9sF8_s?autoplay=1&mute=1&loop=1&playlist=UF3Zg9sF8_s&controls=0&showinfo=0&rel=0"
-          className="absolute inset-0 h-full w-full"
-          style={{ border: "none", pointerEvents: "none" }}
-          allow="autoplay"
-          allowFullScreen
-          title="Itziar Martínez en competición"
-        />
-        <div className="absolute inset-0 bg-[rgba(5,5,11,0.5)]" />
-        <div className="relative z-10 flex min-h-screen flex-col items-center justify-center px-6 py-24 text-center md:px-[52px]">
+      <section className="relative min-h-screen overflow-hidden">
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="absolute inset-0 z-0 h-full w-full object-cover"
+          aria-label="Itziar Martínez en competición"
+        >
+          <source
+            src="https://pub-b4af313647b6409d962b89eaf287e84c.r2.dev/ichi-video.MOV"
+            type="video/quicktime"
+          />
+        </video>
+        <div className="pointer-events-none absolute inset-0 z-[1] bg-transparent" aria-hidden />
+        <div className="pointer-events-none absolute inset-0 z-[2] bg-[rgba(5,5,11,0.5)]" />
+        <div className="relative z-[2] flex min-h-screen flex-col items-center justify-center px-6 py-24 text-center md:px-[52px]">
           <p className="mb-6 text-[9px] uppercase tracking-[0.22em] text-[#F5E614]">En acción</p>
           <h2
             className="max-w-2xl font-[var(--font-syne)] font-extrabold leading-[1.08] tracking-[-0.02em] text-white"

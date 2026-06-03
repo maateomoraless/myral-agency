@@ -34,8 +34,13 @@ export default function Nav() {
       }`}
     >
       <div className="mx-auto flex max-w-[1400px] items-center justify-between px-6 py-5 md:px-[52px]">
-        <Link href="/" className="font-[var(--font-syne)] text-2xl font-extrabold text-white">
-          MYRAL<span className="text-[#F5E614]">.</span>
+        <Link href="/">
+          <img
+            src="/images/logo_myral_sin_fondo.png"
+            alt="MYRAL"
+            height={28}
+            style={{ height: "28px", width: "auto" }}
+          />
         </Link>
 
         <nav className="hidden items-center gap-8 md:flex">

@@ -2,8 +2,8 @@ import Link from "next/link";
 
 const services = [
   { num: "01", title: "Gestión de Redes Sociales", desc: "Estrategia, calendarios y gestión completa de Instagram, TikTok y LinkedIn.", href: "/servicios/gestion-redes-sociales" },
-  { num: "02", title: "Producción de Contenido", desc: "Fotografía, vídeo y reels de nivel profesional." },
-  { num: "03", title: "Publicidad Digital", desc: "Campañas Meta Ads y Google Ads. Cada euro con retorno medible." },
+  { num: "02", title: "Producción de Contenido", desc: "Fotografía, vídeo y reels de nivel profesional.", href: "/servicios/produccion-contenido" },
+  { num: "03", title: "Publicidad Digital", desc: "Campañas Meta Ads y Google Ads. Cada euro con retorno medible.", href: "/servicios/publicidad-digital" },
   { num: "04", title: "Branding e Identidad Visual", desc: "Nombre, logo, colores, tono." },
   { num: "05", title: "Gestión y Producción de Eventos", desc: "Desde la conceptualización hasta la cobertura audiovisual." },
   { num: "06", title: "Influencer Marketing", desc: "Alcance real, no vanity metrics." },

@@ -54,15 +54,21 @@ export default function GestionRedesSocialesPage() {
             <div className="relative w-full max-w-[300px]">
               <div className="rounded-[2.75rem] border border-white/[0.08] bg-[linear-gradient(165deg,#12121c_0%,#07070f_55%,#05050b_100%)] p-3 shadow-[0_40px_80px_rgba(0,0,0,0.55)]">
                 <div className="pointer-events-none absolute left-1/2 top-5 z-20 h-[22px] w-[88px] -translate-x-1/2 rounded-full bg-black/90" />
-                <div className="relative aspect-[9/19.5] overflow-hidden rounded-[2.15rem] bg-black">
-                  <iframe
-                    src="https://www.youtube.com/embed/3L0CEuJK_fI?autoplay=1&mute=1&loop=1&playlist=3L0CEuJK_fI&controls=0&showinfo=0&rel=0"
-                    className="h-full w-full"
-                    style={{ border: "none" }}
-                    allow="autoplay"
-                    allowFullScreen
-                    title="Contenido de redes sociales MYRAL"
-                  />
+                <div className="relative aspect-[9/16] overflow-hidden rounded-[2.15rem] bg-black">
+                  <video
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    className="h-full w-full object-cover"
+                    style={{ transform: "scale(1.02)" }}
+                    aria-label="Contenido de redes sociales MYRAL"
+                  >
+                    <source
+                      src="https://pub-b4af313647b6409d962b89eaf287e84c.r2.dev/A7IV_0033_2.MP4"
+                      type="video/mp4"
+                    />
+                  </video>
                 </div>
               </div>
             </div>
