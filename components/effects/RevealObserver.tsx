@@ -25,6 +25,12 @@ export default function RevealObserver() {
     );
 
     const scan = () => {
+      document.querySelectorAll("section:not(.no-reveal)").forEach((el) => {
+        if (!el.classList.contains("reveal") && !el.classList.contains("reveal-section")) {
+          el.classList.add("reveal");
+        }
+        observe(el);
+      });
       document.querySelectorAll(".reveal, .reveal-section").forEach(observe);
     };
 

@@ -14,7 +14,7 @@ const whatWeDid = [
 export default function IchiPage() {
   return (
     <>
-      <section className="relative min-h-screen overflow-hidden">
+      <section className="relative min-h-screen overflow-hidden no-media-hover-wrap">
         <ParallaxBackground className="absolute inset-0 h-[115%] w-full">
           <img
             src="/images/ichi-roca.png"
@@ -50,7 +50,7 @@ export default function IchiPage() {
 
       <IchiStats />
 
-      <section className="relative min-h-screen overflow-hidden">
+      <section className="relative min-h-screen overflow-hidden no-media-hover-wrap">
         <video
           autoPlay
           muted

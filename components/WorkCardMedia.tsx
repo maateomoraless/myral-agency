@@ -7,7 +7,7 @@ export default function WorkCardMedia({ work }: { work: WorkCard }) {
         src={work.image}
         alt={work.name}
         loading="lazy"
-        className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+        className="h-full w-full object-cover"
       />
     );
   }

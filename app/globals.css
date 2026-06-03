@@ -81,8 +81,8 @@ body.custom-cursor * {
 .reveal,
 .reveal-section {
   opacity: 0;
-  transform: translateY(40px);
-  transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: translateY(32px);
+  transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .reveal.visible,
 .reveal-section.visible {
@@ -92,8 +92,8 @@ body.custom-cursor * {
 
 .reveal-item {
   opacity: 0;
-  transform: translateY(40px);
-  transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: translateY(32px);
+  transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .reveal-section.visible .reveal-item:nth-child(1) { transition-delay: 0s; opacity: 1; transform: none; }
 .reveal-section.visible .reveal-item:nth-child(2) { transition-delay: 0.08s; opacity: 1; transform: none; }
@@ -158,6 +158,111 @@ body.custom-cursor * {
   opacity: 0.85;
   transform: translateY(-2px);
   box-shadow: 0 8px 24px rgba(245, 230, 20, 0.25);
+}
+
+.hover-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+}
+
+.media-hover-wrap {
+  position: relative;
+  overflow: hidden;
+}
+
+.media-hover-wrap::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: rgba(245, 230, 20, 0.08);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.media-hover-wrap:hover::after {
+  opacity: 1;
+}
+
+.media-hover-wrap img:not(.no-media-hover),
+.media-hover-wrap video:not(.no-media-hover) {
+  transition: transform 0.6s ease-out, filter 0.6s ease-out;
+}
+
+.media-hover-wrap:hover img:not(.no-media-hover),
+.media-hover-wrap:hover video:not(.no-media-hover) {
+  transform: scale(1.05);
+  filter: brightness(1.1);
+}
+
+article.border .overflow-hidden:not(.no-media-hover-wrap) {
+  position: relative;
+  overflow: hidden;
+}
+
+article.border .overflow-hidden:not(.no-media-hover-wrap)::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: rgba(245, 230, 20, 0.08);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+article.border .overflow-hidden:not(.no-media-hover-wrap):hover::after {
+  opacity: 1;
+}
+
+article.border .overflow-hidden:not(.no-media-hover-wrap) img:not(.no-media-hover),
+article.border .overflow-hidden:not(.no-media-hover-wrap) video:not(.no-media-hover) {
+  transition: transform 0.6s ease-out, filter 0.6s ease-out;
+}
+
+article.border .overflow-hidden:not(.no-media-hover-wrap):hover img:not(.no-media-hover),
+article.border .overflow-hidden:not(.no-media-hover-wrap):hover video:not(.no-media-hover) {
+  transform: scale(1.05);
+  filter: brightness(1.1);
+}
+
+section .overflow-hidden:not(.no-media-hover-wrap) > img:not(.no-media-hover),
+section .overflow-hidden:not(.no-media-hover-wrap) > video:not(.no-media-hover) {
+  transition: transform 0.6s ease-out, filter 0.6s ease-out;
+}
+
+section .overflow-hidden:not(.no-media-hover-wrap):hover > img:not(.no-media-hover),
+section .overflow-hidden:not(.no-media-hover-wrap):hover > video:not(.no-media-hover) {
+  transform: scale(1.05);
+  filter: brightness(1.1);
+}
+
+section .overflow-hidden:not(.no-media-hover-wrap):has(> img:not(.no-media-hover))::after,
+section .overflow-hidden:not(.no-media-hover-wrap):has(> video:not(.no-media-hover))::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: rgba(245, 230, 20, 0.08);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+section .overflow-hidden:not(.no-media-hover-wrap):has(> img:not(.no-media-hover)):hover::after,
+section .overflow-hidden:not(.no-media-hover-wrap):has(> video:not(.no-media-hover)):hover::after {
+  opacity: 1;
+}
+
+section .overflow-hidden:not(.no-media-hover-wrap):has(> img:not(.no-media-hover)),
+section .overflow-hidden:not(.no-media-hover-wrap):has(> video:not(.no-media-hover)) {
+  position: relative;
+  overflow: hidden;
 }
 
 @media (max-width: 768px) {

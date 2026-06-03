@@ -1,5 +1,6 @@
 import Link from "next/link";
 import AnimatedStats from "@/components/effects/AnimatedStats";
+import HeroMiniStats from "@/components/effects/HeroMiniStats";
 import HeroWordReveal from "@/components/effects/HeroWordReveal";
 import MagneticLink from "@/components/effects/MagneticLink";
 import FlowAnimation from "@/components/FlowAnimation";
@@ -52,14 +53,7 @@ export default function HomePage() {
         <div className="reveal-item mt-11 flex flex-wrap items-end justify-between gap-6">
           <p className="max-w-xs text-[13px] leading-[1.82] text-[var(--muted)]">Hacemos que tu negocio crezca online. Redes sociales, publicidad, webs y automatización con IA. Todo en una sola agencia.</p>
           <div className="flex flex-col items-start gap-5 sm:items-end">
-            <div className="flex gap-9">
-              {[["20+","Proyectos activos"],["+900%","Crecimiento medio en redes"],["16.000","Asistentes en un solo evento"]].map(([v,l]) => (
-                <div key={l}>
-                  <div className="font-[var(--font-syne)] text-[28px] font-bold leading-none">{v}</div>
-                  <div className="mt-1 text-[8px] uppercase tracking-[0.2em] text-white/25">{l}</div>
-                </div>
-              ))}
-            </div>
+            <HeroMiniStats />
             <Link href="#trabajos" className="border border-white/20 px-7 py-3.5 text-[9px] uppercase tracking-[0.16em] text-white/65 transition-colors hover:border-[#F5E614] hover:text-[#F5E614]">Ver nuestro trabajo →</Link>
           </div>
         </div>
@@ -88,7 +82,7 @@ export default function HomePage() {
                 </div>
               </>
             );
-            const className = `group flex gap-4 border-b border-[var(--border)] py-7 transition-all duration-[400ms] ease-out hover:pl-2.5 md:odd:border-r md:odd:pr-10 md:even:pl-10 md:even:hover:pl-12 ${i >= 6 ? "border border-[#F5E614]/15 bg-[#F5E614]/[0.04] px-5" : ""}`;
+            const className = `hover-card group flex gap-4 border-b border-[var(--border)] py-7 transition-all duration-[400ms] ease-out hover:pl-2.5 md:odd:border-r md:odd:pr-10 md:even:pl-10 md:even:hover:pl-12 ${i >= 6 ? "border border-[#F5E614]/15 bg-[#F5E614]/[0.04] px-5" : ""}`;
             if ("href" in service && service.href) {
               return (
                 <Link key={service.num} href={service.href} className={className}>
@@ -110,7 +104,7 @@ export default function HomePage() {
         <div className="mt-12 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
           {featuredWorks.map((work) => (
             <MagneticLink key={work.href} href={work.href} className="group">
-              <article className="border border-[var(--border)] bg-[var(--bg)]">
+              <article className="hover-card border border-[var(--border)] bg-[var(--bg)]">
                 <div className="relative aspect-[3/2] overflow-hidden">
                   <WorkCardMedia work={work} />
                 </div>

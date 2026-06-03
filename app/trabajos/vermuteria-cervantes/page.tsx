@@ -15,7 +15,7 @@ const whatWeDid = [
 export default function CervantesPage() {
   return (
     <>
-      <section className="relative min-h-screen overflow-hidden">
+      <section className="relative min-h-screen overflow-hidden no-media-hover-wrap">
         <ParallaxBackground className="absolute inset-0 h-[115%] w-full">
           <video
             autoPlay

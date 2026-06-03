@@ -6,7 +6,7 @@ import MonoLocoContent from "./MonoLocoContent";
 export default function MonoLocoFestivalPage() {
   return (
     <>
-      <section className="relative min-h-[85vh] overflow-hidden">
+      <section className="relative min-h-[85vh] overflow-hidden no-media-hover-wrap">
         <ParallaxBackground className="absolute inset-0 h-[115%] w-full">
           <img
             src="/images/monoloco-1.png"

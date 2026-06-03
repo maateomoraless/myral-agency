@@ -1,4 +1,5 @@
 import Link from "next/link";
+import GestionRedesStats from "@/components/services/GestionRedesStats";
 
 const includes = [
   "Estrategia de contenido mensual personalizada",
@@ -8,12 +9,6 @@ const includes = [
   "Análisis de métricas y optimización continua",
   "Atención a comentarios y DMs",
   "Informes mensuales de resultados",
-] as const;
-
-const stats = [
-  ["+900%", "Crecimiento medio de seguidores"],
-  ["85K", "Alcance mensual medio"],
-  ["3×", "Más reservas o ventas"],
 ] as const;
 
 const steps = [
@@ -93,20 +88,11 @@ export default function GestionRedesSocialesPage() {
 
       <section className="reveal border-t border-[var(--border)] bg-[var(--bg)] px-6 py-20 md:px-[52px]">
         <h2 className="title-display mb-12">Lo que consiguen nuestros clientes.</h2>
-        <div className="mb-12 grid grid-cols-1 gap-px bg-[var(--border)] md:grid-cols-3">
-          {stats.map(([value, label]) => (
-            <div key={label} className="bg-[var(--bg)] p-8 md:p-10">
-              <div className="font-[var(--font-syne)] text-[clamp(52px,8vw,80px)] font-extrabold leading-none text-[#F5E614]">
-                {value}
-              </div>
-              <div className="mt-3 text-[9px] uppercase tracking-[0.16em] text-[#F5E614]/50">{label}</div>
-            </div>
-          ))}
-        </div>
+        <GestionRedesStats />
 
         <Link
           href="/trabajos/vermuteria-cervantes"
-          className="group block max-w-2xl border border-[var(--border)] bg-[var(--bg2)] p-8 transition-colors hover:border-[#F5E614]/25"
+          className="group hover-card block max-w-2xl border border-[var(--border)] bg-[var(--bg2)] p-8 transition-colors hover:border-[#F5E614]/25"
         >
           <span className="mb-3 inline-block bg-[#F5E614]/10 px-2.5 py-1 text-[8px] uppercase tracking-[0.16em] text-[#F5E614]">
             Caso real

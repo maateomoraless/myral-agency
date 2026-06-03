@@ -152,7 +152,7 @@ export default function ProduccionContenidoPage() {
             <Link
               key={project.href}
               href={project.href}
-              className="group border border-[var(--border)] bg-[#07070f] transition-colors hover:border-[#F5E614]/25"
+              className="hover-card group border border-[var(--border)] bg-[#07070f] transition-colors hover:border-[#F5E614]/25"
             >
               <div className="relative aspect-[3/2] overflow-hidden">
                 <Image

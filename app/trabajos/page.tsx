@@ -14,7 +14,7 @@ export default function TrabajosPage() {
       <div className="mt-12 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
         {works.map((work) => (
           <MagneticLink key={work.href} href={work.href} className="group">
-            <article className="border border-[var(--border)] bg-[var(--bg)]">
+            <article className="hover-card border border-[var(--border)] bg-[var(--bg)]">
               <div className="relative aspect-[3/2] overflow-hidden">
                 <WorkCardMedia work={work} />
               </div>

@@ -1,4 +1,6 @@
 import Link from "next/link";
+import CaseStudyResultsStats from "./CaseStudyResultsStats";
+import type { AnimatedStatItem } from "@/components/effects/AnimatedCounter";
 
 export function CaseStudyIntro({ children }: { children: React.ReactNode }) {
   return (
@@ -41,7 +43,7 @@ export function CaseStudyResults({
   quote,
   link,
 }: {
-  stats?: [string, string][];
+  stats?: AnimatedStatItem[];
   quote?: string;
   link?: { href: string; label: string };
 }) {
@@ -49,16 +51,7 @@ export function CaseStudyResults({
     <section className="section-pad section-alt reveal">
       <h2 className="mb-8 font-[var(--font-syne)] text-3xl font-extrabold">El resultado</h2>
       {stats && stats.length > 0 && (
-        <div className={`grid grid-cols-1 gap-px bg-[var(--border)] sm:grid-cols-3 ${quote ? "mb-8" : ""}`}>
-          {stats.map(([value, label]) => (
-            <div key={label} className="bg-[var(--bg)] p-6 md:p-8">
-              <div className="font-[var(--font-syne)] text-[clamp(2rem,5vw,3.5rem)] font-extrabold leading-none text-[#F5E614]">
-                {value}
-              </div>
-              <div className="mt-2 text-[9px] uppercase tracking-[0.16em] text-[var(--muted)]">{label}</div>
-            </div>
-          ))}
-        </div>
+        <CaseStudyResultsStats items={stats} className={quote ? "mb-8" : ""} />
       )}
       {quote && (
         <p className="max-w-3xl text-[14px] leading-[1.85] text-[var(--muted)]">{quote}</p>
@@ -108,8 +101,8 @@ export function CaseStudyImageHero({
   gradient?: boolean;
 }) {
   return (
-    <section className="relative min-h-[85vh] overflow-hidden">
-      <img src={src} alt={alt} loading="lazy" className="absolute inset-0 h-full w-full object-cover" />
+    <section className="relative min-h-[85vh] overflow-hidden no-media-hover-wrap">
+      <img src={src} alt={alt} loading="lazy" className="no-media-hover absolute inset-0 h-full w-full object-cover" />
       <div
         className={`absolute inset-0 ${gradient ? "bg-gradient-to-t from-black/80 via-black/50 to-black/30" : "bg-black/55"}`}
       />
@@ -138,7 +131,7 @@ export function CaseStudyTextHero({
   subtitle: string;
 }) {
   return (
-    <section className="relative min-h-[85vh] overflow-hidden bg-[#111]">
+    <section className="relative min-h-[85vh] overflow-hidden no-media-hover-wrap bg-[#111]">
       <div className="absolute inset-0 flex items-center justify-center px-6">
         <span className="text-center font-[var(--font-syne)] text-[clamp(1.5rem,6vw,5rem)] font-extrabold uppercase leading-tight tracking-[0.12em] text-white/[0.08]">
           {watermark}

@@ -1,25 +1,7 @@
+import type { ReactNode } from "react";
 import MetaAdsDashboardMockup from "@/components/services/MetaAdsDashboardMockup";
-
-const comparisonCols = [
-  {
-    label: "ROAS medio sector hostelería",
-    strikethrough: "1.8×",
-    value: "3.2×",
-    footnote: "Nuestros clientes",
-  },
-  {
-    label: "CTR medio Meta Ads sector",
-    strikethrough: "0.9%",
-    value: "2.4%",
-    footnote: "Campañas MYRAL",
-  },
-  {
-    label: "Coste por resultado medio",
-    strikethrough: "−",
-    value: "−40%",
-    footnote: "vs media del sector",
-  },
-] as const;
+import PublicidadComparisonStats from "@/components/services/PublicidadComparisonStats";
+import LiveCampaignDashboard from "@/components/services/LiveCampaignDashboard";
 
 const includes = [
   "Segmentación quirúrgica por edad, intereses y localización",
@@ -61,6 +43,24 @@ const steps = [
   ["04", "Optimización", "Revisamos los datos cada semana y ajustamos lo que no rinde."],
 ] as const;
 
+const adExamples = [
+  { type: "image" as const, src: "/images/ads-plato.png", badge: "Hostelería · Meta Ads", alt: "Anuncio hostelería Meta Ads" },
+  { type: "video" as const, src: "/images/ads-reel.mp4", badge: "Contenido · Reel", alt: "Reel publicitario" },
+  { type: "image" as const, src: "/images/ads-decoracion.png", badge: "Restauración · Campaña", alt: "Campaña restauración" },
+] as const;
+
+function AdExampleCard({ badge, children }: { badge: string; children: ReactNode }) {
+  return (
+    <article className="media-hover-wrap relative h-[420px] overflow-hidden rounded-lg">
+      {children}
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/35 via-transparent to-black/15" />
+      <span className="absolute left-3 top-3 z-10 border border-[#F5E614]/30 bg-[#F5E614]/15 px-2.5 py-1 text-[8px] uppercase tracking-[0.16em] text-[#F5E614]">
+        {badge}
+      </span>
+    </article>
+  );
+}
+
 export default function PublicidadDigitalPage() {
   return (
     <>
@@ -89,26 +89,38 @@ export default function PublicidadDigitalPage() {
         <h2 className="text-center font-[var(--font-syne)] text-[36px] font-extrabold text-white">
           Por encima de la media. Siempre.
         </h2>
-        <div className="mt-12 grid grid-cols-1 gap-px bg-[var(--border)] md:grid-cols-3">
-          {comparisonCols.map((col) => (
-            <div key={col.label} className="flex flex-col items-center bg-[#07070f] px-6 py-10 text-center md:px-8 md:py-12">
-              <p className="text-[9px] uppercase tracking-[0.16em] text-[var(--muted)]">{col.label}</p>
-              <p className="mt-4 font-[var(--font-syne)] text-[clamp(28px,4vw,40px)] font-extrabold leading-none text-white/25 line-through decoration-white/20">
-                {col.strikethrough}
-              </p>
-              <p
-                className="mt-3 font-[var(--font-syne)] font-extrabold leading-none text-[#F5E614]"
-                style={{ fontSize: "clamp(48px, 6vw, 72px)" }}
-              >
-                {col.value}
-              </p>
-              <p className="mt-4 text-[9px] uppercase tracking-[0.14em] text-[var(--muted)]">{col.footnote}</p>
-            </div>
-          ))}
+        <div className="mt-12">
+          <PublicidadComparisonStats />
         </div>
         <p className="mx-auto mt-10 max-w-xl text-center text-[10px] leading-[1.7] text-[var(--muted)]">
           Datos comparativos basados en medias del sector. Resultados variables según campaña y mercado.
         </p>
+      </section>
+
+      <section className="reveal bg-[#07070f] px-6 py-24 md:px-[52px]">
+        <h2 className="title-display">
+          Así se ven nuestros anuncios
+          <br />
+          <em className="font-[var(--font-instrument)] font-normal italic text-[#F5E614]">en el feed.</em>
+        </h2>
+        <p className="mt-4 max-w-xl text-[13px] leading-[1.82] text-[var(--muted)]">
+          Creatividades que detienen el scroll y generan conversión.
+        </p>
+        <div className="mt-12 grid grid-cols-1 gap-4 md:grid-cols-3 md:gap-5">
+          {adExamples.map((item) =>
+            item.type === "video" ? (
+              <AdExampleCard key={item.src} badge={item.badge}>
+                <video autoPlay muted loop playsInline className="h-full w-full object-cover" aria-label={item.alt}>
+                  <source src={item.src} type="video/mp4" />
+                </video>
+              </AdExampleCard>
+            ) : (
+              <AdExampleCard key={item.src} badge={item.badge}>
+                <img src={item.src} alt={item.alt} loading="lazy" className="h-full w-full object-cover" />
+              </AdExampleCard>
+            ),
+          )}
+        </div>
       </section>
 
       <section className="reveal bg-[#05050b] px-6 py-28 md:px-[52px]">
@@ -139,7 +151,7 @@ export default function PublicidadDigitalPage() {
       <section className="reveal bg-[#07070f] px-6 py-24 md:px-[52px]">
         <div className="grid grid-cols-1 gap-px bg-[var(--border)] md:grid-cols-2">
           {platforms.map((platform) => (
-            <article key={platform.num} className="bg-[#07070f] p-10">
+            <article key={platform.num} className="hover-card bg-[#07070f] p-10">
               <span className="font-[var(--font-syne)] text-[clamp(40px,6vw,56px)] font-extrabold leading-none text-[#F5E614]">
                 {platform.num}
               </span>
@@ -160,18 +172,21 @@ export default function PublicidadDigitalPage() {
 
       <section className="reveal bg-[#05050b] px-6 py-24 md:px-[52px]">
         <h2 className="title-display mb-12">Cómo lanzamos una campaña.</h2>
-        <div className="max-w-3xl space-y-10">
-          {steps.map(([num, title, desc]) => (
-            <article key={num} className="flex gap-6 border-b border-[var(--border)] pb-10 last:border-0">
-              <span className="font-[var(--font-syne)] text-[clamp(40px,6vw,64px)] font-extrabold leading-none text-[#F5E614]">
-                {num}
-              </span>
-              <div>
-                <h3 className="font-[var(--font-syne)] text-lg font-semibold text-white">{title}</h3>
-                <p className="mt-2 text-[13px] leading-[1.8] text-[var(--muted)]">{desc}</p>
-              </div>
-            </article>
-          ))}
+        <div className="grid grid-cols-1 items-start gap-12 lg:grid-cols-2 lg:gap-16">
+          <div className="max-w-3xl space-y-10">
+            {steps.map(([num, title, desc]) => (
+              <article key={num} className="flex gap-6 border-b border-[var(--border)] pb-10 last:border-0">
+                <span className="font-[var(--font-syne)] text-[clamp(40px,6vw,64px)] font-extrabold leading-none text-[#F5E614]">
+                  {num}
+                </span>
+                <div>
+                  <h3 className="font-[var(--font-syne)] text-lg font-semibold text-white">{title}</h3>
+                  <p className="mt-2 text-[13px] leading-[1.8] text-[var(--muted)]">{desc}</p>
+                </div>
+              </article>
+            ))}
+          </div>
+          <LiveCampaignDashboard />
         </div>
       </section>
 
