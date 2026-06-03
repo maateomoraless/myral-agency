@@ -49,14 +49,13 @@ export default function AntonioBarrulPage() {
       </section>
 
       <section className="relative min-h-screen">
-        <video
-          src="/images/barrul-video.mp4"
-          autoPlay
-          muted
-          loop
-          playsInline
-          className="absolute inset-0 h-full w-full object-cover"
-          aria-label="Anuncio Antonio Barrul"
+        <iframe
+          src="https://www.youtube.com/embed/41QZr5ltC1c?autoplay=1&mute=1&loop=1&playlist=41QZr5ltC1c&controls=0&showinfo=0&rel=0"
+          className="absolute inset-0 h-full w-full"
+          style={{ border: "none", pointerEvents: "none" }}
+          allow="autoplay"
+          allowFullScreen
+          title="Anuncio Antonio Barrul"
         />
         <div className="absolute inset-0 bg-[rgba(5,5,11,0.55)]" />
         <div className="relative z-10 flex min-h-screen flex-col items-center justify-center px-6 py-24 text-center md:px-[52px]">

@@ -17,16 +17,13 @@ export default function CervantesPage() {
     <>
       <section className="relative min-h-screen overflow-hidden">
         <ParallaxBackground className="absolute inset-0 h-[115%] w-full">
-          <video
-            src="/images/cervantes-video.mp4"
-            poster="/images/cervantes-mesa.png"
-            autoPlay
-            muted
-            loop
-            playsInline
-            preload="auto"
-            className="h-full w-full object-cover"
-            aria-label="Vermutería Cervantes"
+          <iframe
+            src="https://www.youtube.com/embed/a1m5ssvZ65k?autoplay=1&mute=1&loop=1&playlist=a1m5ssvZ65k&controls=0&showinfo=0&rel=0"
+            className="absolute inset-0 h-full w-full"
+            style={{ border: "none", pointerEvents: "none" }}
+            allow="autoplay"
+            allowFullScreen
+            title="Vermutería Cervantes"
           />
         </ParallaxBackground>
         <div className="pointer-events-none absolute inset-0 bg-[rgba(5,5,11,0.55)]" />

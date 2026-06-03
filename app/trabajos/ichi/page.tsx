@@ -51,14 +51,13 @@ export default function IchiPage() {
       <IchiStats />
 
       <section className="relative min-h-screen">
-        <video
-          src="/images/ichi-video.mp4"
-          autoPlay
-          muted
-          loop
-          playsInline
-          className="absolute inset-0 h-full w-full object-cover"
-          aria-label="Itziar Martínez en competición"
+        <iframe
+          src="https://www.youtube.com/embed/UF3Zg9sF8_s?autoplay=1&mute=1&loop=1&playlist=UF3Zg9sF8_s&controls=0&showinfo=0&rel=0"
+          className="absolute inset-0 h-full w-full"
+          style={{ border: "none", pointerEvents: "none" }}
+          allow="autoplay"
+          allowFullScreen
+          title="Itziar Martínez en competición"
         />
         <div className="absolute inset-0 bg-[rgba(5,5,11,0.5)]" />
         <div className="relative z-10 flex min-h-screen flex-col items-center justify-center px-6 py-24 text-center md:px-[52px]">
