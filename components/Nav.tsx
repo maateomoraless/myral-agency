@@ -57,7 +57,7 @@ export default function Nav() {
             data-cal-link="myralagency/diagnostico"
             data-cal-namespace="diagnostico"
             data-cal-config='{"layout":"month_view"}'
-            className="bg-[#F5E614] px-5 py-2.5 text-[10px] font-medium uppercase tracking-[0.14em] text-black"
+            className="btn-yellow bg-[#F5E614] px-5 py-2.5 text-[10px] font-medium uppercase tracking-[0.14em] text-black"
           >
             Hablemos
           </button>
@@ -88,7 +88,7 @@ export default function Nav() {
               data-cal-link="myralagency/diagnostico"
               data-cal-namespace="diagnostico"
               data-cal-config='{"layout":"month_view"}'
-              className="bg-[#F5E614] py-3 text-[10px] font-medium uppercase tracking-[0.14em] text-black"
+              className="btn-yellow bg-[#F5E614] py-3 text-[10px] font-medium uppercase tracking-[0.14em] text-black"
             >
               Hablemos
             </button>

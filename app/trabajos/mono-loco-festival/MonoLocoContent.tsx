@@ -1,7 +1,34 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { AnimatedStatsGrid } from "@/components/effects/AnimatedCounter";
 
+const formatWithDots = (n: number) =>
+  Math.round(n)
+    .toString()
+    .replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+
+const resultStats = [
+  {
+    label: "Asistentes — aforo completo",
+    target: 16000,
+    format: formatWithDots,
+    valueClassName:
+      "font-[var(--font-syne)] text-[clamp(2rem,5vw,3rem)] font-extrabold leading-none text-[#F5E614]",
+  },
+  {
+    label: "Evento del año en León",
+    staticValue: "Top",
+    valueClassName:
+      "font-[var(--font-syne)] text-[clamp(2rem,5vw,3rem)] font-extrabold leading-none text-[#F5E614]",
+  },
+  {
+    label: "Entradas agotadas antes del evento",
+    staticValue: "Sold out",
+    valueClassName:
+      "font-[var(--font-syne)] text-[clamp(2rem,5vw,3rem)] font-extrabold leading-none text-[#F5E614]",
+  },
+];
 const whatWeDid = [
   "Estrategia de comunicación y campaña en redes sociales",
   "Gestión de la comunidad online antes, durante y después del evento",
@@ -9,12 +36,6 @@ const whatWeDid = [
   "Producción de contenido audiovisual para promoción",
   "Cobertura en directo del evento en redes sociales",
   "Gestión de RRPP y relaciones con medios locales",
-] as const;
-
-const stats = [
-  ["16.000", "Asistentes — aforo completo"],
-  ["Top", "Evento del año en León"],
-  ["Sold out", "Entradas agotadas antes del evento"],
 ] as const;
 
 const sidebarPhotos = [
@@ -89,16 +110,12 @@ export default function MonoLocoContent() {
 
           <div className="border-t border-[var(--border)] pt-14 lg:pt-16">
             <h2 className="mb-8 font-[var(--font-syne)] text-3xl font-extrabold text-white">El resultado</h2>
-            <div className="mb-8 grid grid-cols-1 gap-px bg-[var(--border)] sm:grid-cols-3">
-              {stats.map(([value, label]) => (
-                <div key={label} className="bg-[var(--bg)] p-6">
-                  <div className="font-[var(--font-syne)] text-[clamp(2rem,5vw,3rem)] font-extrabold leading-none text-[#F5E614]">
-                    {value}
-                  </div>
-                  <div className="mt-2 text-[9px] uppercase tracking-[0.16em] text-[var(--muted)]">{label}</div>
-                </div>
-              ))}
-            </div>
+            <AnimatedStatsGrid
+              items={resultStats}
+              wrapperClassName="mb-8"
+              gridClassName="grid grid-cols-1 gap-px bg-[var(--border)] sm:grid-cols-3"
+              cellClassName="bg-[var(--bg)] p-6"
+            />
             <p className="text-[14px] leading-[1.85] text-[var(--muted)]">
               Uno de los eventos más grandes de León gestionado por MYRAL. Cuando el aforo importa, los sistemas
               importan más.

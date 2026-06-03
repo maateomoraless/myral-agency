@@ -1,23 +1,159 @@
 import Link from "next/link";
+import HeroWordReveal from "@/components/effects/HeroWordReveal";
+import ParallaxBackground from "@/components/effects/ParallaxBackground";
+import BarrulResultsStats from "@/components/case-study/BarrulResultsStats";
+
+const whatWeDid = [
+  "Desarrollo del concepto narrativo y guion visual",
+  "Dirección y producción completa del vídeo",
+  "Grabación en localizaciones reales de León",
+  "Edición cinematográfica con color grading premium",
+  "Adaptación para Instagram Reels y Stories",
+] as const;
 
 export default function AntonioBarrulPage() {
   return (
     <>
-      <section className="relative min-h-[85vh] overflow-hidden">
-        <img src="/images/barrul.png" alt="Antonio Barrul" loading="lazy" className="absolute inset-0 h-full w-full object-cover" />
-        <div className="absolute inset-0 bg-black/55" />
-        <div className="section-pad relative z-10 flex min-h-[85vh] flex-col justify-end">
-          <span className="mb-4 inline-block border border-[#F5E614]/30 bg-[#F5E614]/10 px-3 py-1 text-[9px] uppercase tracking-[0.18em] text-[#F5E614]">Producción Audiovisual · 2024</span>
-          <h1 className="title-display">Antonio Barrul</h1>
-          <p className="mt-4 font-[var(--font-instrument)] text-[clamp(1.25rem,3vw,2rem)] italic text-[#F5E614]">El anuncio que lo cambió todo.</p>
+      <section className="relative min-h-screen overflow-hidden">
+        <ParallaxBackground className="absolute inset-0 h-[115%] w-full">
+          <img
+            src="/images/barrul-campeon.png"
+            alt="Antonio Barrul"
+            loading="lazy"
+            className="h-full w-full object-cover"
+          />
+        </ParallaxBackground>
+        <div
+          className="pointer-events-none absolute inset-0"
+          style={{
+            background:
+              "linear-gradient(to bottom, transparent 0%, transparent 40%, rgba(5,5,11,0.85) 100%)",
+          }}
+        />
+        <div className="relative z-10 flex min-h-screen flex-col justify-end px-6 pb-20 pt-32 md:px-[52px]">
+          <span className="mb-4 text-[9px] uppercase tracking-[0.18em] text-[#F5E614]">
+            Producción Audiovisual · 2024
+          </span>
+          <HeroWordReveal
+            text="Antonio Barrul"
+            as="h1"
+            className="font-[var(--font-syne)] font-extrabold leading-[0.92] tracking-[-0.025em] text-white"
+            style={{ fontSize: "clamp(52px, 8vw, 96px)" }}
+          />
+          <HeroWordReveal
+            text="El anuncio que lo cambió todo."
+            as="p"
+            className="mt-4 font-[var(--font-instrument)] text-[clamp(1.25rem,3vw,2rem)] italic text-[#F5E614]"
+          />
         </div>
       </section>
 
-      <section className="section-pad"><p className="max-w-3xl text-[14px] leading-[1.85] text-[var(--muted)]">Antonio Barrul es uno de los boxeadores más seguidos de España, con más de 300.000 seguidores en Instagram. Cuando llegó a MYRAL tenía un hito que anunciar: su primer combate a nivel europeo. Necesitaba algo que estuviera a la altura del momento.</p></section>
-      <section className="section-pad section-alt"><h2 className="mb-6 font-[var(--font-syne)] text-3xl font-bold">El reto</h2><p className="max-w-3xl text-[14px] leading-[1.85] text-[var(--muted)]">No era un anuncio cualquiera. Tenía que transmitir la tensión, la preparación y la personalidad de Antonio sin caer en el tópico del vídeo de boxeo al uso. Teníamos que hacer algo cinematográfico.</p></section>
-      <section className="section-pad"><h2 className="mb-8 font-[var(--font-syne)] text-3xl font-bold">Lo que hicimos</h2><ul className="max-w-3xl space-y-4">{["Desarrollo del concepto narrativo y guion visual","Dirección y producción completa del vídeo","Grabación en localizaciones reales de León","Edición cinematográfica con color grading premium","Adaptación para Instagram Reels y Stories"].map((it)=> <li key={it} className="flex gap-4 border-b border-[var(--border)] pb-4 text-[14px] text-white/80"><span className="text-[#F5E614]">→</span>{it}</li>)}</ul></section>
-      <section className="section-pad section-alt"><h2 className="mb-8 font-[var(--font-syne)] text-3xl font-bold">El resultado</h2><div className="mb-8 grid grid-cols-1 gap-px bg-[var(--border)] sm:grid-cols-3">{[["300K+","impresiones orgánicas"],["Top","publicación del mes"],["Sold out","en primeras horas"]].map(([v,l])=><div key={l} className="bg-[var(--bg)] p-6"><div className="font-[var(--font-syne)] text-4xl font-extrabold text-[#F5E614]">{v}</div><div className="mt-2 text-[9px] uppercase tracking-[0.16em] text-[var(--muted)]">{l}</div></div>)}</div><p className="max-w-3xl text-[14px] leading-[1.85] text-[var(--muted)]">El vídeo se convirtió en la publicación con más alcance orgánico de su historia en Instagram. Sin publicidad pagada.</p><Link href="https://www.instagram.com/reel/DOoi8rWAk_V/" target="_blank" className="mt-8 inline-block text-[11px] uppercase tracking-[0.16em] text-[#F5E614]">Ver el proyecto en Instagram →</Link></section>
-      <section className="section-pad text-center"><button type="button" data-cal-link="myralagency/diagnostico" data-cal-namespace="diagnostico" data-cal-config='{"layout":"month_view"}' className="bg-[#F5E614] px-8 py-4 text-[10px] font-bold uppercase tracking-[0.18em] text-black">Reservar llamada gratuita →</button></section>
+      <section className="relative min-h-screen">
+        <video
+          src="/images/barrul-video.mp4"
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="absolute inset-0 h-full w-full object-cover"
+          aria-label="Anuncio Antonio Barrul"
+        />
+        <div className="absolute inset-0 bg-[rgba(5,5,11,0.55)]" />
+        <div className="relative z-10 flex min-h-screen flex-col items-center justify-center px-6 py-24 text-center md:px-[52px]">
+          <p className="mb-6 text-[9px] uppercase tracking-[0.22em] text-[#F5E614]">El anuncio</p>
+          <h2
+            className="max-w-4xl font-[var(--font-syne)] font-extrabold leading-[1.05] tracking-[-0.02em] text-white"
+            style={{ fontSize: "clamp(36px, 5vw, 64px)" }}
+          >
+            Producción cinematográfica para el primer combate europeo de Antonio Barrul
+          </h2>
+          <div className="mt-10 h-0.5 w-[60px] bg-[#F5E614]" />
+        </div>
+      </section>
+
+      <section className="border-t border-[var(--border)] bg-[#07070f] px-6 py-24 md:px-[52px]">
+        <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-16">
+          <div>
+            <h2 className="mb-6 font-[var(--font-syne)] text-2xl font-bold text-[#F5E614]">El proyecto</h2>
+            <p className="text-[14px] leading-[1.85] text-[var(--muted)]">
+              Antonio Barrul es uno de los boxeadores más seguidos de España con más de 300.000 seguidores. Cuando
+              llegó a MYRAL tenía un hito que anunciar: su primer combate a nivel europeo. Necesitaba algo
+              cinematográfico, algo que estuviera a la altura del momento.
+            </p>
+          </div>
+          <div className="overflow-hidden rounded-[4px]">
+            <img
+              src="/images/barrul-ring.png"
+              alt="Antonio Barrul en el ring"
+              loading="lazy"
+              className="aspect-[4/3] w-full object-cover lg:aspect-auto lg:min-h-[360px]"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section className="border-t border-[var(--border)] bg-[#05050b] px-6 py-24 md:px-[52px]">
+        <h2 className="title-display mb-12">Lo que hicimos.</h2>
+        <ul className="max-w-3xl space-y-4">
+          {whatWeDid.map((item) => (
+            <li key={item} className="flex gap-4 text-base text-white/85">
+              <span className="shrink-0 text-[#F5E614]">→</span>
+              {item}
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <section className="border-t border-[var(--border)] bg-[#07070f] px-6 py-24 md:px-[52px]">
+        <div className="grid grid-cols-1 gap-12 lg:grid-cols-[minmax(0,3fr)_minmax(0,2fr)] lg:items-center lg:gap-16">
+          <div className="overflow-hidden">
+            <img
+              src="/images/barrul-equipo.png"
+              alt="Equipo de producción Antonio Barrul"
+              loading="lazy"
+              className="aspect-[4/3] w-full object-cover lg:aspect-auto lg:min-h-[480px]"
+            />
+          </div>
+
+          <div className="flex flex-col">
+            <BarrulResultsStats />
+
+            <div className="my-8 h-px w-full bg-[var(--border)]" />
+
+            <p className="text-[13px] leading-[1.85] text-[var(--muted)]">
+              El vídeo se convirtió en la publicación con más alcance orgánico de su historia en Instagram. Sin
+              publicidad pagada.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="border-t border-[var(--border)] bg-[#05050b] px-6 py-12 text-center md:px-[52px]">
+        <p className="mb-3 text-[11px] uppercase tracking-[0.14em] text-[var(--muted)]">Ver el proyecto completo</p>
+        <Link
+          href="https://www.instagram.com/reel/DOoi8rWAk_V/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-[11px] uppercase tracking-[0.16em] text-[#F5E614] transition-opacity hover:opacity-70"
+        >
+          Instagram →
+        </Link>
+      </section>
+
+      <section className="border-t border-[var(--border)] bg-[#05050b] px-6 py-24 text-center md:px-[52px]">
+        <h2 className="font-[var(--font-syne)] text-4xl font-extrabold text-white">
+          ¿Quieres un contenido así para tu marca?
+        </h2>
+        <button
+          type="button"
+          data-cal-link="myralagency/diagnostico"
+          data-cal-namespace="diagnostico"
+          data-cal-config='{"layout":"month_view"}'
+          className="btn-yellow mt-10 bg-[#F5E614] px-10 py-5 text-[10px] font-bold uppercase tracking-[0.18em] text-black"
+        >
+          Reservar llamada gratuita →
+        </button>
+      </section>
     </>
   );
 }

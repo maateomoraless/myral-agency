@@ -1,18 +1,19 @@
-import Link from "next/link";
+import MagneticLink from "@/components/effects/MagneticLink";
+import HeroWordReveal from "@/components/effects/HeroWordReveal";
 import WorkCardMedia from "@/components/WorkCardMedia";
 import { works } from "@/lib/works";
 
 export default function TrabajosPage() {
   return (
-    <section className="section-pad reveal">
-      <h1 className="title-display">Nuestro trabajo.</h1>
-      <p className="mt-6 max-w-2xl text-[14px] leading-[1.85] text-[var(--muted)]">
+    <section className="section-pad reveal-section">
+      <HeroWordReveal text="Nuestro trabajo." as="h1" className="title-display reveal-item" />
+      <p className="reveal-item mt-6 max-w-2xl text-[14px] leading-[1.85] text-[var(--muted)]">
         Producción audiovisual, gestión de redes, eventos y branding para marcas y deportistas.
       </p>
 
       <div className="mt-12 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
         {works.map((work) => (
-          <Link key={work.href} href={work.href} className="group block">
+          <MagneticLink key={work.href} href={work.href} className="group">
             <article className="border border-[var(--border)] bg-[var(--bg)]">
               <div className="relative aspect-[3/2] overflow-hidden">
                 <WorkCardMedia work={work} />
@@ -28,7 +29,7 @@ export default function TrabajosPage() {
                 <p className="mt-3 text-[8px] uppercase tracking-[0.12em] text-[#F5E614]/70">Ver proyecto →</p>
               </div>
             </article>
-          </Link>
+          </MagneticLink>
         ))}
       </div>
     </section>

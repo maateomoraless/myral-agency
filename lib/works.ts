@@ -14,7 +14,7 @@ export const works: WorkCard[] = [
     badge: "Producción Audiovisual",
     name: "Antonio Barrul",
     desc: "Anuncio del primer combate europeo. Producción cinematográfica de alto impacto.",
-    image: "/images/barrul.png",
+    image: "/images/barrul-campeon.png",
     featured: true,
   },
   {
@@ -22,7 +22,7 @@ export const works: WorkCard[] = [
     badge: "Contenido Deportivo",
     name: "Itziar Martínez",
     desc: "Cobertura de la escaladora española top 20 mundial en competiciones internacionales.",
-    image: "/images/ichi.png",
+    image: "/images/ichi-roca.png",
     featured: true,
   },
   {
@@ -38,7 +38,7 @@ export const works: WorkCard[] = [
     badge: "Social Media",
     name: "Vermutería Cervantes",
     desc: "De 200 a 2.000 seguidores en menos de un año.",
-    image: "/images/cervantes-despues.png",
+    image: "/images/cervantes-mesa.png",
     featured: true,
   },
   {

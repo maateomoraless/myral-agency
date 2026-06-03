@@ -3,6 +3,8 @@ import { DM_Sans, Instrument_Serif, Syne } from "next/font/google";
 import Script from "next/script";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
+import CursorEffect from "@/components/effects/CursorEffect";
+import RevealObserver from "@/components/effects/RevealObserver";
 import "./globals.css";
 
 const syne = Syne({
@@ -41,23 +43,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 Cal("init", "diagnostico", {origin:"https://app.cal.com"});
 Cal.ns.diagnostico("ui", {"hideEventTypeDetails":false,"layout":"month_view"});`}
         </Script>
-        <Script id="reveal-observer" strategy="afterInteractive">
-          {`(() => {
-            const run = () => {
-              const nodes = document.querySelectorAll('.reveal');
-              if (!nodes.length) return;
-              const io = new IntersectionObserver((entries) => {
-                entries.forEach((entry) => {
-                  if (entry.isIntersecting) entry.target.classList.add('visible');
-                });
-              }, { threshold: 0.1 });
-              nodes.forEach((n) => io.observe(n));
-            };
-            run();
-            const mo = new MutationObserver(() => run());
-            mo.observe(document.body, { childList: true, subtree: true });
-          })();`}
-        </Script>
+        <CursorEffect />
+        <RevealObserver />
         <Nav />
         <main style={{ paddingTop: 88 }}>{children}</main>
         <Footer />

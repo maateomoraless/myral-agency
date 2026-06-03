@@ -40,7 +40,7 @@ export default function IAPage() {
             <div key={s} className="bg-[var(--bg2)] p-6 text-[13px] text-white/80">{s}</div>
           ))}
         </div>
-        <button type="button" data-cal-link="myralagency/diagnostico" data-cal-namespace="diagnostico" data-cal-config='{"layout":"month_view"}' className="mt-10 bg-[#F5E614] px-8 py-4 text-[10px] font-bold uppercase tracking-[0.18em] text-black">Reservar llamada gratuita →</button>
+        <button type="button" data-cal-link="myralagency/diagnostico" data-cal-namespace="diagnostico" data-cal-config='{"layout":"month_view"}' className="btn-yellow mt-10 bg-[#F5E614] px-8 py-4 text-[10px] font-bold uppercase tracking-[0.18em] text-black">Reservar llamada gratuita →</button>
       </section>
     </>
   );

@@ -84,7 +84,7 @@ export function CaseStudyCta() {
         data-cal-link="myralagency/diagnostico"
         data-cal-namespace="diagnostico"
         data-cal-config='{"layout":"month_view"}'
-        className="bg-[#F5E614] px-8 py-4 text-[10px] font-bold uppercase tracking-[0.18em] text-black"
+        className="btn-yellow bg-[#F5E614] px-8 py-4 text-[10px] font-bold uppercase tracking-[0.18em] text-black"
       >
         Reservar llamada gratuita →
       </button>

@@ -1,16 +1,20 @@
 import { CaseStudyCta } from "@/components/case-study/CaseStudySections";
+import HeroWordReveal from "@/components/effects/HeroWordReveal";
+import ParallaxBackground from "@/components/effects/ParallaxBackground";
 import MonoLocoContent from "./MonoLocoContent";
 
 export default function MonoLocoFestivalPage() {
   return (
     <>
       <section className="relative min-h-[85vh] overflow-hidden">
-        <img
-          src="/images/monoloco-1.png"
-          alt="Mono Loco Festival"
-          loading="lazy"
-          className="absolute inset-0 h-full w-full object-cover"
-        />
+        <ParallaxBackground className="absolute inset-0 h-[115%] w-full">
+          <img
+            src="/images/monoloco-1.png"
+            alt="Mono Loco Festival"
+            loading="lazy"
+            className="h-full w-full object-cover"
+          />
+        </ParallaxBackground>
         <div
           className="pointer-events-none absolute inset-0"
           style={{
@@ -22,12 +26,16 @@ export default function MonoLocoFestivalPage() {
           <span className="mb-4 inline-block w-fit border border-[#F5E614]/40 bg-[#05050b]/80 px-3 py-1 text-[9px] uppercase tracking-[0.18em] text-[#F5E614] backdrop-blur-sm">
             Gestión Integral de Evento · León · 2024
           </span>
-          <h1 className="title-display max-w-4xl text-white drop-shadow-[0_2px_24px_rgba(0,0,0,0.5)]">
-            Mono Loco Festival
-          </h1>
-          <p className="mt-4 max-w-2xl font-[var(--font-instrument)] text-[clamp(1.25rem,3vw,2rem)] italic text-[#F5E614] drop-shadow-[0_2px_16px_rgba(0,0,0,0.45)]">
-            16.000 personas. Un solo escenario.
-          </p>
+          <HeroWordReveal
+            text="Mono Loco Festival"
+            as="h1"
+            className="title-display max-w-4xl text-white drop-shadow-[0_2px_24px_rgba(0,0,0,0.5)]"
+          />
+          <HeroWordReveal
+            text="16.000 personas. Un solo escenario."
+            as="p"
+            className="mt-4 max-w-2xl font-[var(--font-instrument)] text-[clamp(1.25rem,3vw,2rem)] italic text-[#F5E614] drop-shadow-[0_2px_16px_rgba(0,0,0,0.45)]"
+          />
         </div>
       </section>
 
