@@ -45,7 +45,7 @@ export const works: WorkCard[] = [
     href: "/trabajos/leyendas-del-vallenato",
     badge: "Gestión de Evento",
     name: "Leyendas del Vallenato",
-    desc: "2.500 asistentes. Gestión integral remota desde Innsbruck a 1.788km.",
+    desc: "2.500 asistentes. Gestión integral de festival en León.",
     placeholder: "MYRAL.",
   },
   {
