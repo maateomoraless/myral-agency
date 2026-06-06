@@ -53,7 +53,8 @@ export const metadata: Metadata = {
     images: ["https://myralagency.com/opengraph-image"],
   },
   icons: {
-    icon: "/favicon.svg",
+    icon: [{ url: "/favicon.svg", type: "image/svg+xml" }],
+    shortcut: "/favicon.svg",
     apple: "/favicon.svg",
   },
 };
