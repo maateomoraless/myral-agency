@@ -33,9 +33,8 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "MYRAL Agency — Branding, IA y Marketing Digital",
-  description:
-    "Agencia creativa especializada en branding, redes sociales, publicidad digital y automatización con IA. Más de 20 proyectos activos en toda España.",
+  title: "MYRAL Agency",
+  description: "Branding, IA y Marketing Digital",
   openGraph: {
     title: "MYRAL Agency — Branding, IA y Marketing Digital",
     description:
