@@ -69,7 +69,10 @@ export default function GestionEventosPage() {
           className="absolute inset-0 h-full w-full object-cover"
           aria-label="Eventos MYRAL"
         >
-          <source src="/images/evento-fondo.mp4" type="video/mp4" />
+          <source
+            src="https://pub-b4af313647b6409d962b89eaf287e84c.r2.dev/evento-fondo.mp4"
+            type="video/mp4"
+          />
         </video>
         <div
           className="pointer-events-none absolute inset-0 z-[1]"

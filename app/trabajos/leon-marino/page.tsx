@@ -7,25 +7,16 @@ const whatWeDid = [
   "Posicionamiento en el sector del buceo y deportes acuáticos",
 ] as const;
 
-const videoClass =
-  "no-media-hover pointer-events-none h-full w-full cursor-default object-cover";
-
 export default function LeonMarinoPage() {
   return (
     <>
       <section className="relative min-h-screen overflow-hidden bg-[#111] no-media-hover-wrap">
         <div className="pointer-events-none absolute inset-0 overflow-hidden no-media-hover-wrap">
-          <video
-            autoPlay
-            muted
-            loop
-            playsInline
-            poster="/images/marino-buzos.png"
-            className={videoClass}
-            aria-label="León Marino"
-          >
-            <source src="/images/marino-video.MOV" type="video/quicktime" />
-          </video>
+          <img
+            src="/images/marino-buzos.png"
+            alt="León Marino"
+            className="no-media-hover pointer-events-none h-full w-full object-cover"
+          />
         </div>
         <div className="pointer-events-none absolute inset-0" style={{ background: "rgba(5,5,11,0.65)" }} />
         <div className="relative z-10 flex min-h-screen flex-col justify-center px-6 py-20 md:px-[52px]">
