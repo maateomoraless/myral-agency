@@ -3,6 +3,11 @@ import MetaAdsDashboardMockup from "@/components/services/MetaAdsDashboardMockup
 import PublicidadComparisonStats from "@/components/services/PublicidadComparisonStats";
 import LiveCampaignDashboard from "@/components/services/LiveCampaignDashboard";
 
+export const metadata = {
+  title: "Publicidad Digital — MYRAL Agency",
+  description: "Campañas de Meta Ads y Google Ads con 3.2× ROI medio. Cada euro invertido tiene un retorno medible.",
+};
+
 const includes = [
   "Segmentación quirúrgica por edad, intereses y localización",
   "Creatividades optimizadas para conversión",

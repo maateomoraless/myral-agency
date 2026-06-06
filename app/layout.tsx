@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 import CursorEffect from "@/components/effects/CursorEffect";
 import RevealObserver from "@/components/effects/RevealObserver";
 import PageLoader from "@/components/effects/PageLoaderGate";
+import PageTransition from "@/components/effects/PageTransitionGate";
 import "./globals.css";
 
 const syne = Syne({
@@ -31,8 +32,29 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "MYRAL Agency",
-  description: "Agencia premium de crecimiento, contenido e inteligencia artificial.",
+  title: "MYRAL Agency — Branding, IA y Marketing Digital",
+  description:
+    "Agencia creativa especializada en branding, redes sociales, publicidad digital y automatización con IA. Más de 20 proyectos activos en toda España.",
+  openGraph: {
+    title: "MYRAL Agency — Branding, IA y Marketing Digital",
+    description:
+      "Agencia creativa especializada en branding, redes sociales, publicidad digital y automatización con IA.",
+    url: "https://myralagency.com",
+    siteName: "MYRAL Agency",
+    images: [{ url: "https://myralagency.com/opengraph-image", width: 1200, height: 630 }],
+    locale: "es_ES",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "MYRAL Agency",
+    description: "Branding, IA y Marketing Digital",
+    images: ["https://myralagency.com/opengraph-image"],
+  },
+  icons: {
+    icon: "/images/logo_myral_sin_fondo.png",
+    apple: "/images/logo_myral_sin_fondo.png",
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -40,6 +62,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="es">
       <body className={`${syne.variable} ${instrument.variable} ${dmSans.variable}`}>
         <PageLoader />
+        <PageTransition />
         <Script id="cal-embed" strategy="afterInteractive">
           {`(function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
 Cal("init", "diagnostico", {origin:"https://app.cal.com"});

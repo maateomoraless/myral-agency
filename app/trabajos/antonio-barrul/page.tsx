@@ -3,6 +3,12 @@ import HeroWordReveal from "@/components/effects/HeroWordReveal";
 import ParallaxBackground from "@/components/effects/ParallaxBackground";
 import BarrulResultsStats from "@/components/case-study/BarrulResultsStats";
 
+export const metadata = {
+  title: "Antonio Barrul × MYRAL Agency — Producción Audiovisual",
+  description:
+    "Anuncio cinematográfico del primer combate europeo de Antonio Barrul. 300K+ impresiones orgánicas sin publicidad pagada.",
+};
+
 const whatWeDid = [
   "Desarrollo del concepto narrativo y guion visual",
   "Dirección y producción completa del vídeo",

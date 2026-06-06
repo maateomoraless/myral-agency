@@ -2,6 +2,12 @@ import Image from "next/image";
 import Link from "next/link";
 import InstagramCarouselMockup from "@/components/services/InstagramCarouselMockup";
 
+export const metadata = {
+  title: "Producción de Contenido — MYRAL Agency",
+  description:
+    "Fotografía, vídeo y reels de nivel profesional. Contenido que atrae, convence y convierte para tu marca.",
+};
+
 const includes = [
   "Fotografía gastronómica y de producto",
   "Vídeo y reels para Instagram y TikTok",

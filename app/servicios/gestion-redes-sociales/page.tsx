@@ -1,6 +1,12 @@
 import Link from "next/link";
 import GestionRedesStats from "@/components/services/GestionRedesStats";
 
+export const metadata = {
+  title: "Gestión de Redes Sociales — MYRAL Agency",
+  description:
+    "Estrategia, contenido y gestión completa de Instagram, TikTok y LinkedIn. +900% crecimiento medio en clientes de MYRAL.",
+};
+
 const includes = [
   "Estrategia de contenido mensual personalizada",
   "Calendario editorial con fechas y formatos",

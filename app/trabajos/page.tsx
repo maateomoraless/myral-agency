@@ -3,6 +3,12 @@ import HeroWordReveal from "@/components/effects/HeroWordReveal";
 import WorkCardMedia from "@/components/WorkCardMedia";
 import { works } from "@/lib/works";
 
+export const metadata = {
+  title: "Trabajos — MYRAL Agency",
+  description:
+    "Portfolio de proyectos de MYRAL Agency. Producción audiovisual, social media y eventos para marcas y deportistas de primer nivel.",
+};
+
 export default function TrabajosPage() {
   return (
     <section className="section-pad reveal-section">

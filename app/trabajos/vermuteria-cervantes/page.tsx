@@ -4,6 +4,12 @@ import ParallaxBackground from "@/components/effects/ParallaxBackground";
 import CervantesStats from "@/components/case-study/CervantesStats";
 import InstagramBrowserMockup from "./InstagramBrowserMockup";
 
+export const metadata = {
+  title: "Vermutería Cervantes × MYRAL Agency — Social Media",
+  description:
+    "De 200 a 2.000 seguidores en menos de un año. +900% crecimiento y 85K alcance mensual para Vermutería Cervantes en León.",
+};
+
 const whatWeDid = [
   "Estrategia de contenido mensual personalizada",
   "Fotografía gastronómica profesional de platos y ambiente",

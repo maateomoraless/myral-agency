@@ -1,5 +1,11 @@
 import LeyendasResultsStats from "@/components/case-study/LeyendasResultsStats";
 
+export const metadata = {
+  title: "Leyendas del Vallenato × MYRAL Agency — Gestión de Evento",
+  description:
+    "Gestión integral del festival Leyendas del Vallenato. 2.500 asistentes y tasa de conversión del 25% frente al 2-3% de la industria.",
+};
+
 const whatWeDid = [
   "Estrategia de comunicación y campañas Meta Ads segmentadas por provincia",
   "Sistema de venta con pricing dinámico — General, VIP, Mesa Reservada",

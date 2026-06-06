@@ -1,6 +1,12 @@
 import Link from "next/link";
 import RunRunResultsStats from "@/components/case-study/RunRunResultsStats";
 
+export const metadata = {
+  title: "Run Run Social Club × Santa Madre × MYRAL Agency",
+  description:
+    "Campaña de influencer marketing entre comunidad de runners y marca de suplementos deportivos. Roberto Alaiz como protagonista.",
+};
+
 const VIDEO_SRC =
   "https://pub-b4af313647b6409d962b89eaf287e84c.r2.dev/2025-09-16-video-runrun-x-santamadre_DXwzauWq.mp4";
 

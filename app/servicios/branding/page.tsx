@@ -5,6 +5,12 @@ import BrandingNamingReveal from "@/components/services/BrandingNamingReveal";
 import BrandingTimeline from "@/components/services/BrandingTimeline";
 import BrandingTypographyPanel from "@/components/services/BrandingTypographyPanel";
 
+export const metadata = {
+  title: "Branding e Identidad Visual — MYRAL Agency",
+  description:
+    "Naming, logo, colores y tono. Una identidad visual que diferencia tu marca y que la gente recuerda.",
+};
+
 const includesLeft = [
   "Naming y propuesta de nombre",
   "Logotipo en todos los formatos (SVG, PNG, PDF)",

@@ -2,6 +2,12 @@ import Link from "next/link";
 import GestionEventosStats from "@/components/services/GestionEventosStats";
 import LeyendasCaseStats from "@/components/services/LeyendasCaseStats";
 
+export const metadata = {
+  title: "Gestión y Producción de Eventos — MYRAL Agency",
+  description:
+    "Gestión integral de eventos de cualquier escala. 16.000 asistentes en el mayor evento gestionado por MYRAL.",
+};
+
 const includes = [
   "Conceptualización y planificación estratégica",
   "Gestión de artistas y proveedores",

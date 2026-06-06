@@ -7,6 +7,12 @@ import FlowAnimation from "@/components/FlowAnimation";
 import WorkCardMedia from "@/components/WorkCardMedia";
 import { featuredWorks } from "@/lib/works";
 
+export const metadata = {
+  title: "MYRAL Agency — Branding, IA y Marketing Digital en España",
+  description:
+    "Agencia creativa especializada en branding, redes sociales, publicidad digital y automatización con IA. Más de 20 proyectos activos en toda España.",
+};
+
 const services = [
   { num: "01", title: "Gestión de Redes Sociales", desc: "Estrategia, calendarios y gestión completa de Instagram, TikTok y LinkedIn.", href: "/servicios/gestion-redes-sociales" },
   { num: "02", title: "Producción de Contenido", desc: "Fotografía, vídeo y reels de nivel profesional.", href: "/servicios/produccion-contenido" },
@@ -28,6 +34,50 @@ const tickerItems = [
   "Influencer Marketing",
   "Gestión de Eventos",
 ];
+
+const testimonials = [
+  {
+    quote:
+      "El vídeo que hicieron para mi combate europeo superó todo lo que esperaba. Sin MYRAL ese momento no habría tenido el impacto que tuvo.",
+    name: "Antonio Barrul",
+    label: "Boxeador profesional",
+  },
+  {
+    quote:
+      "Por fin alguien que entiende el deporte de élite y sabe cómo contarlo. El contenido que producen habla por sí solo.",
+    name: "Itziar Martínez",
+    label: "Escaladora · Top 20 Mundial",
+  },
+  {
+    quote:
+      "En menos de un año pasamos de ser invisibles en redes a tener lista de espera los fines de semana. Los números lo dicen todo.",
+    name: "Cliente en hostelería",
+    label: "León, España",
+  },
+] as const;
+
+const whyMyral = [
+  {
+    num: "01",
+    title: "IA real, no de adorno",
+    desc: "Somos de las pocas agencias en España que automatiza procesos reales. Leads, propuestas y reportes en piloto automático.",
+  },
+  {
+    num: "02",
+    title: "Producción propia",
+    desc: "No subcontratamos. El equipo que habla contigo es el que graba, edita y publica. Sin intermediarios, sin sorpresas.",
+  },
+  {
+    num: "03",
+    title: "Datos antes que intuición",
+    desc: "Cada decisión tiene un número detrás. Sabemos exactamente qué funciona y qué no antes de invertir un euro.",
+  },
+  {
+    num: "04",
+    title: "Sin permanencias",
+    desc: "Contratos mensuales. Si en algún momento no estás satisfecho, te vas. Así de simple.",
+  },
+] as const;
 
 function ServiceTitle({ title }: { title: string }) {
   return (
@@ -116,6 +166,37 @@ export default function HomePage() {
 
       <AnimatedStats />
 
+      <section className="reveal-section bg-[#07070f] px-6 py-28 md:px-[52px]">
+        <p className="reveal-item mb-6 text-[9px] uppercase tracking-[0.26em] text-[#F5E614]">Lo que dicen</p>
+        <h2
+          className="reveal-item font-[var(--font-syne)] font-extrabold leading-[0.95] tracking-[-0.025em] text-white"
+          style={{ fontSize: "clamp(36px, 5vw, 56px)" }}
+        >
+          Clientes que
+          <br />
+          <em className="font-[var(--font-instrument)] font-normal italic text-[#F5E614]">hablan por nosotros.</em>
+        </h2>
+        <div className="reveal-item mt-14 grid grid-cols-1 gap-6 md:grid-cols-3">
+          {testimonials.map(({ quote, name, label }) => (
+            <article
+              key={name}
+              className="rounded-[12px] border border-[rgba(240,237,232,0.07)] bg-[#0a0a0a] p-8 transition-all duration-300 hover:-translate-y-1 hover:border-[rgba(245,230,20,0.15)]"
+            >
+              <span
+                className="block font-[var(--font-syne)] text-[48px] font-extrabold leading-none text-[#F5E614] opacity-40"
+                aria-hidden
+              >
+                &ldquo;
+              </span>
+              <p className="mt-2 text-[15px] italic leading-[1.7] text-[var(--muted)]">{quote}</p>
+              <div className="my-6 h-px bg-[rgba(240,237,232,0.07)]" />
+              <p className="font-[var(--font-syne)] text-[14px] font-semibold text-white">{name}</p>
+              <p className="mt-1 text-[9px] uppercase tracking-[0.18em] text-[var(--muted)]">{label}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
       <section className="section-pad section-alt reveal-section">
         <h2 className="reveal-item title-display">
           No solo creamos.
@@ -140,21 +221,52 @@ export default function HomePage() {
         </Link>
 
         <div className="reveal-item mt-16 grid grid-cols-1 gap-px bg-[var(--border)] md:grid-cols-3">
-          {[["01", "Captación leads"], ["02", "Propuestas automáticas"], ["03", "Reportes mensuales"]].map(
-            ([n, t]) => (
-              <article
-                key={n}
-                className="group relative bg-[var(--bg)] p-7 transition-colors hover:bg-[#F5E614]/[0.02]"
-              >
-                <div className="absolute left-0 right-0 top-0 h-0.5 origin-left scale-x-0 bg-[#F5E614] transition-transform duration-500 group-hover:scale-x-100" />
-                <div className="mb-3 font-[var(--font-syne)] text-[10px] font-bold text-[#F5E614]/25">{n}</div>
-                <h3 className="font-[var(--font-syne)] text-[15px] font-semibold">{t}</h3>
-              </article>
-            ),
-          )}
+          {(
+            [
+              ["01", "Captación leads", "Respuesta personalizada en menos de 2 minutos."],
+              ["02", "Propuestas automáticas", "PDF a medida sin trabajo manual."],
+              ["03", "Reportes mensuales", "Día 1 de cada mes, automático."],
+            ] as const
+          ).map(([n, t, d]) => (
+            <article
+              key={n}
+              className="group relative bg-[var(--bg)] p-7 transition-colors hover:bg-[#F5E614]/[0.02]"
+            >
+              <div className="absolute left-0 right-0 top-0 h-0.5 origin-left scale-x-0 bg-[#F5E614] transition-transform duration-500 group-hover:scale-x-100" />
+              <div className="mb-3 font-[var(--font-syne)] text-[10px] font-bold text-[#F5E614]/25">{n}</div>
+              <h3 className="font-[var(--font-syne)] text-[15px] font-semibold">{t}</h3>
+              <p className="mt-2 text-[12px] leading-[1.6] text-[var(--muted)]">{d}</p>
+            </article>
+          ))}
         </div>
 
         <FlowAnimation />
+      </section>
+
+      <section className="reveal-section bg-[#05050b] px-6 py-28 md:px-[52px]">
+        <p className="reveal-item mb-6 text-[9px] uppercase tracking-[0.26em] text-[#F5E614]">Por qué nosotros</p>
+        <h2
+          className="reveal-item font-[var(--font-syne)] font-extrabold leading-[0.95] tracking-[-0.025em] text-white"
+          style={{ fontSize: "clamp(36px, 5vw, 56px)" }}
+        >
+          Lo que nos hace
+          <br />
+          <em className="font-[var(--font-instrument)] font-normal italic text-[#F5E614]">diferentes.</em>
+        </h2>
+        <div className="reveal-item mt-14 grid grid-cols-1 gap-4 md:grid-cols-2">
+          {whyMyral.map(({ num, title, desc }) => (
+            <article
+              key={num}
+              className="rounded-[12px] border border-[rgba(240,237,232,0.07)] bg-[#07070f] p-8 transition-all duration-300 hover:-translate-y-1 hover:border-[rgba(245,230,20,0.2)]"
+            >
+              <span className="font-[var(--font-syne)] text-[48px] font-extrabold leading-none text-[#F5E614] opacity-20">
+                {num}
+              </span>
+              <h3 className="mt-2 font-[var(--font-syne)] text-[18px] font-bold text-white">{title}</h3>
+              <p className="mt-3 text-[13px] leading-[1.7] text-[var(--muted)]">{desc}</p>
+            </article>
+          ))}
+        </div>
       </section>
 
       <section className="section-pad reveal-section">

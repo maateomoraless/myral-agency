@@ -3,6 +3,12 @@ import HeroWordReveal from "@/components/effects/HeroWordReveal";
 import ParallaxBackground from "@/components/effects/ParallaxBackground";
 import IchiStats from "@/components/case-study/IchiStats";
 
+export const metadata = {
+  title: "Itziar Martínez × MYRAL Agency — Contenido Deportivo",
+  description:
+    "Cobertura audiovisual de la escaladora española top 20 mundial en competiciones internacionales de escalada.",
+};
+
 const whatWeDid = [
   "Cobertura fotográfica en competiciones internacionales",
   "Fotografía de acción en roca natural exterior",

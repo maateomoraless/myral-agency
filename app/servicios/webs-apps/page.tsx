@@ -3,6 +3,12 @@ import FlowAnimation from "@/components/FlowAnimation";
 import WebsAppsHeroStats from "@/components/services/WebsAppsHeroStats";
 import WhatNextBrowserMockup from "@/components/services/WhatNextBrowserMockup";
 
+export const metadata = {
+  title: "Creación de Webs & Apps — MYRAL Agency",
+  description:
+    "Webs rápidas, bonitas y conectadas con IA desde el primer día. Next.js, TypeScript y las mejores herramientas del mercado.",
+};
+
 const whatNextStack = [
   "Next.js 14 App Router",
   "Supabase para autenticación y base de datos",

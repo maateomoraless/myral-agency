@@ -17,8 +17,8 @@ export default function Footer() {
   return (
     <footer className="border-t border-white/10 px-6 py-7 md:px-[52px]">
       <div className="mx-auto flex max-w-[1400px] flex-wrap items-center justify-between gap-4">
-        <Link href="/" className="font-[var(--font-syne)] text-base font-extrabold text-white">
-          MYRAL<span className="text-[#F5E614]">.</span>
+        <Link href="/">
+          <img src="/images/logo_myral_sin_fondo.png" alt="MYRAL" style={{ height: "32px", width: "auto" }} />
         </Link>
 
         <div className="flex flex-wrap gap-5">

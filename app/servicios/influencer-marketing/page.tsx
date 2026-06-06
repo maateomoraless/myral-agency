@@ -2,6 +2,12 @@ import Link from "next/link";
 import InfluencerMarketingStats from "@/components/services/InfluencerMarketingStats";
 import InfluencerMetricsDashboard from "@/components/services/InfluencerMetricsDashboard";
 
+export const metadata = {
+  title: "Influencer Marketing — MYRAL Agency",
+  description:
+    "Identificamos, negociamos y gestionamos colaboraciones con influencers que convierten de verdad. Sin vanity metrics.",
+};
+
 const cases = [
   {
     href: "/trabajos/antonio-barrul",

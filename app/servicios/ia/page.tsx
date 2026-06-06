@@ -3,6 +3,12 @@ import IaDiagnosticoQuiz from "@/components/services/IaDiagnosticoQuiz";
 import IaHeroStats from "@/components/services/IaHeroStats";
 import IaWhyStats from "@/components/services/IaWhyStats";
 
+export const metadata = {
+  title: "Automatización con IA — MYRAL Agency",
+  description:
+    "Tu negocio trabajando 24/7 sin intervención manual. Captación de leads, propuestas y reportes automatizados con IA.",
+};
+
 const automations = [
   ["01", "Captación de leads", "Respuesta personalizada en menos de 2 minutos."],
   ["02", "Propuestas automáticas", "PDF personalizado sin trabajo manual."],

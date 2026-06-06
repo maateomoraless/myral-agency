@@ -3,6 +3,12 @@ import HeroWordReveal from "@/components/effects/HeroWordReveal";
 import ParallaxBackground from "@/components/effects/ParallaxBackground";
 import MonoLocoContent from "./MonoLocoContent";
 
+export const metadata = {
+  title: "Mono Loco Festival × MYRAL Agency — Gestión de Evento",
+  description:
+    "Gestión integral de comunicación y redes sociales para el Mono Loco Festival. 16.000 asistentes en León.",
+};
+
 export default function MonoLocoFestivalPage() {
   return (
     <>
