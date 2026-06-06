@@ -91,14 +91,12 @@ export default function GestionEventosPage() {
             Servicios · Gestión y Producción de Eventos
           </p>
           <h1
-            className="font-[var(--font-syne)] font-extrabold leading-[0.88] tracking-[-0.025em] text-white"
-            style={{ fontSize: "clamp(52px, 8vw, 96px)" }}
+            className="hero-title-96 font-[var(--font-syne)] font-extrabold tracking-[-0.025em] text-white"
           >
             Eventos que
           </h1>
           <p
-            className="font-[var(--font-instrument)] italic text-[#F5E614]"
-            style={{ fontSize: "clamp(52px, 8vw, 96px)", lineHeight: 0.88 }}
+            className="hero-subtitle-96 font-[var(--font-instrument)] italic text-[#F5E614]"
           >
             dejan huella.
           </p>

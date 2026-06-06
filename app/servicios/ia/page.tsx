@@ -30,14 +30,12 @@ export default function ServiciosIaPage() {
             Inteligencia Artificial · Automatización
           </p>
           <h1
-            className="font-[var(--font-syne)] font-extrabold leading-[0.88] tracking-[-0.025em] text-white"
-            style={{ fontSize: "clamp(52px, 9vw, 110px)" }}
+            className="hero-title-110 font-[var(--font-syne)] font-extrabold tracking-[-0.025em] text-white"
           >
             No solo creamos.
           </h1>
           <p
-            className="font-[var(--font-instrument)] italic text-[#F5E614]"
-            style={{ fontSize: "clamp(52px, 9vw, 110px)", lineHeight: 0.88 }}
+            className="hero-subtitle-110 font-[var(--font-instrument)] italic text-[#F5E614]"
           >
             Lo automatizamos todo.
           </p>

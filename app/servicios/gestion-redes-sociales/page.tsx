@@ -33,14 +33,12 @@ export default function GestionRedesSocialesPage() {
           Servicios · Gestión de Redes Sociales
         </p>
         <h1
-          className="font-[var(--font-syne)] font-extrabold leading-[0.88] tracking-[-0.025em]"
-          style={{ fontSize: "clamp(46px, 7vw, 80px)" }}
+          className="hero-title-80 font-[var(--font-syne)] font-extrabold tracking-[-0.025em] text-white"
         >
           Tu marca online,
         </h1>
         <p
-          className="font-[var(--font-instrument)] italic text-[#F5E614]"
-          style={{ fontSize: "clamp(46px, 7vw, 80px)", lineHeight: 0.88 }}
+          className="hero-subtitle-80 font-[var(--font-instrument)] italic text-[#F5E614]"
         >
           every single day.
         </p>

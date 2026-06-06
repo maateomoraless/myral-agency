@@ -56,14 +56,12 @@ export default function ContactoPage() {
           Contacto
         </p>
         <h1
-          className="font-[var(--font-syne)] font-extrabold leading-[1] pb-[0.1em] overflow-visible tracking-[-0.025em] text-white"
-          style={{ fontSize: "clamp(46px, 7vw, 80px)" }}
+          className="hero-title-80 font-[var(--font-syne)] font-extrabold tracking-[-0.025em] text-white"
         >
           Hablemos.
         </h1>
         <p
-          className="font-[var(--font-instrument)] italic text-[#F5E614]"
-          style={{ fontSize: "clamp(28px, 4vw, 48px)", lineHeight: 1, paddingBottom: "0.1em" }}
+          className="font-[var(--font-instrument)] italic text-[#F5E614] text-2xl leading-[1] pb-[0.1em] overflow-visible md:text-3xl lg:text-[clamp(28px,4vw,48px)] lg:leading-[1.1]"
         >
           Sin compromiso. Sin rodeos.
         </p>

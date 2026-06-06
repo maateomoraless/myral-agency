@@ -47,8 +47,7 @@ export default function CervantesPage() {
           <HeroWordReveal
             text="Vermutería Cervantes"
             as="h1"
-            className="font-[var(--font-syne)] font-extrabold leading-[0.92] tracking-[-0.025em] text-white"
-            style={{ fontSize: "clamp(52px, 8vw, 96px)" }}
+            className="hero-title-96 font-[var(--font-syne)] font-extrabold tracking-[-0.025em] text-white"
           />
           <HeroWordReveal
             text="De 200 a 2.000. En menos de un año."

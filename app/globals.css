@@ -54,11 +54,23 @@ body.custom-cursor * {
 .title-display {
   font-family: var(--font-syne), "Syne", sans-serif;
   font-weight: 800;
-  font-size: clamp(46px, 7.5vw, 90px);
+  font-size: 2.25rem;
   line-height: 1;
   letter-spacing: -0.025em;
   padding-bottom: 0.1em;
   overflow: visible;
+}
+
+@media (min-width: 768px) {
+  .title-display {
+    font-size: 3rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .title-display {
+    font-size: clamp(46px, 7.5vw, 90px);
+  }
 }
 
 .title-display.text-center,
@@ -82,6 +94,88 @@ h2.text-center,
   line-height: 1;
   padding-bottom: 0.15em;
   overflow: visible;
+}
+
+.hero-title-96 {
+  font-size: 2.25rem;
+  line-height: 1;
+  padding-bottom: 0.1em;
+  overflow: visible;
+}
+
+.hero-subtitle-96 {
+  font-size: 2.25rem;
+  line-height: 1;
+  padding-bottom: 0.1em;
+  overflow: visible;
+}
+
+.hero-title-110 {
+  font-size: 2.25rem;
+  line-height: 1;
+  padding-bottom: 0.1em;
+  overflow: visible;
+}
+
+.hero-subtitle-110 {
+  font-size: 2.25rem;
+  line-height: 1;
+  padding-bottom: 0.1em;
+  overflow: visible;
+}
+
+.hero-title-80 {
+  font-size: 2.25rem;
+  line-height: 1;
+  padding-bottom: 0.1em;
+  overflow: visible;
+}
+
+.hero-subtitle-80 {
+  font-size: 2.25rem;
+  line-height: 1;
+  padding-bottom: 0.1em;
+  overflow: visible;
+}
+
+@media (min-width: 768px) {
+  .hero-title-96,
+  .hero-subtitle-96,
+  .hero-title-110,
+  .hero-subtitle-110,
+  .hero-title-80,
+  .hero-subtitle-80 {
+    font-size: 3rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero-title-96 {
+    font-size: clamp(52px, 8vw, 96px);
+  }
+
+  .hero-subtitle-96 {
+    font-size: clamp(52px, 8vw, 96px);
+    line-height: 0.88;
+  }
+
+  .hero-title-110 {
+    font-size: clamp(52px, 9vw, 110px);
+  }
+
+  .hero-subtitle-110 {
+    font-size: clamp(52px, 9vw, 110px);
+    line-height: 0.88;
+  }
+
+  .hero-title-80 {
+    font-size: clamp(46px, 7vw, 80px);
+  }
+
+  .hero-subtitle-80 {
+    font-size: clamp(46px, 7vw, 80px);
+    line-height: 0.88;
+  }
 }
 
 .eyebrow {

@@ -29,8 +29,7 @@ export default function ElLocoDeLasTortillasPage() {
             Social Media · Oviedo
           </p>
           <h1
-            className="font-[var(--font-syne)] font-extrabold leading-[0.88] tracking-[-0.025em] text-white"
-            style={{ fontSize: "clamp(52px, 8vw, 96px)" }}
+            className="hero-title-96 font-[var(--font-syne)] font-extrabold tracking-[-0.025em] text-white"
           >
             El Loco de las Tortillas
           </h1>
