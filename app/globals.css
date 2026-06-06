@@ -448,3 +448,24 @@ section .overflow-hidden:not(.no-media-hover-wrap):has(> video:not(.no-media-hov
   transform-origin: center;
   animation: flow-ia-pulse 2s ease-out infinite;
 }
+
+@media (max-width: 768px) {
+  html,
+  body {
+    overflow-x: hidden;
+  }
+
+  .page-loader-root {
+    overflow: hidden;
+    overflow-x: hidden;
+    max-width: 100vw;
+    width: 100%;
+  }
+
+  .page-loader-text {
+    max-width: 100%;
+    overflow: hidden;
+    padding-inline: 16px;
+    box-sizing: border-box;
+  }
+}

@@ -21,8 +21,17 @@ export default function PageLoader() {
   const [sizeLabel, setSizeLabel] = useState("80");
   const [btnBLit, setBtnBLit] = useState(false);
   const [fontSelectorLit, setFontSelectorLit] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
 
   const t = (ms: number) => new Promise((r) => setTimeout(r, ms));
+
+  useEffect(() => {
+    const mq = window.matchMedia("(max-width: 768px)");
+    const update = () => setIsMobile(mq.matches);
+    update();
+    mq.addEventListener("change", update);
+    return () => mq.removeEventListener("change", update);
+  }, []);
 
   useEffect(() => {
     const fonts: [string, string][] = [
@@ -116,8 +125,11 @@ export default function PageLoader() {
 
   if (!visible) return null;
 
+  const displayFontSize = isMobile ? Math.min(fontSize, 52) : fontSize;
+
   return (
     <div
+      className="page-loader-root"
       style={{
         position: "fixed",
         inset: 0,
@@ -225,6 +237,7 @@ export default function PageLoader() {
       </div>
 
       <div
+        className="page-loader-text"
         style={{
           display: "flex",
           alignItems: "baseline",
@@ -235,7 +248,7 @@ export default function PageLoader() {
       >
           <div
             style={{
-              fontSize: fontSize,
+              fontSize: displayFontSize,
               fontWeight: fontWeight,
               fontFamily: fontFamily,
               letterSpacing: letterSpacing,
@@ -263,7 +276,7 @@ export default function PageLoader() {
                 style={{
                   display: "inline-block",
                   width: 3,
-                  height: fontSize,
+                  height: displayFontSize,
                   background: "#F5E614",
                   marginLeft: 3,
                   verticalAlign: "top",
@@ -275,7 +288,7 @@ export default function PageLoader() {
           {dotVisible && (
             <span
               style={{
-                fontSize: fontSize,
+                fontSize: displayFontSize,
                 fontWeight: 800,
                 fontFamily: "Syne, sans-serif",
                 color: "#F5E614",
