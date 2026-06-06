@@ -29,7 +29,7 @@ const serviciosTexto: Record<string, string> = {
   "Influencer Marketing":
     "identificaríamos los influencers correctos para tu marca y gestionaríamos la colaboración completa",
   "Automatización IA":
-    "automatizaríamos la captación de leads, las propuestas y los reportes para que tu negocio trabaje solo",
+    "automatizaríamos la captación de leads, las propuestas y los reportes para que tu negocio trabaje por sí solo",
 };
 
 const situaciones: Record<string, string> = {

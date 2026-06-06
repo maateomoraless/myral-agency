@@ -4,7 +4,7 @@ import { AnimatedStatsGrid, type AnimatedStatItem } from "@/components/effects/A
 
 const stats: AnimatedStatItem[] = [
   {
-    label: "aforo completo",
+    label: "asistentes — aforo completo",
     target: 2500,
     duration: 2000,
     format: (n: number) =>
@@ -14,14 +14,14 @@ const stats: AnimatedStatItem[] = [
     valueClassName: "font-[var(--font-syne)] text-4xl font-extrabold leading-none text-[#F5E614]",
   },
   {
-    label: "tasa de conversión vs 2-3% industria",
+    label: "tasa de conversión vs. 2–3% de la industria",
     target: 25,
     duration: 1800,
     format: (n: number) => `${Math.round(n)}%`,
     valueClassName: "font-[var(--font-syne)] text-4xl font-extrabold leading-none text-[#F5E614]",
   },
   {
-    label: "red territorial",
+    label: "nodos en la red territorial",
     staticValue: "3 nodos",
     valueClassName: "font-[var(--font-syne)] text-4xl font-extrabold leading-none text-[#F5E614]",
   },

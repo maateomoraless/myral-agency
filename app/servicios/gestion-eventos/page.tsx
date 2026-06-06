@@ -1,4 +1,5 @@
 import Link from "next/link";
+import FinalCta from "@/components/FinalCta";
 import GestionEventosStats from "@/components/services/GestionEventosStats";
 import LeyendasCaseStats from "@/components/services/LeyendasCaseStats";
 
@@ -218,23 +219,7 @@ export default function GestionEventosPage() {
         </div>
       </section>
 
-      <section className="reveal bg-[#07070f] px-6 py-24 text-center md:px-[52px]">
-        <h2 className="font-[var(--font-syne)] text-[36px] font-extrabold text-white">
-          ¿Tienes un evento en mente?
-        </h2>
-        <p className="mx-auto mt-4 max-w-xl text-[13px] leading-[1.82] text-[var(--muted)]">
-          Cuéntanos el proyecto y te decimos si es viable antes de comprometerte con nada.
-        </p>
-        <button
-          type="button"
-          data-cal-link="myralagency/diagnostico"
-          data-cal-namespace="diagnostico"
-          data-cal-config='{"layout":"month_view"}'
-          className="mt-10 bg-[#F5E614] px-10 py-5 text-[10px] font-bold uppercase tracking-[0.18em] text-black transition-opacity hover:opacity-90"
-        >
-          Reservar llamada gratuita →
-        </button>
-      </section>
+      <FinalCta title="¿Tienes un evento en mente?" />
     </>
   );
 }

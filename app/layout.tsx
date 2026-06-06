@@ -7,6 +7,7 @@ import CursorEffect from "@/components/effects/CursorEffect";
 import RevealObserver from "@/components/effects/RevealObserver";
 import PageLoader from "@/components/effects/PageLoaderGate";
 import PageTransition from "@/components/effects/PageTransitionGate";
+import CookieBanner from "@/components/CookieBannerGate";
 import "./globals.css";
 
 const syne = Syne({
@@ -61,6 +62,18 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="es">
       <body className={`${syne.variable} ${instrument.variable} ${dmSans.variable}`}>
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-P7JWJEVE1J"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-P7JWJEVE1J');
+          `}
+        </Script>
         <PageLoader />
         <PageTransition />
         <Script id="cal-embed" strategy="afterInteractive">
@@ -73,6 +86,7 @@ Cal.ns.diagnostico("ui", {"hideEventTypeDetails":false,"layout":"month_view"});`
         <Nav />
         <main style={{ paddingTop: 88 }}>{children}</main>
         <Footer />
+        <CookieBanner />
       </body>
     </html>
   );

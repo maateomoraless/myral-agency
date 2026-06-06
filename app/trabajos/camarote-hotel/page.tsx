@@ -1,4 +1,5 @@
 import Link from "next/link";
+import FinalCta from "@/components/FinalCta";
 
 const whatWeDid = [
   "Desarrollo de identidad visual para redes sociales",
@@ -137,18 +138,7 @@ export default function CamaroteHotelPage() {
         </Link>
       </section>
 
-      <section className="reveal bg-[#07070f] px-6 py-24 text-center md:px-[52px]">
-        <h2 className="title-display mx-auto max-w-3xl">¿Quieres que tu hotel tenga la presencia que merece?</h2>
-        <button
-          type="button"
-          data-cal-link="myralagency/diagnostico"
-          data-cal-namespace="diagnostico"
-          data-cal-config='{"layout":"month_view"}'
-          className="mt-10 bg-[#F5E614] px-10 py-5 text-[10px] font-bold uppercase tracking-[0.18em] text-black transition-opacity hover:opacity-90"
-        >
-          Reservar llamada gratuita →
-        </button>
-      </section>
+      <FinalCta title="¿Quieres que tu negocio tenga la presencia que merece?" />
     </>
   );
 }

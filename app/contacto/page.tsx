@@ -50,20 +50,20 @@ export default function ContactoPage() {
 
   return (
     <>
-      <section className="reveal bg-[#05050b] px-6 py-32 md:px-[52px]">
+      <section className="reveal hero-text-wrap w-full overflow-visible bg-[#05050b] px-6 py-32 md:px-[52px]">
         <p className="mb-6 flex items-center gap-2 text-[9px] uppercase tracking-[0.26em] text-[#F5E614]">
           <span className="badge-pulse-dot h-[7px] w-[7px] shrink-0 rounded-full bg-[#F5E614]" />
           Contacto
         </p>
         <h1
-          className="font-[var(--font-syne)] font-extrabold leading-[0.88] tracking-[-0.025em] text-white"
+          className="font-[var(--font-syne)] font-extrabold leading-[1] pb-[0.1em] overflow-visible tracking-[-0.025em] text-white"
           style={{ fontSize: "clamp(46px, 7vw, 80px)" }}
         >
           Hablemos.
         </h1>
         <p
           className="font-[var(--font-instrument)] italic text-[#F5E614]"
-          style={{ fontSize: "clamp(28px, 4vw, 48px)", lineHeight: 1.1 }}
+          style={{ fontSize: "clamp(28px, 4vw, 48px)", lineHeight: 1, paddingBottom: "0.1em" }}
         >
           Sin compromiso. Sin rodeos.
         </p>
@@ -181,7 +181,7 @@ export default function ContactoPage() {
       </section>
 
       <section className="reveal bg-[#07070f] px-6 py-24 text-center md:px-[52px]">
-        <h2 className="font-[var(--font-syne)] text-[28px] font-bold text-white">
+        <h2 className="cta-heading mx-auto w-full max-w-3xl font-[var(--font-syne)] text-[28px] font-bold text-white">
           ¿Prefieres escribirnos directamente?
         </h2>
         <Link

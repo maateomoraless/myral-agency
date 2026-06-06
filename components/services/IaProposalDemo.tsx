@@ -126,7 +126,7 @@ export default function IaProposalDemo() {
           onChange={(e) => setNecesidad(e.target.value)}
           placeholder="¿Qué necesitas mejorar?"
           className={inputClass}
-          aria-label="Qué necesitas mejorar"
+          aria-label="¿Qué necesitas mejorar?"
         />
         <button
           type="submit"

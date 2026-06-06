@@ -30,7 +30,7 @@ const stats: AnimatedStatItem[] = [
     valueStyle: VALUE_STYLE,
   },
   {
-    label: "Tasa de conversión vs 2-3% industria",
+    label: "Tasa de conversión vs. 2–3% de la industria",
     target: 25,
     duration: 1800,
     format: (n: number) => `${Math.round(n)}%`,

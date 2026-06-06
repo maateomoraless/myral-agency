@@ -16,7 +16,7 @@ export default function IAPage() {
       </section>
 
       <section className="section-pad section-alt reveal">
-        <h2 className="mb-6 font-[var(--font-syne)] text-3xl font-bold">Por qué importa</h2>
+        <h2 className="mb-6 font-[var(--font-syne)] text-3xl font-bold">¿Por qué importa?</h2>
         <p className="max-w-3xl text-[14px] leading-[1.85] text-[var(--muted)]">Un negocio que no automatiza en 2025 está compitiendo en desventaja. Cada lead que espera más de 5 minutos tiene un 80% menos de probabilidades de convertir.</p>
       </section>
 
@@ -34,7 +34,7 @@ export default function IAPage() {
       </section>
 
       <section className="section-pad section-alt reveal">
-        <h2 className="mb-8 font-[var(--font-syne)] text-3xl font-bold">Para qué negocios</h2>
+        <h2 className="mb-8 font-[var(--font-syne)] text-3xl font-bold">¿Para qué negocios?</h2>
         <div className="grid grid-cols-1 gap-px bg-[var(--border)] sm:grid-cols-2 lg:grid-cols-3">
           {["Hostelería","Eventos","Marcas","Deporte","Servicios","Cualquier negocio con leads"].map((s) => (
             <div key={s} className="bg-[var(--bg2)] p-6 text-[13px] text-white/80">{s}</div>

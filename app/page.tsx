@@ -38,19 +38,19 @@ const tickerItems = [
 const testimonials = [
   {
     quote:
-      "El vídeo que hicieron para mi combate europeo superó todo lo que esperaba. Sin MYRAL ese momento no habría tenido el impacto que tuvo.",
+      "«El vídeo que hicieron para mi combate europeo superó todo lo que esperaba. Sin MYRAL ese momento no habría tenido el impacto que tuvo.»",
     name: "Antonio Barrul",
     label: "Boxeador profesional",
   },
   {
     quote:
-      "Por fin alguien que entiende el deporte de élite y sabe cómo contarlo. El contenido que producen habla por sí solo.",
+      "«Por fin alguien que entiende el deporte de élite y sabe cómo contarlo. El contenido que producen habla por sí solo.»",
     name: "Itziar Martínez",
     label: "Escaladora · Top 20 Mundial",
   },
   {
     quote:
-      "En menos de un año pasamos de ser invisibles en redes a tener lista de espera los fines de semana. Los números lo dicen todo.",
+      "«En menos de un año pasamos de ser invisibles en redes a tener lista de espera los fines de semana. Los números lo dicen todo.»",
     name: "Cliente en hostelería",
     label: "León, España",
   },
@@ -60,7 +60,7 @@ const whyMyral = [
   {
     num: "01",
     title: "IA real, no de adorno",
-    desc: "Somos de las pocas agencias en España que automatiza procesos reales. Leads, propuestas y reportes en piloto automático.",
+    desc: "Somos de las pocas agencias en España que automatizan procesos reales. Leads, propuestas y reportes en piloto automático.",
   },
   {
     num: "02",
@@ -91,8 +91,9 @@ function ServiceTitle({ title }: { title: string }) {
 export default function HomePage() {
   return (
     <>
-      <section className="reveal-section relative flex min-h-screen flex-col justify-end overflow-hidden px-6 pb-[68px] pt-[100px] md:px-[52px]">
+      <section className="reveal-section relative flex min-h-screen w-full flex-col justify-end overflow-hidden px-6 pb-[68px] pt-[100px] md:px-[52px]">
         <div className="pointer-events-none absolute inset-0" style={{ background: "radial-gradient(ellipse 58% 52% at 72% 44%, rgba(245,230,20,.06) 0%, transparent 62%)" }} />
+        <div className="hero-text-wrap relative w-full overflow-visible">
         <div className="reveal-item relative mb-[18px] flex items-center gap-2">
           <span className="h-[7px] w-[7px] rounded-full bg-[#F5E614] [animation:pulse_2s_ease-in-out_infinite]" />
           <span className="text-[9px] uppercase tracking-[0.2em] text-white/40">Disponible para nuevos proyectos</span>
@@ -106,6 +107,7 @@ export default function HomePage() {
             <HeroMiniStats />
             <Link href="#trabajos" className="border border-white/20 px-7 py-3.5 text-[9px] uppercase tracking-[0.16em] text-white/65 transition-colors hover:border-[#F5E614] hover:text-[#F5E614]">Ver nuestro trabajo →</Link>
           </div>
+        </div>
         </div>
       </section>
 
@@ -169,7 +171,7 @@ export default function HomePage() {
       <section className="reveal-section bg-[#07070f] px-6 py-28 md:px-[52px]">
         <p className="reveal-item mb-6 text-[9px] uppercase tracking-[0.26em] text-[#F5E614]">Lo que dicen</p>
         <h2
-          className="reveal-item font-[var(--font-syne)] font-extrabold leading-[0.95] tracking-[-0.025em] text-white"
+          className="reveal-item font-[var(--font-syne)] font-extrabold leading-[1] pb-[0.1em] overflow-visible tracking-[-0.025em] text-white"
           style={{ fontSize: "clamp(36px, 5vw, 56px)" }}
         >
           Clientes que
@@ -204,7 +206,7 @@ export default function HomePage() {
           <em className="font-[var(--font-instrument)] font-normal italic text-[#F5E614]">Lo automatizamos.</em>
         </h2>
         <p className="reveal-item mt-6 max-w-xl text-[13px] leading-[1.82] text-[var(--muted)]">
-          Somos de las pocas agencias en España que integra IA real. No como tendencia — como ventaja competitiva.
+          Somos de las pocas agencias en España que integran IA real. No como tendencia — como ventaja competitiva.
         </p>
         <div className="reveal-item mt-8 flex flex-wrap gap-8 border-t border-[var(--border)] pt-8">
           {["< 2 min respuesta leads", "100% reportes automáticos", "−72% trabajo manual"].map((s) => (
@@ -223,7 +225,7 @@ export default function HomePage() {
         <div className="reveal-item mt-16 grid grid-cols-1 gap-px bg-[var(--border)] md:grid-cols-3">
           {(
             [
-              ["01", "Captación leads", "Respuesta personalizada en menos de 2 minutos."],
+              ["01", "Captación de leads", "Respuesta personalizada en menos de 2 minutos."],
               ["02", "Propuestas automáticas", "PDF a medida sin trabajo manual."],
               ["03", "Reportes mensuales", "Día 1 de cada mes, automático."],
             ] as const
@@ -246,7 +248,7 @@ export default function HomePage() {
       <section className="reveal-section bg-[#05050b] px-6 py-28 md:px-[52px]">
         <p className="reveal-item mb-6 text-[9px] uppercase tracking-[0.26em] text-[#F5E614]">Por qué nosotros</p>
         <h2
-          className="reveal-item font-[var(--font-syne)] font-extrabold leading-[0.95] tracking-[-0.025em] text-white"
+          className="reveal-item font-[var(--font-syne)] font-extrabold leading-[1] pb-[0.1em] overflow-visible tracking-[-0.025em] text-white"
           style={{ fontSize: "clamp(36px, 5vw, 56px)" }}
         >
           Lo que nos hace
@@ -270,7 +272,7 @@ export default function HomePage() {
       </section>
 
       <section className="section-pad reveal-section">
-        <h2 className="reveal-item title-display">¿Listo para crecer?</h2>
+        <h2 className="reveal-item title-display cta-heading">¿Listo para crecer?</h2>
         <div className="reveal-item mt-8 flex flex-wrap gap-4">
           <button type="button" data-cal-link="myralagency/diagnostico" data-cal-namespace="diagnostico" data-cal-config='{"layout":"month_view"}' className="btn-yellow bg-[#F5E614] px-8 py-4 text-[10px] font-bold uppercase tracking-[0.18em] text-black">Reservar llamada gratuita</button>
           <Link href="mailto:info@myralagency.com" className="inline-flex items-center border border-white/20 px-8 py-4 text-[10px] uppercase tracking-[0.16em] text-white/65 hover:border-[#F5E614] hover:text-[#F5E614]">info@myralagency.com</Link>

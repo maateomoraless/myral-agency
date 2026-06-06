@@ -16,7 +16,7 @@ const stats: AnimatedStatItem[] = [
     valueStyle: VALUE_STYLE,
   },
   {
-    label: "Mundial — deportista patrocinada",
+    label: "Top 20 del ranking mundial — deportista patrocinada",
     staticValue: "Top 20",
     valueClassName: VALUE_CLASS,
     valueStyle: VALUE_STYLE,

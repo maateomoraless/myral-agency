@@ -1,4 +1,5 @@
 import Link from "next/link";
+import FinalCta from "@/components/FinalCta";
 import CaseStudyResultsStats from "./CaseStudyResultsStats";
 import type { AnimatedStatItem } from "@/components/effects/AnimatedCounter";
 
@@ -69,20 +70,8 @@ export function CaseStudyResults({
   );
 }
 
-export function CaseStudyCta() {
-  return (
-    <section className="section-pad reveal text-center">
-      <button
-        type="button"
-        data-cal-link="myralagency/diagnostico"
-        data-cal-namespace="diagnostico"
-        data-cal-config='{"layout":"month_view"}'
-        className="btn-yellow bg-[#F5E614] px-8 py-4 text-[10px] font-bold uppercase tracking-[0.18em] text-black"
-      >
-        Reservar llamada gratuita →
-      </button>
-    </section>
-  );
+export function CaseStudyCta({ title }: { title: string }) {
+  return <FinalCta title={title} />;
 }
 
 export function CaseStudyImageHero({
@@ -106,7 +95,7 @@ export function CaseStudyImageHero({
       <div
         className={`absolute inset-0 ${gradient ? "bg-gradient-to-t from-black/80 via-black/50 to-black/30" : "bg-black/55"}`}
       />
-      <div className="section-pad relative z-10 flex min-h-[85vh] flex-col justify-end">
+      <div className="hero-text-wrap section-pad relative z-10 flex min-h-[85vh] w-full flex-col justify-end overflow-visible">
         <span className="mb-4 inline-block border border-[#F5E614]/30 bg-[#F5E614]/10 px-3 py-1 text-[9px] uppercase tracking-[0.18em] text-[#F5E614]">
           {badge}
         </span>
@@ -132,13 +121,13 @@ export function CaseStudyTextHero({
 }) {
   return (
     <section className="relative min-h-[85vh] overflow-hidden no-media-hover-wrap bg-[#111]">
-      <div className="absolute inset-0 flex items-center justify-center px-6">
-        <span className="text-center font-[var(--font-syne)] text-[clamp(1.5rem,6vw,5rem)] font-extrabold uppercase leading-tight tracking-[0.12em] text-white/[0.08]">
+      <div className="absolute inset-0 flex w-full items-center justify-center overflow-visible px-6">
+        <span className="section-heading-center w-full text-center font-[var(--font-syne)] text-[clamp(1.5rem,6vw,5rem)] font-extrabold uppercase leading-[1] pb-[0.1em] tracking-[0.12em] text-white/[0.08]">
           {watermark}
         </span>
       </div>
       <div className="absolute inset-0 bg-black/45" />
-      <div className="section-pad relative z-10 flex min-h-[85vh] flex-col justify-end">
+      <div className="hero-text-wrap section-pad relative z-10 flex min-h-[85vh] w-full flex-col justify-end overflow-visible">
         <span className="mb-4 inline-block border border-[#F5E614]/30 bg-[#F5E614]/10 px-3 py-1 text-[9px] uppercase tracking-[0.18em] text-[#F5E614]">
           {badge}
         </span>

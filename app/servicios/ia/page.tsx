@@ -1,4 +1,5 @@
 import FlowAnimation from "@/components/FlowAnimation";
+import FinalCta from "@/components/FinalCta";
 import IaDiagnosticoQuiz from "@/components/services/IaDiagnosticoQuiz";
 import IaHeroStats from "@/components/services/IaHeroStats";
 import IaWhyStats from "@/components/services/IaWhyStats";
@@ -116,30 +117,7 @@ export default function ServiciosIaPage() {
         <IaWhyStats />
       </section>
 
-      <section className="reveal bg-[#07070f] px-6 py-32 text-center md:px-[52px]">
-        <h2
-          className="font-[var(--font-syne)] font-extrabold leading-tight text-white"
-          style={{ fontSize: "clamp(32px, 5vw, 56px)" }}
-        >
-          ¿Quieres que tu negocio
-          <br />
-          <em className="font-[var(--font-instrument)] font-normal italic text-[#F5E614]">
-            trabaje mientras duermes?
-          </em>
-        </h2>
-        <p className="mx-auto mt-6 max-w-xl text-[13px] leading-[1.82] text-[var(--muted)]">
-          Reserva una llamada de 20 minutos y te explicamos qué automatizaríamos en tu caso concreto.
-        </p>
-        <button
-          type="button"
-          data-cal-link="myralagency/diagnostico"
-          data-cal-namespace="diagnostico"
-          data-cal-config='{"layout":"month_view"}'
-          className="mt-10 bg-[#F5E614] px-12 py-5 text-[11px] font-bold uppercase tracking-[0.18em] text-black transition-opacity hover:opacity-90"
-        >
-          Reservar llamada gratuita →
-        </button>
-      </section>
+      <FinalCta title="¿Quieres que tu negocio trabaje mientras duermes?" />
     </>
   );
 }

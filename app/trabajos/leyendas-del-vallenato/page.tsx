@@ -1,4 +1,5 @@
 import LeyendasResultsStats from "@/components/case-study/LeyendasResultsStats";
+import FinalCta from "@/components/FinalCta";
 
 export const metadata = {
   title: "Leyendas del Vallenato × MYRAL Agency — Gestión de Evento",
@@ -71,17 +72,7 @@ export default function LeyendasPage() {
         <LeyendasResultsStats />
       </section>
 
-      <section className="section-pad text-center">
-        <button
-          type="button"
-          data-cal-link="myralagency/diagnostico"
-          data-cal-namespace="diagnostico"
-          data-cal-config='{"layout":"month_view"}'
-          className="bg-[#F5E614] px-8 py-4 text-[10px] font-bold uppercase tracking-[0.18em] text-black"
-        >
-          Reservar llamada gratuita →
-        </button>
-      </section>
+      <FinalCta title="¿Tienes un evento en mente?" />
     </>
   );
 }

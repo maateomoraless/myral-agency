@@ -14,7 +14,7 @@ const stats = [
     valueClassName: "font-[var(--font-syne)] text-[48px] font-extrabold leading-none text-[#F5E614]",
   },
   {
-    label: "Conversión vs 2-3% industria",
+    label: "Conversión vs. 2–3% de la industria",
     target: 25,
     duration: 1800,
     format: (n: number) => `${Math.round(n)}%`,

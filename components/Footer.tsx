@@ -46,6 +46,19 @@ export default function Footer() {
       <p className="mx-auto mt-4 max-w-[1400px] border-t border-white/5 pt-3 text-[8px] text-white/20">
         © 2025 Myral Agency · León · myralagency.com
       </p>
+      <p className="mx-auto mt-3 max-w-[1400px] text-center text-[11px] text-[var(--muted)]">
+        <Link href="/aviso-legal" className="hover:text-[#F5E614]">
+          Aviso Legal
+        </Link>
+        {" · "}
+        <Link href="/privacidad" className="hover:text-[#F5E614]">
+          Privacidad
+        </Link>
+        {" · "}
+        <Link href="/cookies" className="hover:text-[#F5E614]">
+          Cookies
+        </Link>
+      </p>
     </footer>
   );
 }

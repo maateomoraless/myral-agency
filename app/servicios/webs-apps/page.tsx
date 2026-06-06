@@ -1,4 +1,5 @@
 import Link from "next/link";
+import FinalCta from "@/components/FinalCta";
 import FlowAnimation from "@/components/FlowAnimation";
 import WebsAppsHeroStats from "@/components/services/WebsAppsHeroStats";
 import WhatNextBrowserMockup from "@/components/services/WhatNextBrowserMockup";
@@ -208,18 +209,7 @@ export default function WebsAppsPage() {
         </div>
       </section>
 
-      <section className="reveal bg-[#05050b] px-6 py-24 text-center md:px-[52px]">
-        <h2 className="title-display mx-auto max-w-3xl">¿Tienes una idea para una web o app?</h2>
-        <button
-          type="button"
-          data-cal-link="myralagency/diagnostico"
-          data-cal-namespace="diagnostico"
-          data-cal-config='{"layout":"month_view"}'
-          className="mt-10 bg-[#F5E614] px-10 py-5 text-[10px] font-bold uppercase tracking-[0.18em] text-black transition-opacity hover:opacity-90"
-        >
-          Reservar llamada gratuita →
-        </button>
-      </section>
+      <FinalCta title="¿Tienes una idea para una web o app?" />
     </>
   );
 }

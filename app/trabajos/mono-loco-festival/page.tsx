@@ -1,4 +1,4 @@
-import { CaseStudyCta } from "@/components/case-study/CaseStudySections";
+import FinalCta from "@/components/FinalCta";
 import HeroWordReveal from "@/components/effects/HeroWordReveal";
 import ParallaxBackground from "@/components/effects/ParallaxBackground";
 import MonoLocoContent from "./MonoLocoContent";
@@ -47,7 +47,7 @@ export default function MonoLocoFestivalPage() {
 
       <MonoLocoContent />
 
-      <CaseStudyCta />
+      <FinalCta title="¿Tienes un evento que merece este nivel?" />
     </>
   );
 }

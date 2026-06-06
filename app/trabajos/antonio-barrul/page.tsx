@@ -1,4 +1,5 @@
 import Link from "next/link";
+import FinalCta from "@/components/FinalCta";
 import HeroWordReveal from "@/components/effects/HeroWordReveal";
 import ParallaxBackground from "@/components/effects/ParallaxBackground";
 import BarrulResultsStats from "@/components/case-study/BarrulResultsStats";
@@ -151,20 +152,7 @@ export default function AntonioBarrulPage() {
         </Link>
       </section>
 
-      <section className="border-t border-[var(--border)] bg-[#05050b] px-6 py-24 text-center md:px-[52px]">
-        <h2 className="font-[var(--font-syne)] text-4xl font-extrabold text-white">
-          ¿Quieres un contenido así para tu marca?
-        </h2>
-        <button
-          type="button"
-          data-cal-link="myralagency/diagnostico"
-          data-cal-namespace="diagnostico"
-          data-cal-config='{"layout":"month_view"}'
-          className="btn-yellow mt-10 bg-[#F5E614] px-10 py-5 text-[10px] font-bold uppercase tracking-[0.18em] text-black"
-        >
-          Reservar llamada gratuita →
-        </button>
-      </section>
+      <FinalCta title="¿Quieres un contenido así para tu marca?" />
     </>
   );
 }

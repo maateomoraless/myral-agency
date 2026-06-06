@@ -4,7 +4,7 @@ import { CounterValue, useInViewOnce } from "@/components/effects/AnimatedCounte
 
 const stats = [
   {
-    label: "Reducción trabajo manual",
+    label: "Reducción del trabajo manual",
     target: 72,
     duration: 2000,
     format: (n: number) => `${Math.round(n)}%`,
