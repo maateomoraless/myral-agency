@@ -121,11 +121,11 @@ export default function HomePage() {
 
       <section className="section-pad reveal-section">
         <h2 className="reveal-item title-display">Todo lo que necesitas<br /><em className="font-[var(--font-instrument)] font-normal italic text-[#F5E614]">en un sitio.</em></h2>
-        <div className="mt-12 grid grid-cols-1 md:grid-cols-2">
+        <div className="mt-12 grid grid-cols-1 items-stretch overflow-visible md:grid-cols-2">
           {services.map((service, i) => {
             const inner = (
               <>
-                <span className={`min-w-6 font-[var(--font-syne)] text-[10px] font-bold ${i >= 6 ? "text-[#F5E614]/50" : "text-[#F5E614]/25"}`}>{service.num}</span>
+                <span className={`min-w-6 shrink-0 overflow-visible font-[var(--font-syne)] text-[10px] font-bold ${i >= 6 ? "text-[#F5E614]/50" : "text-[#F5E614]/25"}`}>{service.num}</span>
                 <div>
                   <h3 className="font-[var(--font-syne)] text-sm font-semibold transition-colors group-hover:text-[#F5E614]">
                     <ServiceTitle title={service.title} />
@@ -134,7 +134,11 @@ export default function HomePage() {
                 </div>
               </>
             );
-            const className = `hover-card group flex gap-4 border-b border-[var(--border)] py-7 transition-all duration-[400ms] ease-out hover:pl-2.5 md:odd:border-r md:odd:pr-10 md:even:pl-10 md:even:hover:pl-12 ${i >= 6 ? "border border-[#F5E614]/15 bg-[#F5E614]/[0.04] px-5" : ""}`;
+            const className = `hover-card group flex h-full w-full gap-4 overflow-visible py-7 transition-all duration-[400ms] ease-out hover:pl-2.5 md:odd:pr-10 md:even:pl-10 md:even:hover:pl-12 ${
+              i >= 6
+                ? "border border-[#F5E614]/15 bg-[#F5E614]/[0.04] pl-1"
+                : "border-b border-[var(--border)] md:odd:border-r"
+            }`;
             return (
               <Link key={service.num} href={service.href} className={className}>
                 {inner}
