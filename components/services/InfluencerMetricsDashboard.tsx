@@ -1,6 +1,6 @@
 "use client";
 
-import { useInViewOnce } from "@/components/effects/AnimatedCounter";
+import { CounterValue, useInViewOnce } from "@/components/effects/AnimatedCounter";
 
 const metrics = [
   { label: "Engagement rate medio", value: 72 },
@@ -19,7 +19,13 @@ export default function InfluencerMetricsDashboard() {
           <div key={label}>
             <div className="mb-2 flex items-center justify-between text-[13px] text-white">
               <span>{label}</span>
-              <span className="font-[var(--font-syne)] font-bold tabular-nums text-[#F5E614]">{value}%</span>
+              <CounterValue
+                active={active}
+                target={value}
+                duration={1500}
+                format={(n) => `${Math.round(n)}%`}
+                className="font-[var(--font-syne)] font-bold tabular-nums text-[#F5E614]"
+              />
             </div>
             <div className="h-1.5 overflow-hidden rounded-full bg-[#222]">
               <div

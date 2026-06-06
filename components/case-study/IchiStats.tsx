@@ -2,13 +2,10 @@
 
 import { AnimatedStatsGrid } from "@/components/effects/AnimatedCounter";
 
-const formatTop = (n: number) => `Top ${Math.round(n)}`;
-
 const stats = [
   {
     label: "Ranking mundial",
-    target: 20,
-    format: formatTop,
+    staticValue: "Top 20",
     valueClassName: "font-[var(--font-syne)] font-extrabold leading-none text-[#F5E614]",
     valueStyle: { fontSize: "clamp(48px, 6vw, 72px)" },
   },

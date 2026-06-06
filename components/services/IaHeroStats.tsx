@@ -7,11 +7,13 @@ const stats = [
     label: "Reducción trabajo manual",
     target: 72,
     duration: 2000,
-    format: (n: number) => `−${Math.round(n)}%`,
+    format: (n: number) => `${Math.round(n)}%`,
   },
   {
     label: "Respuesta automática a leads",
-    static: "<2 min",
+    target: 2,
+    duration: 1800,
+    format: (n: number) => `<${Math.round(n)} min`,
   },
   {
     label: "Reportes sin intervención humana",
@@ -31,17 +33,13 @@ export default function IaHeroStats() {
     <div ref={ref} className="mt-12 flex flex-wrap gap-10 md:gap-16">
       {stats.map((item) => (
         <div key={item.label}>
-          {"static" in item ? (
-            <div className={valueClass}>{item.static}</div>
-          ) : (
-            <CounterValue
-              active={active}
-              target={item.target}
-              duration={item.duration}
-              format={item.format}
-              className={valueClass}
-            />
-          )}
+          <CounterValue
+            active={active}
+            target={item.target}
+            duration={item.duration}
+            format={item.format}
+            className={valueClass}
+          />
           <div className="mt-2 max-w-[180px] text-[9px] uppercase tracking-[0.16em] text-[var(--muted)]">
             {item.label}
           </div>

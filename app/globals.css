@@ -304,9 +304,9 @@ section .overflow-hidden:not(.no-media-hover-wrap):has(> video:not(.no-media-hov
 }
 
 .ia-hero-grid {
-  background-image: radial-gradient(circle, rgba(245, 230, 20, 0.15) 1px, transparent 1px);
+  background-image: radial-gradient(circle, rgba(245, 230, 20, 0.12) 1px, transparent 1px);
   background-size: 40px 40px;
-  animation: ia-dot-grid 24s linear infinite;
+  animation: ia-dot-grid 4s linear infinite;
 }
 
 .badge-pulse-dot {
