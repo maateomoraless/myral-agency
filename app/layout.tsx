@@ -52,8 +52,8 @@ export const metadata: Metadata = {
     images: ["https://myralagency.com/opengraph-image"],
   },
   icons: {
-    icon: "/images/logo_myral_sin_fondo.png",
-    apple: "/images/logo_myral_sin_fondo.png",
+    icon: "/favicon.svg",
+    apple: "/favicon.svg",
   },
 };
 
