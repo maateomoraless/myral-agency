@@ -20,7 +20,7 @@ export const works: WorkCard[] = [
   {
     href: "/trabajos/ichi",
     badge: "Contenido Deportivo",
-    name: "Itziar Martínez",
+    name: "Iziar Martínez",
     desc: "Cobertura de la escaladora española top 20 mundial en competiciones internacionales.",
     image: "/images/ichi-roca.png",
     featured: true,

@@ -9,8 +9,8 @@ const links = [
 
 const socials = [
   { href: "https://instagram.com/myralagency", label: "IG" },
-  { href: "https://tiktok.com/@myralagency", label: "TK" },
-  { href: "https://linkedin.com/company/myralagency", label: "LI" },
+  { href: "https://www.tiktok.com/@myralagency", label: "TK" },
+  { href: "https://www.linkedin.com/company/myral-agency/", label: "LI" },
 ];
 
 export default function Footer() {

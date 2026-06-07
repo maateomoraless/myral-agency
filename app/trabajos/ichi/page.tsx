@@ -5,7 +5,7 @@ import ParallaxBackground from "@/components/effects/ParallaxBackground";
 import IchiStats from "@/components/case-study/IchiStats";
 
 export const metadata = {
-  title: "Itziar Martínez × MYRAL Agency — Contenido Deportivo",
+  title: "Iziar Martínez × MYRAL Agency — Contenido Deportivo",
   description:
     "Cobertura audiovisual de la escaladora española top 20 mundial en competiciones internacionales de escalada.",
 };
@@ -25,7 +25,7 @@ export default function IchiPage() {
         <ParallaxBackground className="absolute inset-0 h-[115%] w-full">
           <img
             src="/images/ichi-roca.png"
-            alt="Itziar Martínez"
+            alt="Iziar Martínez"
             loading="lazy"
             className="h-full w-full object-cover object-center"
           />
@@ -42,7 +42,7 @@ export default function IchiPage() {
             Contenido Deportivo · 2024-2025
           </span>
           <HeroWordReveal
-            text="Itziar Martínez"
+            text="Iziar Martínez"
             as="h1"
             className="hero-title-96 font-[var(--font-syne)] font-extrabold tracking-[-0.025em] text-white"
           />
@@ -63,7 +63,7 @@ export default function IchiPage() {
           loop
           playsInline
           className="absolute inset-0 z-0 h-full w-full object-cover"
-          aria-label="Itziar Martínez en competición"
+          aria-label="Iziar Martínez en competición"
         >
           <source
             src="https://pub-b4af313647b6409d962b89eaf287e84c.r2.dev/ichi-video.MOV"
@@ -88,7 +88,7 @@ export default function IchiPage() {
           <div className="h-[600px] overflow-hidden">
             <img
               src="/images/ichi-roca.png"
-              alt="Itziar Martínez en roca natural"
+              alt="Iziar Martínez en roca natural"
               loading="lazy"
               className="h-full w-full object-cover"
             />
@@ -99,7 +99,7 @@ export default function IchiPage() {
               Escalada de élite contada desde dentro.
             </h2>
             <p className="text-[14px] leading-[1.85] text-[var(--muted)]">
-              Itziar Martínez es una de las mejores escaladoras españolas de la historia. Con presencia en Copas del
+              Iziar Martínez es una de las mejores escaladoras españolas de la historia. Con presencia en Copas del
               Mundo y clasificaciones entre las 20 mejores del mundo, necesitaba un contenido visual que transmitiera
               tanto su nivel técnico como su personalidad fuera de la pared.
             </p>
@@ -123,7 +123,7 @@ export default function IchiPage() {
           <div className="overflow-hidden rounded-sm">
             <img
               src="/images/ichi-rocódromo.png"
-              alt="Itziar Martínez en rocódromo"
+              alt="Iziar Martínez en rocódromo"
               loading="lazy"
               className="aspect-[4/5] w-full object-cover lg:aspect-auto lg:min-h-[480px]"
             />
@@ -136,7 +136,7 @@ export default function IchiPage() {
           className="mx-auto max-w-2xl font-[var(--font-syne)] font-semibold leading-[1.35] text-white"
           style={{ fontSize: "clamp(20px, 2.5vw, 28px)" }}
         >
-          Una biblioteca de contenido que Itziar usa para su presencia online, con imágenes que han circulado en medios
+          Una biblioteca de contenido que Iziar usa para su presencia online, con imágenes que han circulado en medios
           especializados de escalada y comunidades deportivas internacionales.
         </p>
         <Link

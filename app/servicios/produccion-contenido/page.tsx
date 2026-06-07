@@ -45,7 +45,7 @@ const relatedProjects = [
   },
   {
     href: "/trabajos/ichi",
-    name: "Itziar Martínez",
+    name: "Iziar Martínez",
     image: "/images/ichi-roca.png",
     badge: "Contenido Deportivo",
   },

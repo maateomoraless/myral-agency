@@ -45,7 +45,7 @@ const testimonials = [
   {
     quote:
       "«Por fin alguien que entiende el deporte de élite y sabe cómo contarlo. El contenido que producen habla por sí solo.»",
-    name: "Itziar Martínez",
+    name: "Iziar Martínez",
     label: "Escaladora · Top 20 Mundial",
   },
   {

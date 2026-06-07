@@ -21,7 +21,7 @@ const cases = [
     href: "/trabajos/ichi",
     image: "/images/ichi-roca.png",
     badge: "Escalada · Top 20 Mundial",
-    title: "Itziar Martínez",
+    title: "Iziar Martínez",
     desc: "Cobertura audiovisual de competiciones internacionales. Contenido que circula en medios especializados de todo el mundo.",
   },
   {
