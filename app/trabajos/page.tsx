@@ -17,11 +17,11 @@ export default function TrabajosPage() {
         Producción audiovisual, gestión de redes, eventos y branding para marcas y deportistas.
       </p>
 
-      <div className="mt-12 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
+      <div className="mt-12 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
         {works.map((work) => (
           <MagneticLink key={work.href} href={work.href} className="group">
             <article className="hover-card border border-[var(--border)] bg-[var(--bg)]">
-              <div className="relative aspect-[3/2] overflow-hidden">
+              <div className="relative aspect-[4/3] min-h-[200px] overflow-hidden md:aspect-[3/2] md:min-h-0">
                 <WorkCardMedia work={work} />
               </div>
               <div className="p-4">

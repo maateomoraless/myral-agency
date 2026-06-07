@@ -150,11 +150,11 @@ export default function HomePage() {
 
       <section id="trabajos" className="section-pad section-alt reveal-section">
         <h2 className="reveal-item title-display">Con quién<br /><em className="font-[var(--font-instrument)] font-normal italic text-[#F5E614]">trabajamos.</em></h2>
-        <div className="mt-12 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-12 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {featuredWorks.map((work) => (
             <MagneticLink key={work.href} href={work.href} className="group">
               <article className="hover-card border border-[var(--border)] bg-[var(--bg)]">
-                <div className="relative aspect-[3/2] overflow-hidden">
+                <div className="relative aspect-[4/3] min-h-[200px] overflow-hidden md:aspect-[3/2] md:min-h-0">
                   <WorkCardMedia work={work} />
                 </div>
                 <div className="p-4">
