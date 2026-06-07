@@ -154,7 +154,7 @@ export default function HomePage() {
           {featuredWorks.map((work) => (
             <MagneticLink key={work.href} href={work.href} className="group">
               <article className="hover-card border border-[var(--border)] bg-[var(--bg)]">
-                <div className="relative aspect-[4/3] min-h-[200px] overflow-hidden md:aspect-[3/2] md:min-h-0">
+                <div className="relative h-[200px] overflow-hidden md:h-[280px]">
                   <WorkCardMedia work={work} />
                 </div>
                 <div className="p-4">
