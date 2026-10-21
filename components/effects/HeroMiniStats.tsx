@@ -4,16 +4,16 @@ import { CounterValue, useInViewOnce } from "@/components/effects/AnimatedCounte
 
 const stats = [
   {
-    label: "Proyectos activos",
+    label: "Clientes activos",
     target: 20,
     duration: 1500,
     format: (n: number) => `${Math.round(n)}+`,
   },
   {
-    label: "Crecimiento medio en redes",
-    target: 900,
-    duration: 2000,
-    format: (n: number) => `+${Math.round(n)}%`,
+    label: "Sectores: vino, hostelería, deporte, música y turismo",
+    target: 5,
+    duration: 1200,
+    format: (n: number) => `${Math.round(n)}`,
   },
   {
     label: "Asistentes en un solo evento",

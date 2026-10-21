@@ -35,32 +35,12 @@ const tickerItems = [
   "Gestión de Eventos",
 ];
 
-const testimonials = [
-  {
-    quote:
-      "«El vídeo que hicieron para mi combate europeo superó todo lo que esperaba. Sin MYRAL ese momento no habría tenido el impacto que tuvo.»",
-    name: "Antonio Barrul",
-    label: "Boxeador profesional",
-  },
-  {
-    quote:
-      "«Por fin alguien que entiende el deporte de élite y sabe cómo contarlo. El contenido que producen habla por sí solo.»",
-    name: "Iziar Martínez",
-    label: "Escaladora · Top 20 Mundial",
-  },
-  {
-    quote:
-      "«En menos de un año pasamos de ser invisibles en redes a tener lista de espera los fines de semana. Los números lo dicen todo.»",
-    name: "Cliente en hostelería",
-    label: "León, España",
-  },
-] as const;
 
 const whyMyral = [
   {
     num: "01",
     title: "IA real, no de adorno",
-    desc: "Somos de las pocas agencias en España que automatizan procesos reales. Leads, propuestas y reportes en piloto automático.",
+    desc: "Usamos IA en nuestro propio flujo de trabajo — propuestas, planificación y edición — y la aplicamos a los procesos de nuestros clientes.",
   },
   {
     num: "02",
@@ -70,12 +50,12 @@ const whyMyral = [
   {
     num: "03",
     title: "Datos antes que intuición",
-    desc: "Cada decisión tiene un número detrás. Sabemos exactamente qué funciona y qué no antes de invertir un euro.",
+    desc: "Cada mes revisamos los resultados reales de cada cuenta y ajustamos el plan en función de lo que funciona.",
   },
   {
     num: "04",
-    title: "Sin permanencias",
-    desc: "Contratos mensuales. Si en algún momento no estás satisfecho, te vas. Así de simple.",
+    title: "Un solo equipo",
+    desc: "Quien diseña la estrategia es quien graba y edita. Hablas siempre con las personas que hacen el trabajo.",
   },
 ] as const;
 
@@ -172,36 +152,6 @@ export default function HomePage() {
 
       <AnimatedStats />
 
-      <section className="reveal-section bg-[#07070f] px-6 py-28 md:px-[52px]">
-        <p className="reveal-item mb-6 text-[9px] uppercase tracking-[0.26em] text-[#F5E614]">Lo que dicen</p>
-        <h2
-          className="reveal-item font-[var(--font-syne)] font-extrabold leading-[1] pb-[0.1em] overflow-visible tracking-[-0.025em] text-white"
-          style={{ fontSize: "clamp(36px, 5vw, 56px)" }}
-        >
-          Clientes que
-          <br />
-          <em className="font-[var(--font-instrument)] font-normal italic text-[#F5E614]">hablan por nosotros.</em>
-        </h2>
-        <div className="reveal-item mt-14 grid grid-cols-1 gap-6 md:grid-cols-3">
-          {testimonials.map(({ quote, name, label }) => (
-            <article
-              key={name}
-              className="rounded-[12px] border border-[rgba(240,237,232,0.07)] bg-[#0a0a0a] p-8 transition-all duration-300 hover:-translate-y-1 hover:border-[rgba(245,230,20,0.15)]"
-            >
-              <span
-                className="block font-[var(--font-syne)] text-[48px] font-extrabold leading-none text-[#F5E614] opacity-40"
-                aria-hidden
-              >
-                &ldquo;
-              </span>
-              <p className="mt-2 text-[15px] italic leading-[1.7] text-[var(--muted)]">{quote}</p>
-              <div className="my-6 h-px bg-[rgba(240,237,232,0.07)]" />
-              <p className="font-[var(--font-syne)] text-[14px] font-semibold text-white">{name}</p>
-              <p className="mt-1 text-[9px] uppercase tracking-[0.18em] text-[var(--muted)]">{label}</p>
-            </article>
-          ))}
-        </div>
-      </section>
 
       <section className="section-pad section-alt reveal-section">
         <h2 className="reveal-item title-display">
@@ -212,13 +162,6 @@ export default function HomePage() {
         <p className="reveal-item mt-6 max-w-xl text-[13px] leading-[1.82] text-[var(--muted)]">
           Somos de las pocas agencias en España que integran IA real. No como tendencia — como ventaja competitiva.
         </p>
-        <div className="reveal-item mt-8 flex flex-wrap gap-8 border-t border-[var(--border)] pt-8">
-          {["< 2 min respuesta leads", "100% reportes automáticos", "−72% trabajo manual"].map((s) => (
-            <div key={s} className="text-[11px] text-white/70">
-              {s}
-            </div>
-          ))}
-        </div>
         <Link
           href="/servicios/ia"
           className="reveal-item mt-10 inline-block text-[9px] uppercase tracking-[0.16em] text-[#F5E614] hover:opacity-70"
