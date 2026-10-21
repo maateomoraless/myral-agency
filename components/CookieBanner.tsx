@@ -30,7 +30,7 @@ export default function CookieBanner() {
 
   return (
     <div
-      className="mono fixed bottom-14 left-5 z-[70] max-w-[340px] border border-white/10 bg-[#05050b]/90 p-4 backdrop-blur md:left-8"
+      className="mono fixed right-5 top-16 z-[70] max-w-[300px] border border-white/10 bg-[#05050b]/90 p-4 backdrop-blur md:right-8"
       style={{
         opacity,
         transition: "opacity 0.3s ease",

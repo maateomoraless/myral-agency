@@ -26,11 +26,14 @@ export default function Chrome() {
   const t = useT();
   const { lang, setLang } = useLang();
   const path = usePathname();
+  const lab = path.startsWith("/lab/");
   const nav = [
     { href: "/", label: t(ui.work) },
     { href: "/studio", label: t(ui.studio) },
     { href: "/contacto", label: t(ui.contact) },
   ];
+
+  if (lab) return null;
 
   return (
     <div className="studio-chrome mono pointer-events-none fixed inset-0 z-[60] text-[10px] uppercase tracking-[0.18em] text-[#f0ede8] mix-blend-difference">
