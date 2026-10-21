@@ -30,6 +30,11 @@ export default function PageLoader() {
     if (closing.current) return;
     closing.current = true;
     timers.current.forEach(clearTimeout);
+    try {
+      sessionStorage.setItem(SESSION_KEY, "1");
+    } catch {
+      /* sin storage */
+    }
     setFadeOut(true);
     timers.current = [setTimeout(() => setVisible(false), 450)];
   }, []);
@@ -38,7 +43,6 @@ export default function PageLoader() {
     let seen = false;
     try {
       seen = sessionStorage.getItem(SESSION_KEY) === "1";
-      sessionStorage.setItem(SESSION_KEY, "1");
     } catch {
       /* storage no disponible: mostramos la intro igualmente */
     }
