@@ -30,7 +30,7 @@ export default function CookieBanner() {
 
   return (
     <div
-      className="fixed bottom-0 left-0 right-0 z-50 border-t border-[rgba(240,237,232,0.07)] bg-[#0a0a0a] px-10 py-5"
+      className="mono fixed bottom-14 left-5 z-[70] max-w-[340px] border border-white/10 bg-[#05050b]/90 p-4 backdrop-blur md:left-8"
       style={{
         opacity,
         transition: "opacity 0.3s ease",
@@ -38,28 +38,27 @@ export default function CookieBanner() {
       role="dialog"
       aria-label="Preferencias de cookies"
     >
-      <div className="mx-auto flex max-w-[1400px] flex-col items-start justify-between gap-8 md:flex-row md:items-center">
-        <p className="max-w-xl text-[13px] leading-[1.7] text-[var(--muted)]">
-          Usamos cookies propias y de terceros para analizar el tráfico y mejorar tu experiencia. Puedes aceptar
-          todas o gestionar tus preferencias.{" "}
-          <Link href="/cookies" className="text-[#F5E614] hover:opacity-70">
-            Política de cookies
+      <div className="flex flex-col gap-4">
+        <p className="text-[10px] leading-[1.6] text-white/55">
+          Cookies help us understand how the site is used.{" "}
+          <Link href="/cookies" className="text-white underline underline-offset-2 hover:opacity-70">
+            Policy
           </Link>
         </p>
-        <div className="flex shrink-0 gap-3">
+        <div className="flex shrink-0 gap-6">
           <button
             type="button"
             onClick={() => handleChoice(false)}
-            className="rounded border border-[rgba(240,237,232,0.15)] px-6 py-2 text-sm text-[#f0ede8] transition-colors hover:border-[#F5E614]/30"
+            className="text-[10px] uppercase tracking-[0.16em] text-white/50 hover:text-white"
           >
-            Rechazar
+            Decline
           </button>
           <button
             type="button"
             onClick={() => handleChoice(true)}
-            className="rounded bg-[#F5E614] px-6 py-2 text-sm font-bold text-[#05050b] transition-opacity hover:opacity-90"
+            className="text-[10px] uppercase tracking-[0.16em] text-[#F5E614] hover:opacity-70"
           >
-            Aceptar todas
+            Accept
           </button>
         </div>
       </div>
