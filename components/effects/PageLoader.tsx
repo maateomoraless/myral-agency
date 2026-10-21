@@ -45,9 +45,9 @@ export default function PageLoader() {
     const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     if (seen || reduced) return;
 
-    setVisible(true);
     const at = (ms: number, fn: () => void) => timers.current.push(setTimeout(fn, ms));
 
+    at(0, () => setVisible(true));
     for (let i = 1; i <= 5; i++) at(150 + i * 70, () => setLetters(i));
     FONTS.forEach((_, i) => at(650 + i * 110, () => setFontIdx(i)));
     at(1350, () => setShowLogo(true));
