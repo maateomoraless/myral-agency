@@ -49,7 +49,7 @@ export const projects: Project[] = [
     orientation: "h",
     video: "/media/v2/europafm.mp4",
     poster: "/media/v2/europafm.jpg",
-    stills: [], // TEMP
+    stills: stills("europafm", 6),
   },
   {
     slug: "san-cobate",
@@ -63,9 +63,9 @@ export const projects: Project[] = [
       es: "Vendimia en Ribera del Duero. San Cobate y tres bodegas más, de la viña a la copa.",
     },
     orientation: "v",
-    video: "/media/sancobate-loop.mp4",
-    poster: "/media/sancobate-poster.jpg",
-    stills: [], // TEMP: pendiente clip del reel 13
+    video: "/media/v3/sancobate.mp4",
+    poster: "/media/v3/sancobate.jpg",
+    stills: stills("sancobate", 5),
   },
   {
     slug: "antonio-barrul",
@@ -79,8 +79,9 @@ export const projects: Project[] = [
       es: "Su primer combate europeo, anunciado como el tráiler de una película.",
     },
     orientation: "h",
-    poster: "/images/barrul-campeon.png",
-    stills: ["/images/barrul-ring.png", "/images/barrul-equipo.png"], // TEMP: pendiente vídeo
+    video: "/media/v3/barrul.mp4",
+    poster: "/media/v3/barrul.jpg",
+    stills: ["/media/v3/barrul-still-3.jpg", "/media/v3/barrul-still-2.jpg", "/images/barrul-ring.png", "/images/barrul-equipo.png"],
   },
   {
     slug: "marcela",
@@ -94,9 +95,9 @@ export const projects: Project[] = [
       es: "Brasa, vino y una cocina en penumbra. Una de las mejores mesas de la ciudad.",
     },
     orientation: "v",
-    video: "/media/marcela-loop.mp4",
-    poster: "/media/marcela-poster.jpg",
-    stills: [], // TEMP: pendiente clip del reel 04
+    video: "/media/v3/marcela.mp4",
+    poster: "/media/v3/marcela.jpg",
+    stills: stills("marcela", 6),
   },
   {
     slug: "leon-solo-musica",
@@ -112,7 +113,7 @@ export const projects: Project[] = [
     orientation: "h",
     video: "/media/v2/lsm.mp4",
     poster: "/media/v2/lsm.jpg",
-    stills: [], // TEMP
+    stills: stills("lsm", 6),
   },
   {
     slug: "iziar-martinez",
@@ -126,9 +127,9 @@ export const projects: Project[] = [
       es: "Escaladora de Copa del Mundo. Fuerza, equilibrio y la siguiente presa.",
     },
     orientation: "v",
-    video: "/media/v2/ichi.mp4",
-    poster: "/media/v2/ichi.jpg",
-    stills: [], // TEMP: pendiente clip del reel 01
+    video: "/media/v3/ichi.mp4",
+    poster: "/media/v3/iziar-still-3.jpg",
+    stills: stills("iziar", 5),
   },
   {
     slug: "verdiago-vive",
@@ -144,7 +145,7 @@ export const projects: Project[] = [
     orientation: "v",
     video: "/media/v2/verdiago.mp4",
     poster: "/media/v2/verdiago.jpg",
-    stills: [], // TEMP
+    stills: stills("verdiago", 6),
   },
   {
     slug: "camarote-hotel",
