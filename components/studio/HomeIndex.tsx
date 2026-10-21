@@ -20,6 +20,7 @@ export default function HomeIndex() {
   const videos = useRef<(HTMLVideoElement | null)[]>([]);
   const items = useRef<(HTMLAnchorElement | null)[]>([]);
   const touch = useRef(false);
+  const [auto, setAuto] = useState(true);
 
   const activate = (i: number | null) => {
     setActive((prev) => {
@@ -44,6 +45,7 @@ export default function HomeIndex() {
   useEffect(() => {
     touch.current = window.matchMedia("(hover: none)").matches;
     if (!touch.current) return;
+    const raf = requestAnimationFrame(() => setAuto(false));
     const io = new IntersectionObserver(
       (entries) => {
         entries.forEach((e) => {
@@ -53,8 +55,26 @@ export default function HomeIndex() {
       { rootMargin: "-48% 0px -48% 0px" },
     );
     items.current.forEach((el) => el && io.observe(el));
-    return () => io.disconnect();
+    return () => {
+      cancelAnimationFrame(raf);
+      io.disconnect();
+    };
   }, []);
+
+  // Escritorio sin interacción: la portada va pasando proyectos sola, como un proyector
+  useEffect(() => {
+    if (!auto || leaving || window.matchMedia("(hover: none)").matches) return;
+    const id = setInterval(
+      () => {
+        setActive((prev) => {
+          warp(1100, 50);
+          return prev === null ? 0 : (prev + 1) % projects.length;
+        });
+      },
+      active === null ? 3200 : 4600,
+    );
+    return () => clearInterval(id);
+  }, [auto, leaving, active]);
 
   const open = (e: React.MouseEvent, i: number, href: string) => {
     e.preventDefault();
@@ -118,7 +138,8 @@ export default function HomeIndex() {
         className={`relative z-10 px-5 pb-[40vh] pt-[40vh] transition-opacity duration-500 md:px-8 md:pb-[22vh] md:pt-[24vh] ${
           leaving ? "opacity-0" : "opacity-100"
         }`}
-        onMouseLeave={() => !touch.current && activate(null)}
+        onMouseLeave={() => !touch.current && setAuto(true)}
+        onMouseEnter={() => !touch.current && setAuto(false)}
       >
         <p className="mono mb-8 text-[10px] uppercase tracking-[0.2em] text-white/40">
           {t(ui.index)} — {String(projects.length).padStart(2, "0")}
@@ -126,6 +147,7 @@ export default function HomeIndex() {
         <ol>
           {projects.map((p, i) => {
             const on = active === i;
+            const strong = on && !auto;
             return (
               <li key={p.slug}>
                 <Link
@@ -142,16 +164,16 @@ export default function HomeIndex() {
                   <span className="mono w-6 shrink-0 text-[10px] text-white/35 md:w-8">{String(i + 1).padStart(2, "0")}</span>
                   <span
                     className={`display relative leading-[0.98] transition-colors duration-500 ${
-                      on ? "text-[#f0ede8]" : active === null ? "text-[#f0ede8]/70" : "text-[#f0ede8]/18"
+                      strong ? "text-[#f0ede8]" : on ? "text-[#f0ede8]/75" : active === null ? "text-[#f0ede8]/70" : "text-[#f0ede8]/18"
                     }`}
                     style={{ fontSize: "clamp(38px, 6.4vw, 104px)" }}
                   >
                     {p.title}
-                    {on && <HandUnderline key={`u-${i}`} className="absolute -bottom-[0.06em] left-0 h-[0.16em] w-full" />}
+                    {strong && <HandUnderline key={`u-${i}`} className="absolute -bottom-[0.06em] left-0 h-[0.16em] w-full" />}
                   </span>
                   <span
                     className={`mono hidden self-center text-[10px] uppercase tracking-[0.16em] text-white/70 transition-all duration-500 lg:inline ${
-                      on ? "translate-x-0 opacity-100" : "-translate-x-2 opacity-0"
+                      strong ? "translate-x-0 opacity-100" : "-translate-x-2 opacity-0"
                     }`}
                   >
                     {t(p.role)}

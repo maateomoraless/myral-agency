@@ -6,10 +6,10 @@ const SESSION_KEY = "myral-intro-seen";
 
 /**
  * Entrada "diafragma": aparece el punto amarillo del logo y se abre como el iris de una cámara.
- * Se salta con toque, click, scroll o tecla. Una vez por visita.
+ * Sale en cada carga de página (más corta si ya la has visto). Se salta con toque, click, scroll o tecla.
  */
 export default function PageLoader() {
-  const [stage, setStage] = useState<"off" | "dot" | "iris" | "done">("off");
+  const [stage, setStage] = useState<"off" | "dot" | "iris" | "done">("dot");
   const timers = useRef<ReturnType<typeof setTimeout>[]>([]);
   const finished = useRef(false);
 
@@ -33,10 +33,12 @@ export default function PageLoader() {
     } catch {
       /* sin storage */
     }
-    if (seen || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     const at = (ms: number, fn: () => void) => timers.current.push(setTimeout(fn, ms));
-    at(0, () => setStage("dot"));
-    at(1300, finish);
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      at(0, () => setStage("done"));
+      return () => timers.current.forEach(clearTimeout);
+    }
+    at(seen ? 700 : 1400, finish);
     return () => timers.current.forEach(clearTimeout);
   }, [finish]);
 
