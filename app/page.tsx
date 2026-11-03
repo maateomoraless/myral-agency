@@ -102,6 +102,23 @@ export default function HomePage() {
   return (
     <>
       <section className="reveal-section relative flex min-h-screen w-full flex-col justify-end overflow-hidden px-6 pb-[68px] pt-[100px] md:px-[52px]">
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+          poster="/hero/hero-poster.jpg"
+          aria-hidden
+          className="pointer-events-none absolute inset-0 h-full w-full object-cover"
+        >
+          <source src="/hero/hero-mobile.mp4" type="video/mp4" media="(max-width: 768px) and (orientation: portrait)" />
+          <source src="/hero/hero-1080.mp4" type="video/mp4" />
+        </video>
+        <div
+          className="pointer-events-none absolute inset-0"
+          style={{ background: "linear-gradient(to bottom, rgba(5,5,11,0.55) 0%, rgba(5,5,11,0.35) 35%, rgba(5,5,11,0.75) 70%, #05050b 100%)" }}
+        />
         <div className="pointer-events-none absolute inset-0" style={{ background: "radial-gradient(ellipse 58% 52% at 72% 44%, rgba(245,230,20,.06) 0%, transparent 62%)" }} />
         <div className="hero-text-wrap relative w-full overflow-visible">
         <div className="reveal-item relative mb-[18px] flex items-center gap-2">

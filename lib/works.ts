@@ -15,7 +15,7 @@ export const works: WorkCard[] = [
     badge: "Cobertura de Eventos",
     name: "Europa FM · Conciertos",
     desc: "Fangoria, Paula Koops, Marlena, Bombai y Palencia. Reel la misma noche, aftermovie al día siguiente.",
-    image: "/work/europa-fm/fangoria-poster.jpg",
+    image: "/work/europa-fm/card.jpg",
     featured: true,
   },
   {
