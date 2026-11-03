@@ -12,14 +12,10 @@ const links = [
 ];
 
 const serviceLinks = [
-  { href: "/servicios/gestion-redes-sociales", label: "Gestión de Redes Sociales" },
-  { href: "/servicios/produccion-contenido", label: "Producción de Contenido" },
-  { href: "/servicios/publicidad-digital", label: "Publicidad Digital" },
-  { href: "/servicios/branding", label: "Branding e Identidad Visual" },
-  { href: "/servicios/gestion-eventos", label: "Gestión y Producción de Eventos" },
-  { href: "/servicios/influencer-marketing", label: "Influencer Marketing" },
-  { href: "/servicios/ia", label: "Automatización con IA", featured: true },
-  { href: "/servicios/webs-apps", label: "Creación de Webs & Apps", featured: true },
+  { href: "/servicios/produccion-contenido", label: "Producción Audiovisual" },
+  { href: "/servicios/gestion-redes-sociales", label: "Redes Sociales y Publicidad" },
+  { href: "/servicios/gestion-eventos", label: "Eventos" },
+  { href: "/servicios/ia", label: "IA y Webs", featured: true },
 ] as const;
 
 const linkClassName = (active: boolean) =>

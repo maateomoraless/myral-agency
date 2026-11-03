@@ -1,14 +1,10 @@
 import Link from "next/link";
 
 const services = [
-  { num: "01", title: "Gestión de Redes Sociales", desc: "Estrategia, calendarios y gestión completa de Instagram, TikTok y LinkedIn.", href: "/servicios/gestion-redes-sociales" },
-  { num: "02", title: "Producción de Contenido", desc: "Fotografía, vídeo y reels de nivel profesional.", href: "/servicios/produccion-contenido" },
-  { num: "03", title: "Publicidad Digital", desc: "Campañas Meta Ads y Google Ads. Cada euro con retorno medible.", href: "/servicios/publicidad-digital" },
-  { num: "04", title: "Branding e Identidad Visual", desc: "Nombre, logo, colores, tono.", href: "/servicios/branding" },
-  { num: "05", title: "Gestión y Producción de Eventos", desc: "Desde la conceptualización hasta la cobertura audiovisual.", href: "/servicios/gestion-eventos" },
-  { num: "06", title: "Influencer Marketing", desc: "Alcance real, no vanity metrics.", href: "/servicios/influencer-marketing" },
-  { num: "07", title: "Automatización con IA ★", desc: "Tu negocio trabajando 24/7 sin intervención manual.", href: "/servicios/ia" },
-  { num: "08", title: "Creación de Webs & Apps ★", desc: "Rápidas, bonitas y conectadas con IA desde el primer día.", href: "/servicios/webs-apps" },
+  { num: "01", title: "Producción Audiovisual", desc: "Vídeo, foto y reels con acabado de cine. Aftermovies, anuncios y cobertura de eventos con entrega en horas.", href: "/servicios/produccion-contenido" },
+  { num: "02", title: "Redes Sociales y Publicidad", desc: "Estrategia, contenido y gestión de Instagram y TikTok, con campañas Meta Ads que se miden.", href: "/servicios/gestion-redes-sociales" },
+  { num: "03", title: "Eventos", desc: "Producción, venta de entradas y cobertura de festivales, conciertos y actos. De la idea al último reel.", href: "/servicios/gestion-eventos" },
+  { num: "04", title: "IA y Webs ★", desc: "Webs rápidas y automatizaciones que trabajan por tu negocio 24/7.", href: "/servicios/ia" },
 ] as const;
 
 export default function ServiciosPage() {
@@ -41,7 +37,7 @@ export default function ServiciosPage() {
               </>
             );
 
-            const className = `hover-card group flex gap-4 border-b border-[var(--border)] py-7 transition-all duration-[400ms] ease-out hover:pl-2.5 md:odd:border-r md:odd:pr-10 md:even:pl-10 md:even:hover:pl-12 ${i >= 6 ? "border border-[#F5E614]/15 bg-[#F5E614]/[0.04] px-5" : ""}`;
+            const className = `hover-card group flex gap-4 border-b border-[var(--border)] py-7 transition-all duration-[400ms] ease-out hover:pl-2.5 md:odd:border-r md:odd:pr-10 md:even:pl-10 md:even:hover:pl-12 ${i === 3 ? "bg-[#F5E614]/[0.04]" : ""}`;
 
             return (
               <Link key={service.num} href={service.href} className={className}>

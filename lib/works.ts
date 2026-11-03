@@ -11,6 +11,14 @@ export type WorkCard = {
 
 export const works: WorkCard[] = [
   {
+    href: "/trabajos/europa-fm",
+    badge: "Cobertura de Eventos",
+    name: "Europa FM · Conciertos",
+    desc: "Fangoria, Paula Koops, Marlena, Bombai y Palencia. Reel la misma noche, aftermovie al día siguiente.",
+    image: "/work/europa-fm/fangoria-poster.jpg",
+    featured: true,
+  },
+  {
     href: "/trabajos/antonio-barrul",
     badge: "Producción Audiovisual",
     name: "Antonio Barrul",
@@ -40,14 +48,6 @@ export const works: WorkCard[] = [
     name: "Vermutería Cervantes",
     desc: "De 200 a 2.000 seguidores en menos de un año.",
     image: "/images/cervantes-mesa.png",
-    featured: true,
-  },
-  {
-    href: "/trabajos/europa-fm",
-    badge: "Cobertura de Eventos",
-    name: "Europa FM · Conciertos",
-    desc: "Fangoria, Paula Koops, Marlena, Bombai y Palencia. Reel la misma noche, aftermovie al día siguiente.",
-    image: "/work/europa-fm/fangoria-poster.jpg",
   },
   {
     href: "/trabajos/jakob-schubert",
@@ -95,7 +95,7 @@ export const works: WorkCard[] = [
     href: "/trabajos/leon-street-music",
     badge: "Producción Audiovisual",
     name: "León Street Music",
-    desc: "Vídeo del festival, reels y fotografía de los conciertos en la calle.",
+    desc: "Reels y fotografía de los conciertos en la calle.",
     image: "/work/leon-street-music/card.jpg",
   },
   {

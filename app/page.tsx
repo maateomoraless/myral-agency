@@ -14,26 +14,36 @@ export const metadata = {
 };
 
 const services = [
-  { num: "01", title: "Gestión de Redes Sociales", desc: "Estrategia, calendarios y gestión completa de Instagram, TikTok y LinkedIn.", href: "/servicios/gestion-redes-sociales" },
-  { num: "02", title: "Producción de Contenido", desc: "Fotografía, vídeo y reels de nivel profesional.", href: "/servicios/produccion-contenido" },
-  { num: "03", title: "Publicidad Digital", desc: "Campañas Meta Ads y Google Ads. Cada euro con retorno medible.", href: "/servicios/publicidad-digital" },
-  { num: "04", title: "Branding e Identidad Visual", desc: "Nombre, logo, colores, tono.", href: "/servicios/branding" },
-  { num: "05", title: "Gestión y Producción de Eventos", desc: "Desde la conceptualización hasta la cobertura audiovisual.", href: "/servicios/gestion-eventos" },
-  { num: "06", title: "Influencer Marketing", desc: "Alcance real, no vanity metrics.", href: "/servicios/influencer-marketing" },
-  { num: "07", title: "Automatización con IA ★", desc: "Tu negocio trabajando 24/7 sin intervención manual.", href: "/servicios/ia" },
-  { num: "08", title: "Creación de Webs & Apps ★", desc: "Rápidas, bonitas y conectadas con IA desde el primer día.", href: "/servicios/webs-apps" },
+  { num: "01", title: "Producción Audiovisual", desc: "Vídeo, foto y reels con acabado de cine. Aftermovies, anuncios y cobertura de eventos con entrega en horas.", href: "/servicios/produccion-contenido" },
+  { num: "02", title: "Redes Sociales y Publicidad", desc: "Estrategia, contenido y gestión de Instagram y TikTok, con campañas Meta Ads que se miden.", href: "/servicios/gestion-redes-sociales" },
+  { num: "03", title: "Eventos", desc: "Producción, venta de entradas y cobertura de festivales, conciertos y actos. De la idea al último reel.", href: "/servicios/gestion-eventos" },
+  { num: "04", title: "IA y Webs ★", desc: "Webs rápidas y automatizaciones que trabajan por tu negocio 24/7.", href: "/servicios/ia" },
 ] as const;
 
 const tickerItems = [
-  "Branding",
-  "Social Media",
-  "Webs & Apps",
-  "Automatización IA",
+  "Producción Audiovisual",
+  "Aftermovies",
+  "Reels",
+  "Redes Sociales",
   "Meta Ads",
-  "Contenido Visual",
-  "Influencer Marketing",
-  "Gestión de Eventos",
+  "Eventos",
+  "Webs",
+  "Automatización IA",
 ];
+
+const clientLogos = [
+  { src: "/logos/europa-fm.png", name: "Europa FM", h: 30 },
+  { src: "/logos/fele.png", name: "FELE · Empresas de León", h: 52 },
+  { src: "/logos/leon-solo-musica.png", name: "León Solo Música", h: 34 },
+  { src: "/logos/leyendas-del-vallenato.png", name: "Leyendas del Vallenato", h: 50 },
+  { src: "/logos/san-cobate.png", name: "San Cobate", h: 28 },
+  { src: "/logos/senorio-de-nava.png", name: "Señorío de Nava", h: 58 },
+  { src: "/logos/vile-la-finca.png", name: "Vile la Finca", h: 52 },
+  { src: "/logos/fuentenebro.png", name: "Fuentenebro", h: 20 },
+  { src: "/logos/marcela.png", name: "Marcela Brasa y Vinos", h: 56 },
+  { src: "/logos/verdiago-vive.png", name: "Verdiago Vive", h: 40 },
+  { src: "/logos/leon-street-music.png", name: "León Street Music", h: 54 },
+] as const;
 
 const testimonials = [
   {
@@ -50,9 +60,9 @@ const testimonials = [
   },
   {
     quote:
-      "«En menos de un año pasamos de ser invisibles en redes a tener lista de espera los fines de semana. Los números lo dicen todo.»",
-    name: "Cliente en hostelería",
-    label: "León, España",
+      "«Necesitábamos a alguien capaz de grabar un concierto y tener el reel publicado esa misma noche. MYRAL lo cumple concierto tras concierto, y por eso seguimos contando con ellos.»",
+    name: "Luis Cañón",
+    label: "Director · Europa FM Castilla y León",
   },
 ] as const;
 
@@ -98,11 +108,11 @@ export default function HomePage() {
           <span className="h-[7px] w-[7px] rounded-full bg-[#F5E614] [animation:pulse_2s_ease-in-out_infinite]" />
           <span className="text-[9px] uppercase tracking-[0.2em] text-white/40">Disponible para nuevos proyectos</span>
         </div>
-        <p className="reveal-item mb-5 text-[9px] uppercase tracking-[0.26em] text-[#F5E614]">Branding · IA · Webs · Marketing</p>
+        <p className="reveal-item mb-5 text-[9px] uppercase tracking-[0.26em] text-[#F5E614]">Audiovisual · Redes · Eventos · IA</p>
         <HeroWordReveal text="Tu marca," as="h1" className="title-display font-[var(--font-syne)]" />
         <HeroWordReveal text="sin excusas." as="p" className="title-display font-[var(--font-instrument)] italic text-[#F5E614]" />
         <div className="reveal-item mt-11 flex flex-wrap items-end justify-between gap-6">
-          <p className="max-w-xs text-[13px] leading-[1.82] text-[var(--muted)]">Hacemos que tu negocio crezca online. Redes sociales, publicidad, webs y automatización con IA. Todo en una sola agencia.</p>
+          <p className="max-w-xs text-[13px] leading-[1.82] text-[var(--muted)]">Vídeo que se nota, redes que convierten y eventos que llenan. Para marcas, festivales y deportistas que quieren destacar.</p>
           <div className="flex flex-col items-start gap-5 sm:items-end">
             <HeroMiniStats />
             <Link href="#trabajos" className="border border-white/20 px-7 py-3.5 text-[9px] uppercase tracking-[0.16em] text-white/65 transition-colors hover:border-[#F5E614] hover:text-[#F5E614]">Ver nuestro trabajo →</Link>
@@ -119,13 +129,32 @@ export default function HomePage() {
         </div>
       </div>
 
+      <section className="reveal-section border-b border-[var(--border)] px-6 py-16 md:px-[52px]">
+        <p className="reveal-item mb-10 text-center text-[9px] uppercase tracking-[0.26em] text-white/40">Han confiado en nosotros</p>
+        <div className="logo-marquee relative overflow-hidden">
+          <div className="logo-track flex w-max items-center">
+            {[...clientLogos, ...clientLogos].map((logo, i) => (
+              <img
+                key={`${logo.src}-${i}`}
+                src={logo.src}
+                alt={logo.name}
+                aria-hidden={i >= clientLogos.length}
+                loading="lazy"
+                className="mx-8 w-auto shrink-0 opacity-55 transition-opacity duration-300 hover:opacity-100 md:mx-12"
+                style={{ height: logo.h }}
+              />
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="section-pad reveal-section">
         <h2 className="reveal-item title-display">Todo lo que necesitas<br /><em className="font-[var(--font-instrument)] font-normal italic text-[#F5E614]">en un sitio.</em></h2>
         <div className="mt-12 grid grid-cols-1 items-stretch overflow-visible md:grid-cols-2">
           {services.map((service, i) => {
             const inner = (
               <>
-                <span className={`min-w-6 shrink-0 overflow-visible font-[var(--font-syne)] text-[10px] font-bold ${i >= 6 ? "text-[#F5E614]/50" : "text-[#F5E614]/25"}`}>{service.num}</span>
+                <span className={`min-w-6 shrink-0 overflow-visible font-[var(--font-syne)] text-[10px] font-bold ${i === 3 ? "text-[#F5E614]/50" : "text-[#F5E614]/25"}`}>{service.num}</span>
                 <div>
                   <h3 className="font-[var(--font-syne)] text-sm font-semibold transition-colors group-hover:text-[#F5E614]">
                     <ServiceTitle title={service.title} />
@@ -135,8 +164,8 @@ export default function HomePage() {
               </>
             );
             const className = `hover-card group flex h-full w-full gap-4 overflow-visible py-7 transition-all duration-[400ms] ease-out hover:pl-2.5 md:odd:pr-10 md:even:pl-10 md:even:hover:pl-12 ${
-              i >= 6
-                ? "border border-[#F5E614]/15 bg-[#F5E614]/[0.04] pl-1"
+              i === 3
+                ? "border-b border-[var(--border)] bg-[#F5E614]/[0.04] md:odd:border-r"
                 : "border-b border-[var(--border)] md:odd:border-r"
             }`;
             return (

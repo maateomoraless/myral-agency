@@ -50,7 +50,7 @@ export const cases: CaseStudy[] = [
     films: [
       { src: "/work/europa-fm/aftermovie-fangoria.mp4", poster: "/work/europa-fm/aftermovie-fangoria.jpg", title: "Aftermovie · Fangoria" },
       reel("europa-fm", "reel-paula", "Paula Koops"),
-      reel("europa-fm", "reel-marlena", "Marlena"),
+      reel("europa-fm", "reel-marlena", "Marlena · Aftermovie"),
       reel("europa-fm", "reel-bombai", "Bombai"),
       reel("europa-fm", "reel-palencia", "Palencia"),
     ],
@@ -127,7 +127,7 @@ export const cases: CaseStudy[] = [
       "Edición de reels y fotografía",
       "Gestión mensual de redes sociales",
     ],
-    films: [1, 2, 3, 4, 5, 6].map((n) => reel("verdiago-vive", `reel-${n}`, `Reel ${n}`)),
+    films: [1, 2, 3, 4].map((n) => reel("verdiago-vive", `reel-${n}`, `Reel ${n}`)),
     gallery: [],
     cta: "¿Tienes un alojamiento que merece más reservas?",
     metaDescription: "Contenido y gestión de redes para Verdiago Vive, hotel rural, spa y restaurante en León.",
@@ -177,7 +177,7 @@ export const cases: CaseStudy[] = [
       "Fotografía gastronómica",
       "Edición y publicación en redes",
     ],
-    films: [1, 2, 3].map((n) => reel("marcela-brasa-y-vinos", `reel-${n}`, `Reel ${n}`)),
+    films: [1, 2, 3, 4].map((n) => reel("marcela-brasa-y-vinos", `reel-${n}`, `Reel ${n}`)),
     gallery: [
       photo("marcela-brasa-y-vinos", 1),
       loop("marcela-brasa-y-vinos", "vino"),
@@ -221,18 +221,15 @@ export const cases: CaseStudy[] = [
     heroVideo: "/work/leon-street-music/lstreet-hero.mp4",
     heroPoster: "/work/leon-street-music/lstreet-poster.jpg",
     intro:
-      "Cobertura del festival León Street Music en las plazas del centro de León: vídeo del festival, reels de los conciertos y fotografía de cada directo.",
+      "Cobertura del festival León Street Music en las plazas del centro de León: reels de los conciertos, vídeos promocionales de los grupos y fotografía de cada directo.",
     whatWeDid: [
       "Grabación de los conciertos en la calle",
-      "Vídeo del festival y reels para redes",
+      "Reels del festival para redes",
       "Vídeos promocionales de los grupos",
       "Fotografía editada de cada directo",
     ],
     films: [
-      { src: "/work/leon-street-music/video-final.mp4", poster: "/work/leon-street-music/video-final.jpg", title: "Vídeo del festival", vertical: true },
-      reel("leon-street-music", "reel-1", "Reel 1"),
-      reel("leon-street-music", "reel-2", "Reel 2"),
-      reel("leon-street-music", "reel-3", "Reel 3"),
+      reel("leon-street-music", "reel-3", "Reel del festival"),
     ],
     galleryTitle: "Fotografía.",
     gallery: [1, 2, 3, 4, 5, 6].map((n) => photo("leon-street-music", n)),
