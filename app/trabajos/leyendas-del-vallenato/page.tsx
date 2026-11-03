@@ -20,12 +20,20 @@ export default function LeyendasPage() {
   return (
     <>
       <section className="no-reveal relative min-h-[85vh] overflow-hidden bg-[#111]">
-        <div className="absolute inset-0 flex items-center justify-center">
-          <span className="font-[var(--font-syne)] text-[clamp(4rem,13vw,10rem)] font-extrabold text-white/10">
-            MYRAL.
-          </span>
-        </div>
-        <div className="absolute inset-0 bg-black/45" />
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          poster="/work/leyendas-del-vallenato/card.jpg"
+          className="absolute inset-0 h-full w-full object-cover"
+        >
+          <source src="/work/leyendas-del-vallenato/video-festival.mp4" type="video/mp4" />
+        </video>
+        <div
+          className="absolute inset-0"
+          style={{ background: "linear-gradient(to bottom, rgba(5,5,11,0.25) 0%, rgba(5,5,11,0.35) 40%, rgba(5,5,11,0.92) 100%)" }}
+        />
         <div className="section-pad relative z-10 flex min-h-[85vh] flex-col justify-end">
           <span className="mb-4 inline-block border border-[#F5E614]/30 bg-[#F5E614]/10 px-3 py-1 text-[9px] uppercase tracking-[0.18em] text-[#F5E614]">
             Gestión Integral de Evento · 2025
@@ -70,6 +78,20 @@ export default function LeyendasPage() {
       <section className="section-pad section-alt">
         <h2 className="mb-8 font-[var(--font-syne)] text-3xl font-bold">El resultado</h2>
         <LeyendasResultsStats />
+      </section>
+
+      <section className="border-t border-[var(--border)] bg-[#05050b] px-6 py-24 md:px-[52px]">
+        <h2 className="mb-10 font-[var(--font-syne)] text-4xl font-extrabold text-white">El vídeo.</h2>
+        <video
+          controls
+          playsInline
+          preload="none"
+          poster="/work/leyendas-del-vallenato/video-festival.jpg"
+          className="aspect-video w-full rounded-sm bg-black object-cover"
+        >
+          <source src="/work/leyendas-del-vallenato/video-festival.mp4" type="video/mp4" />
+        </video>
+        <p className="mt-3 text-[9px] uppercase tracking-[0.16em] text-[var(--muted)]">Vídeo de presentación del festival</p>
       </section>
 
       <FinalCta title="¿Tienes un evento en mente?" />

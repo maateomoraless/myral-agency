@@ -1,10 +1,16 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 
 export default function PageLoader() {
   const [phase, setPhase] = useState(0);
-  const [visible, setVisible] = useState(true);
+  const [visible, setVisible] = useState(() => {
+    try {
+      return !sessionStorage.getItem("myral-intro-seen");
+    } catch {
+      return true;
+    }
+  });
   const [letters, setLetters] = useState([false, false, false, false, false]);
   const [fontFamily, setFontFamily] = useState("Georgia, serif");
   const [fontSize, setFontSize] = useState(80);
@@ -22,6 +28,27 @@ export default function PageLoader() {
   const [btnBLit, setBtnBLit] = useState(false);
   const [fontSelectorLit, setFontSelectorLit] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
+  const skipped = useRef(false);
+
+  const skip = useCallback(() => {
+    if (skipped.current) return;
+    skipped.current = true;
+    setFadeOut(true);
+    setTimeout(() => setVisible(false), 350);
+  }, []);
+
+  useEffect(() => {
+    try {
+      if (sessionStorage.getItem("myral-intro-seen")) {
+        skipped.current = true;
+        return;
+      }
+      sessionStorage.setItem("myral-intro-seen", "1");
+    } catch {}
+    const onKey = () => skip();
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [skip]);
 
   const t = (ms: number) => new Promise((r) => setTimeout(r, ms));
 
@@ -44,6 +71,7 @@ export default function PageLoader() {
     ];
 
     async function animate() {
+      if (skipped.current) return;
       await t(300);
       setGridVisible(true);
       await t(400);
@@ -115,6 +143,7 @@ export default function PageLoader() {
       setTextBounce(false);
       await t(500);
 
+      if (skipped.current) return;
       setFadeOut(true);
       await t(800);
       setVisible(false);
@@ -130,7 +159,11 @@ export default function PageLoader() {
   return (
     <div
       className="page-loader-root"
+      onClick={skip}
+      role="button"
+      aria-label="Saltar animación"
       style={{
+        cursor: "pointer",
         position: "fixed",
         inset: 0,
         zIndex: 9999,
@@ -140,7 +173,7 @@ export default function PageLoader() {
         alignItems: "center",
         justifyContent: "center",
         opacity: fadeOut ? 0 : 1,
-        transition: "opacity 0.8s ease",
+        transition: skipped.current ? "opacity 0.35s ease" : "opacity 0.8s ease",
         fontFamily: "DM Sans, sans-serif",
       }}
     >
@@ -304,6 +337,30 @@ export default function PageLoader() {
             </span>
           )}
       </div>
+
+      <button
+        type="button"
+        onClick={(e) => {
+          e.stopPropagation();
+          skip();
+        }}
+        style={{
+          position: "absolute",
+          bottom: 32,
+          right: 32,
+          background: "transparent",
+          border: "1px solid rgba(240,237,232,0.25)",
+          color: "#f0ede8",
+          padding: "10px 18px",
+          fontSize: 10,
+          letterSpacing: "0.16em",
+          textTransform: "uppercase",
+          fontFamily: "DM Sans, sans-serif",
+          cursor: "pointer",
+        }}
+      >
+        Saltar →
+      </button>
 
       <style>{`
         @keyframes blink { 0%,49%{opacity:1} 50%,100%{opacity:0} }

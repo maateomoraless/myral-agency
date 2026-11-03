@@ -33,6 +33,7 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://myralagency.com"),
   title: "MYRAL Agency",
   description: "Branding, IA y Marketing Digital",
   openGraph: {

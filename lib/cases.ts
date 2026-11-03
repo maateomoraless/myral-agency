@@ -19,6 +19,8 @@ export type CaseStudy = {
   metaDescription: string;
 };
 
+const photo = (slug: string, n: number, label?: string): CaseMedia => ({ type: "image", src: `/work/${slug}/foto-${n}.jpg`, label });
+const reel = (slug: string, key: string, title: string): CaseFilm => ({ src: `/work/${slug}/${key}.mp4`, poster: `/work/${slug}/${key}.jpg`, title, vertical: true });
 const still = (slug: string, n: number): CaseMedia => ({ type: "image", src: `/work/${slug}/still-${n}.jpg` });
 const stills = (slug: string) => [1, 2, 3, 4, 5, 6].map((n) => still(slug, n));
 const loop = (slug: string, key: string, label?: string): CaseMedia => ({
@@ -45,6 +47,13 @@ export const cases: CaseStudy[] = [
       "Selección y edición de fotografías del evento",
       "Desplazamiento del equipo a cada ciudad",
     ],
+    films: [
+      { src: "/work/europa-fm/aftermovie-fangoria.mp4", poster: "/work/europa-fm/aftermovie-fangoria.jpg", title: "Aftermovie · Fangoria" },
+      reel("europa-fm", "reel-paula", "Paula Koops"),
+      reel("europa-fm", "reel-marlena", "Marlena"),
+      reel("europa-fm", "reel-bombai", "Bombai"),
+      reel("europa-fm", "reel-palencia", "Palencia"),
+    ],
     galleryTitle: "Cinco conciertos.",
     gallery: [
       loop("europa-fm", "fangoria", "Fangoria"),
@@ -52,6 +61,7 @@ export const cases: CaseStudy[] = [
       loop("europa-fm", "marlena", "Marlena"),
       loop("europa-fm", "bombai", "Bombai"),
       loop("europa-fm", "palencia", "Palencia"),
+      ...[1, 2, 3, 4, 5, 6, 7].map((n) => photo("europa-fm", n, n === 1 ? "Paula Koops · fotografía" : undefined)),
     ],
     cta: "¿Tienes un evento que merece contarse así?",
     metaDescription:
@@ -73,6 +83,7 @@ export const cases: CaseStudy[] = [
       "Slideshow de fotografía analógica con diseño sonoro",
       "Versiones adaptadas a redes sociales",
     ],
+    films: [reel("jakob-schubert", "reel", "Reel")],
     gallery: [],
     link: { href: "https://www.instagram.com/jakob.schubert/", label: "Ver perfil →" },
     cta: "¿Quieres este nivel de producción para tu marca?",
@@ -95,6 +106,7 @@ export const cases: CaseStudy[] = [
     ],
     films: [
       { src: "/work/leon-solo-musica/lsm-aftermovie.mp4", poster: "/work/leon-solo-musica/lsm-aftermovie.jpg", title: "Aftermovie" },
+      reel("leon-solo-musica", "reel", "Reel"),
     ],
     gallery: stills("leon-solo-musica"),
     cta: "¿Organizas un festival o un concierto?",
@@ -115,6 +127,7 @@ export const cases: CaseStudy[] = [
       "Edición de reels y fotografía",
       "Gestión mensual de redes sociales",
     ],
+    films: [1, 2, 3, 4, 5, 6].map((n) => reel("verdiago-vive", `reel-${n}`, `Reel ${n}`)),
     gallery: [],
     cta: "¿Tienes un alojamiento que merece más reservas?",
     metaDescription: "Contenido y gestión de redes para Verdiago Vive, hotel rural, spa y restaurante en León.",
@@ -135,13 +148,16 @@ export const cases: CaseStudy[] = [
       "Edición y adaptación para Instagram, TikTok y Facebook",
     ],
     films: [
-      { src: "/work/bodegas/sancobate-reel.mp4", poster: "/work/bodegas/sancobate-reel.jpg", title: "Reel · San Cobate", vertical: true },
+      { src: "/work/bodegas/sancobate-reel.mp4", poster: "/work/bodegas/sancobate-reel.jpg", title: "San Cobate", vertical: true },
+      reel("bodegas", "reel-fuentenebro", "Fuentenebro"),
+      reel("bodegas", "reel-vile", "Vile la Finca"),
     ],
     galleryTitle: "En la finca.",
     gallery: [
       loop("bodegas", "sancobate", "San Cobate"),
       loop("bodegas", "senorio", "Señorío de Nava"),
       loop("bodegas", "fuentenebro", "Fuentenebro"),
+      ...[1, 2, 3, 4, 5, 6, 7, 8, 9].map((n) => photo("bodegas", n)),
     ],
     cta: "¿Quieres que tu bodega se vea así?",
     metaDescription: "Producción de contenido para las bodegas San Cobate, Señorío de Nava, Fuentenebro y Vile la Finca.",
@@ -161,16 +177,17 @@ export const cases: CaseStudy[] = [
       "Fotografía gastronómica",
       "Edición y publicación en redes",
     ],
+    films: [1, 2, 3].map((n) => reel("marcela-brasa-y-vinos", `reel-${n}`, `Reel ${n}`)),
     gallery: [
+      photo("marcela-brasa-y-vinos", 1),
       loop("marcela-brasa-y-vinos", "vino"),
-      still("marcela-brasa-y-vinos", 1),
+      photo("marcela-brasa-y-vinos", 2),
+      photo("marcela-brasa-y-vinos", 3),
       loop("marcela-brasa-y-vinos", "tartar"),
-      still("marcela-brasa-y-vinos", 3),
-      loop("marcela-brasa-y-vinos", "cerveza"),
-      still("marcela-brasa-y-vinos", 6),
+      photo("marcela-brasa-y-vinos", 4),
+      photo("marcela-brasa-y-vinos", 5),
       loop("marcela-brasa-y-vinos", "aceite"),
-      still("marcela-brasa-y-vinos", 4),
-      loop("marcela-brasa-y-vinos", "jamon"),
+      photo("marcela-brasa-y-vinos", 6),
     ],
     cta: "¿Tu restaurante necesita este contenido?",
     metaDescription: "Contenido mensual para redes de Marcela Brasa y Vinos.",
@@ -204,12 +221,21 @@ export const cases: CaseStudy[] = [
     heroVideo: "/work/leon-street-music/lstreet-hero.mp4",
     heroPoster: "/work/leon-street-music/lstreet-poster.jpg",
     intro:
-      "Vídeo promocional para León Street Music grabado en las calles del centro de León, pensado para redes y en formato vertical.",
-    whatWeDid: ["Grabación en exteriores", "Edición y color", "Formato vertical para redes"],
-    films: [
-      { src: "/work/leon-street-music/lstreet-reel.mp4", poster: "/work/leon-street-music/lstreet-reel.jpg", title: "Reel", vertical: true },
+      "Cobertura del festival León Street Music en las plazas del centro de León: vídeo del festival, reels de los conciertos y fotografía de cada directo.",
+    whatWeDid: [
+      "Grabación de los conciertos en la calle",
+      "Vídeo del festival y reels para redes",
+      "Vídeos promocionales de los grupos",
+      "Fotografía editada de cada directo",
     ],
-    gallery: [],
+    films: [
+      { src: "/work/leon-street-music/video-final.mp4", poster: "/work/leon-street-music/video-final.jpg", title: "Vídeo del festival", vertical: true },
+      reel("leon-street-music", "reel-1", "Reel 1"),
+      reel("leon-street-music", "reel-2", "Reel 2"),
+      reel("leon-street-music", "reel-3", "Reel 3"),
+    ],
+    galleryTitle: "Fotografía.",
+    gallery: [1, 2, 3, 4, 5, 6].map((n) => photo("leon-street-music", n)),
     cta: "¿Quieres un vídeo así para tu proyecto?",
     metaDescription: "Vídeo promocional para León Street Music.",
   },

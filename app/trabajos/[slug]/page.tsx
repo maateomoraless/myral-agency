@@ -22,6 +22,8 @@ export default async function CasePage({ params }: { params: Promise<{ slug: str
   const { slug } = await params;
   const c = getCase(slug);
   if (!c) notFound();
+  const wide = (c.films ?? []).filter((f) => !f.vertical);
+  const tall = (c.films ?? []).filter((f) => f.vertical);
 
   return (
     <>
@@ -58,21 +60,39 @@ export default async function CasePage({ params }: { params: Promise<{ slug: str
 
       <CaseStudyIntro>{c.intro}</CaseStudyIntro>
 
-      {c.films && c.films.length > 0 && (
+      {wide.length > 0 && (
         <section className="border-t border-[var(--border)] bg-[#05050b] px-6 py-24 md:px-[52px]">
           <h2 className="mb-10 font-[var(--font-syne)] text-4xl font-extrabold text-white">
-            {c.films.length > 1 ? "Los vídeos." : "El vídeo."}
+            {wide.length > 1 ? "Los vídeos." : "El vídeo."}
           </h2>
           <div className="space-y-12">
-            {c.films.map((f) => (
-              <figure key={f.src} className={f.vertical ? "mx-auto max-w-[420px]" : "w-full"}>
-                <video
-                  controls
-                  playsInline
-                  preload="none"
-                  poster={f.poster}
-                  className={`w-full rounded-sm bg-black ${f.vertical ? "aspect-[9/16]" : "aspect-video"} object-cover`}
-                >
+            {wide.map((f) => (
+              <figure key={f.src} className="w-full">
+                <video controls playsInline preload="none" poster={f.poster} className="aspect-video w-full rounded-sm bg-black object-cover">
+                  <source src={f.src} type="video/mp4" />
+                </video>
+                <figcaption className="mt-3 text-[9px] uppercase tracking-[0.16em] text-[var(--muted)]">{f.title}</figcaption>
+              </figure>
+            ))}
+          </div>
+        </section>
+      )}
+
+      {tall.length > 0 && (
+        <section className="border-t border-[var(--border)] bg-[#05050b] px-6 py-24 md:px-[52px]">
+          <h2 className="mb-10 font-[var(--font-syne)] text-4xl font-extrabold text-white">
+            {tall.length > 1 ? "Reels." : "El reel."}
+          </h2>
+          <div
+            className={
+              tall.length === 1
+                ? "mx-auto max-w-[380px]"
+                : "grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4"
+            }
+          >
+            {tall.map((f) => (
+              <figure key={f.src}>
+                <video controls playsInline preload="none" poster={f.poster} className="aspect-[9/16] w-full rounded-sm bg-black object-cover">
                   <source src={f.src} type="video/mp4" />
                 </video>
                 <figcaption className="mt-3 text-[9px] uppercase tracking-[0.16em] text-[var(--muted)]">{f.title}</figcaption>
