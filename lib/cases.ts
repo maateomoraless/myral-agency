@@ -52,7 +52,6 @@ export const cases: CaseStudy[] = [
       loop("europa-fm", "marlena", "Marlena"),
       loop("europa-fm", "bombai", "Bombai"),
       loop("europa-fm", "palencia", "Palencia"),
-      still("europa-fm", 1),
     ],
     cta: "¿Tienes un evento que merece contarse así?",
     metaDescription:
@@ -74,7 +73,7 @@ export const cases: CaseStudy[] = [
       "Slideshow de fotografía analógica con diseño sonoro",
       "Versiones adaptadas a redes sociales",
     ],
-    gallery: stills("jakob-schubert"),
+    gallery: [],
     link: { href: "https://www.instagram.com/jakob.schubert/", label: "Ver perfil →" },
     cta: "¿Quieres este nivel de producción para tu marca?",
     metaDescription: "Edición de vídeo para el escalador Jakob Schubert.",
@@ -116,7 +115,7 @@ export const cases: CaseStudy[] = [
       "Edición de reels y fotografía",
       "Gestión mensual de redes sociales",
     ],
-    gallery: stills("verdiago-vive"),
+    gallery: [],
     cta: "¿Tienes un alojamiento que merece más reservas?",
     metaDescription: "Contenido y gestión de redes para Verdiago Vive, hotel rural, spa y restaurante en León.",
   },
@@ -138,13 +137,11 @@ export const cases: CaseStudy[] = [
     films: [
       { src: "/work/bodegas/sancobate-reel.mp4", poster: "/work/bodegas/sancobate-reel.jpg", title: "Reel · San Cobate", vertical: true },
     ],
-    galleryTitle: "Cuatro bodegas.",
+    galleryTitle: "En la finca.",
     gallery: [
       loop("bodegas", "sancobate", "San Cobate"),
       loop("bodegas", "senorio", "Señorío de Nava"),
       loop("bodegas", "fuentenebro", "Fuentenebro"),
-      loop("bodegas", "vile", "Vile la Finca"),
-      ...stills("bodegas").slice(0, 5),
     ],
     cta: "¿Quieres que tu bodega se vea así?",
     metaDescription: "Producción de contenido para las bodegas San Cobate, Señorío de Nava, Fuentenebro y Vile la Finca.",
@@ -209,7 +206,10 @@ export const cases: CaseStudy[] = [
     intro:
       "Vídeo promocional para León Street Music grabado en las calles del centro de León, pensado para redes y en formato vertical.",
     whatWeDid: ["Grabación en exteriores", "Edición y color", "Formato vertical para redes"],
-    gallery: [loop("leon-street-music", "lstreet")],
+    films: [
+      { src: "/work/leon-street-music/lstreet-reel.mp4", poster: "/work/leon-street-music/lstreet-reel.jpg", title: "Reel", vertical: true },
+    ],
+    gallery: [],
     cta: "¿Quieres un vídeo así para tu proyecto?",
     metaDescription: "Vídeo promocional para León Street Music.",
   },
