@@ -8,6 +8,8 @@ import RevealObserver from "@/components/effects/RevealObserver";
 import PageLoader from "@/components/effects/PageLoaderGate";
 import PageTransition from "@/components/effects/PageTransitionGate";
 import CookieBanner from "@/components/CookieBannerGate";
+import WhatsAppButton from "@/components/WhatsAppButton";
+import { LangProvider } from "@/lib/i18n";
 import "./globals.css";
 
 const syne = Syne({
@@ -56,8 +58,17 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="es">
+    <html lang="es" suppressHydrationWarning>
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html:
+              "try{var q=new URLSearchParams(location.search).get('lang');if(q==='en'||(q!=='es'&&localStorage.getItem('myral-lang')==='en'))document.documentElement.classList.add('i18n-pending')}catch(e){}",
+          }}
+        />
+      </head>
       <body className={`${syne.variable} ${instrument.variable} ${dmSans.variable}`}>
+        <LangProvider>
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-P7JWJEVE1J"
           strategy="afterInteractive"
@@ -83,6 +94,8 @@ Cal.ns.diagnostico("ui", {"hideEventTypeDetails":false,"layout":"month_view"});`
         <main style={{ paddingTop: 88 }}>{children}</main>
         <Footer />
         <CookieBanner />
+        <WhatsAppButton />
+        </LangProvider>
       </body>
     </html>
   );

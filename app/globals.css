@@ -577,3 +577,12 @@ section .overflow-hidden:not(.no-media-hover-wrap):has(> video:not(.no-media-hov
 @media (prefers-reduced-motion: reduce) {
   .reveal, .reveal-section, .reveal-item { opacity: 1 !important; transform: none !important; transition: none !important; }
 }
+
+.reel-row { scrollbar-width: none; }
+.reel-row::-webkit-scrollbar { display: none; }
+
+/* English version: hide until translated (max 1.5s) */
+@keyframes i18n-show { to { opacity: 1; } }
+html.i18n-pending:not(.i18n-ready) main,
+html.i18n-pending:not(.i18n-ready) header,
+html.i18n-pending:not(.i18n-ready) footer { opacity: 0; animation: i18n-show 0.2s 1.5s forwards; }

@@ -3,6 +3,7 @@ import Link from "next/link";
 const links = [
   { href: "/", label: "Inicio" },
   { href: "/trabajos", label: "Trabajos" },
+  { href: "/sobre", label: "Historia" },
   { href: "/ia", label: "IA" },
   { href: "/contacto", label: "Contacto" },
 ];
@@ -44,7 +45,7 @@ export default function Footer() {
         </div>
       </div>
       <p className="mx-auto mt-4 max-w-[1400px] border-t border-white/5 pt-3 text-[8px] text-white/20">
-        © 2025 Myral Agency · León · myralagency.com
+        © 2026 MYRAL Agency · León · myralagency.com
       </p>
       <p className="mx-auto mt-3 max-w-[1400px] text-center text-[11px] text-[var(--muted)]">
         <Link href="/aviso-legal" className="hover:text-[#F5E614]">

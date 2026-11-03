@@ -4,6 +4,7 @@ import HeroMiniStats from "@/components/effects/HeroMiniStats";
 import HeroWordReveal from "@/components/effects/HeroWordReveal";
 import MagneticLink from "@/components/effects/MagneticLink";
 import FlowAnimation from "@/components/FlowAnimation";
+import ShowreelButton from "@/components/ShowreelButton";
 import WorkCardMedia from "@/components/WorkCardMedia";
 import { featuredWorks } from "@/lib/works";
 
@@ -43,6 +44,11 @@ const clientLogos = [
   { src: "/logos/marcela.png", name: "Marcela Brasa y Vinos", h: 56 },
   { src: "/logos/verdiago-vive.png", name: "Verdiago Vive", h: 40 },
   { src: "/logos/leon-street-music.png", name: "León Street Music", h: 54 },
+  { src: "/logos/camarote.png", name: "Camarote Hotel", h: 50 },
+  { src: "/logos/cervantes.png", name: "Vermutería Cervantes", h: 46 },
+  { src: "/logos/bares-del-mono.png", name: "Leña al Mono · Bares del Mono", h: 54 },
+  { src: "/logos/runrun.png", name: "Run Run Social Club", h: 22 },
+  { src: "/logos/santa-madre.png", name: "Santa Madre", h: 50 },
 ] as const;
 
 const testimonials = [
@@ -132,7 +138,10 @@ export default function HomePage() {
           <p className="max-w-xs text-[13px] leading-[1.82] text-[var(--muted)]">Vídeo que se nota, redes que convierten y eventos que llenan. Para marcas, festivales y deportistas que quieren destacar.</p>
           <div className="flex flex-col items-start gap-5 sm:items-end">
             <HeroMiniStats />
+            <div className="flex flex-wrap items-center gap-3">
+            <ShowreelButton />
             <Link href="#trabajos" className="border border-white/20 px-7 py-3.5 text-[9px] uppercase tracking-[0.16em] text-white/65 transition-colors hover:border-[#F5E614] hover:text-[#F5E614]">Ver nuestro trabajo →</Link>
+            </div>
           </div>
         </div>
         </div>
@@ -147,7 +156,7 @@ export default function HomePage() {
       </div>
 
       <section className="reveal-section border-b border-[var(--border)] px-6 py-16 md:px-[52px]">
-        <p className="reveal-item mb-10 text-center text-[9px] uppercase tracking-[0.26em] text-white/40">Han confiado en nosotros</p>
+        <p className="reveal-item mb-10 text-center text-[9px] uppercase tracking-[0.26em] text-white/60">Han confiado en nosotros</p>
         <div className="logo-marquee relative overflow-hidden">
           <div className="logo-track flex w-max items-center">
             {[...clientLogos, ...clientLogos].map((logo, i) => (
@@ -157,7 +166,7 @@ export default function HomePage() {
                 alt={logo.name}
                 aria-hidden={i >= clientLogos.length}
                 loading="lazy"
-                className="mx-8 w-auto shrink-0 opacity-55 transition-opacity duration-300 hover:opacity-100 md:mx-12"
+                className="mx-8 w-auto shrink-0 opacity-90 transition-opacity duration-300 hover:opacity-100 md:mx-12"
                 style={{ height: logo.h }}
               />
             ))}

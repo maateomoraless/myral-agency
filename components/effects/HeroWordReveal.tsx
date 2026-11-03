@@ -1,6 +1,7 @@
 "use client";
 
 import { createElement, type CSSProperties } from "react";
+import { useLang } from "@/lib/i18n";
 
 export default function HeroWordReveal({
   text,
@@ -13,7 +14,8 @@ export default function HeroWordReveal({
   className?: string;
   style?: CSSProperties;
 }) {
-  const words = text.split(/\s+/).filter(Boolean);
+  const { t } = useLang();
+  const words = t(text).split(/\s+/).filter(Boolean);
 
   return createElement(
     as,

@@ -3,10 +3,12 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
+import { LangSwitch } from "@/lib/i18n";
 
 const links = [
   { href: "/", label: "Inicio" },
   { href: "/trabajos", label: "Trabajos" },
+  { href: "/sobre", label: "Historia" },
   { href: "/servicios/ia", label: "IA" },
   { href: "/contacto", label: "Contacto" },
 ];
@@ -106,18 +108,22 @@ export default function Nav() {
           >
             Hablemos
           </button>
+          <LangSwitch />
         </nav>
 
+        <div className="flex items-center gap-5 md:hidden">
+        <LangSwitch />
         <button
           type="button"
           aria-label="Abrir menú"
-          className="flex flex-col gap-1.5 md:hidden"
+          className="flex flex-col gap-1.5"
           onClick={() => setOpen((v) => !v)}
         >
           <span className={`h-px w-6 bg-white transition-transform ${open ? "translate-y-[7px] rotate-45" : ""}`} />
           <span className={`h-px w-6 bg-white transition-opacity ${open ? "opacity-0" : ""}`} />
           <span className={`h-px w-6 bg-white transition-transform ${open ? "-translate-y-[7px] -rotate-45" : ""}`} />
         </button>
+        </div>
       </div>
 
       {open && (

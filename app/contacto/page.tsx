@@ -2,26 +2,21 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import QuoteForm from "@/components/QuoteForm";
 
 const points = [
-  "Sin compromiso ni coste",
+  "Llamada de 20 minutos, gratis y sin compromiso",
   "Análisis real de tu presencia online",
   "Plan de acción personalizado para tu caso",
-  "Elige el día y hora que mejor te venga",
+  "Lunes a viernes, por videollamada",
 ] as const;
 
-const cardPoints = [
-  "Lunes a viernes",
-  "10:00 - 14:00 y 16:00 - 19:00",
-  "Por videollamada",
-  "Respuesta en menos de 24h",
-] as const;
 
 const faqs = [
   {
     question: "¿Cuánto cuesta trabajar con MYRAL?",
     answer:
-      "Depende del proyecto y los servicios que necesites. En la llamada de diagnóstico te damos un presupuesto concreto y sin sorpresas.",
+      "Depende del proyecto y los servicios que necesites. Rellena el formulario o reserva una llamada y te damos un presupuesto concreto, sin sorpresas.",
   },
   {
     question: "¿Cuánto tiempo tardáis en empezar?",
@@ -63,19 +58,17 @@ export default function ContactoPage() {
         <p
           className="font-[var(--font-instrument)] italic text-[#F5E614] text-2xl leading-[1] pb-[0.1em] overflow-visible md:text-3xl lg:text-[clamp(28px,4vw,48px)] lg:leading-[1.1]"
         >
-          Sin compromiso. Sin rodeos.
+          Cuéntanos tu proyecto.
         </p>
         <p className="mt-8 max-w-lg text-[13px] leading-[1.82] text-[var(--muted)]">
-          Reserva una llamada de 20 minutos y te decimos exactamente qué haríamos con tu negocio. Si no encajamos, te
-          lo decimos también.
+          Rellena el formulario y te enviamos una primera propuesta en menos de 24 horas. ¿Prefieres hablar? Reserva una
+          llamada de 20 minutos o escríbenos por WhatsApp.
         </p>
       </section>
 
-      <section className="reveal grid min-h-[70vh] grid-cols-1 lg:grid-cols-2">
-        <div className="flex flex-col justify-center bg-[#07070f] px-6 py-16 md:px-[80px] lg:py-0">
-          <h2 className="font-[var(--font-syne)] text-[24px] font-bold text-white">
-            Diagnóstico gratuito — 20 min
-          </h2>
+      <section className="reveal grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.35fr)]">
+        <div className="flex flex-col justify-center bg-[#07070f] px-6 py-16 md:px-[80px] lg:py-20">
+          <h2 className="font-[var(--font-syne)] text-[24px] font-bold text-white">¿Prefieres hablarlo?</h2>
           <ul className="mt-8 space-y-4">
             {points.map((point) => (
               <li key={point} className="flex gap-3 text-[14px] leading-[1.6] text-white/85">
@@ -84,6 +77,25 @@ export default function ContactoPage() {
               </li>
             ))}
           </ul>
+          <div className="mt-8 flex flex-wrap gap-3">
+            <button
+              type="button"
+              data-cal-link="myralagency/diagnostico"
+              data-cal-namespace="diagnostico"
+              data-cal-config='{"layout":"month_view"}'
+              className="border border-[#F5E614] px-6 py-3.5 text-[9px] font-bold uppercase tracking-[0.16em] text-[#F5E614] transition-colors hover:bg-[#F5E614] hover:text-black"
+            >
+              Reservar llamada gratuita →
+            </button>
+            <Link
+              href="https://wa.me/34672126363"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="border border-white/20 px-6 py-3.5 text-[9px] uppercase tracking-[0.16em] text-white/70 transition-colors hover:border-[#25D366] hover:text-[#25D366]"
+            >
+              WhatsApp →
+            </Link>
+          </div>
 
           <div className="my-8 h-px w-full bg-[#222]" />
 
@@ -115,41 +127,18 @@ export default function ContactoPage() {
             </Link>
           </div>
 
-          <div className="my-8 h-px w-full bg-[#222]" />
-
-          <p className="text-[12px] text-[var(--muted)]">Respondemos en menos de 24 horas.</p>
-          <p className="mt-4 flex items-center gap-2 text-[11px] text-[var(--muted)]">
+          <p className="mt-8 flex items-center gap-2 text-[11px] text-[var(--muted)]">
             <span className="h-2 w-2 shrink-0 animate-pulse rounded-full bg-[#22c55e]" />
             Disponible para nuevos proyectos
           </p>
         </div>
 
-        <div className="flex flex-col items-center justify-center bg-[#05050b] px-6 py-16 md:px-[80px] lg:py-0">
-          <div className="w-full max-w-md rounded-[12px] border border-[#222] bg-[#07070f] p-12 text-center">
-            <h2 className="font-[var(--font-syne)] text-[28px] font-extrabold text-white">Diagnóstico gratuito</h2>
-            <p className="mt-2 text-[13px] text-[var(--muted)]">20 minutos · Sin compromiso</p>
-            <div className="mx-auto my-6 h-[2px] w-[60px] bg-[#F5E614]" />
-            <ul className="space-y-4 text-left">
-              {cardPoints.map((point) => (
-                <li key={point} className="flex gap-3 text-[14px] leading-[1.6] text-white/85">
-                  <span className="shrink-0 text-[#F5E614]">→</span>
-                  {point}
-                </li>
-              ))}
-            </ul>
-            <button
-              type="button"
-              data-cal-link="myralagency/diagnostico"
-              data-cal-namespace="diagnostico"
-              data-cal-config='{"layout":"month_view"}'
-              className="btn-yellow mt-8 w-full bg-[#F5E614] px-8 py-4 text-[10px] font-bold uppercase tracking-[0.18em] text-black"
-            >
-              Reservar llamada gratuita →
-            </button>
-            <p className="mt-4 text-center text-[11px] text-[var(--muted)]">
-              Más de 20 proyectos activos en toda España
-            </p>
-          </div>
+        <div className="bg-[#05050b] px-6 py-16 md:px-[80px] lg:py-20">
+          <p className="mb-3 text-[9px] uppercase tracking-[0.26em] text-[#F5E614]">Presupuesto en 24 h</p>
+          <h2 className="mb-10 font-[var(--font-syne)] text-[clamp(28px,3vw,40px)] font-extrabold leading-tight text-white">
+            Pide tu presupuesto.
+          </h2>
+          <QuoteForm />
         </div>
       </section>
 

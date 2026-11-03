@@ -4,6 +4,7 @@ import HeroWordReveal from "@/components/effects/HeroWordReveal";
 import { CaseStudyIntro, CaseStudyWhatWeDid, CaseStudyCta } from "@/components/case-study/CaseStudySections";
 import Link from "next/link";
 import { cases, getCase } from "@/lib/cases";
+import CaseImpactStats from "@/components/case-study/CaseImpactStats";
 
 export const dynamicParams = false;
 
@@ -60,6 +61,8 @@ export default async function CasePage({ params }: { params: Promise<{ slug: str
 
       <CaseStudyIntro>{c.intro}</CaseStudyIntro>
 
+      {c.stats && c.stats.length > 0 && <CaseImpactStats stats={c.stats} />}
+
       {wide.length > 0 && (
         <section className="border-t border-[var(--border)] bg-[#05050b] px-6 py-24 md:px-[52px]">
           <h2 className="mb-10 font-[var(--font-syne)] text-4xl font-extrabold text-white">
@@ -87,11 +90,13 @@ export default async function CasePage({ params }: { params: Promise<{ slug: str
             className={
               tall.length === 1
                 ? "mx-auto max-w-[380px]"
-                : "grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4"
+                : `reel-row -mx-6 flex snap-x snap-mandatory gap-4 overflow-x-auto px-6 pb-2 md:mx-0 md:grid md:overflow-visible md:px-0 md:pb-0 ${
+                    tall.length === 2 ? "md:grid-cols-2" : tall.length === 3 ? "md:grid-cols-3" : "md:grid-cols-4"
+                  }`
             }
           >
             {tall.map((f) => (
-              <figure key={f.src}>
+              <figure key={f.src} className={tall.length === 1 ? "" : "w-[72%] shrink-0 snap-center md:w-auto"}>
                 <video controls playsInline preload="none" poster={f.poster} className="aspect-[9/16] w-full rounded-sm bg-black object-cover">
                   <source src={f.src} type="video/mp4" />
                 </video>

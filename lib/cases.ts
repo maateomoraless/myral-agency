@@ -2,6 +2,8 @@ export type CaseMedia = { type: "video" | "image"; src: string; poster?: string;
 
 export type CaseFilm = { src: string; poster: string; title: string; vertical?: boolean };
 
+export type CaseStat = { value: number; label: string; prefix?: string; suffix?: string };
+
 export type CaseStudy = {
   slug: string;
   badge: string;
@@ -11,6 +13,7 @@ export type CaseStudy = {
   heroPoster: string;
   intro: string;
   whatWeDid: string[];
+  stats?: CaseStat[];
   films?: CaseFilm[];
   gallery: CaseMedia[];
   galleryTitle?: string;
@@ -40,6 +43,12 @@ export const cases: CaseStudy[] = [
     heroPoster: "/work/europa-fm/fangoria-hero-poster.jpg",
     intro:
       "Europa FM confía en MYRAL la cobertura audiovisual de sus conciertos en Castilla y León. Fangoria, Paula Koops, Marlena, Bombai y Palencia: cada concierto con el mismo estándar y el mismo compromiso de entrega.",
+    stats: [
+      { value: 10000, label: "Personas por concierto", prefix: "+" },
+      { value: 5, label: "Conciertos cubiertos" },
+      { value: 500, label: "Visualizaciones", prefix: "+", suffix: "K" },
+      { value: 24, label: "Entrega del reel", suffix: "h" },
+    ],
     whatWeDid: [
       "Grabación completa de cada concierto",
       "Reel vertical entregado la misma noche",
@@ -61,7 +70,7 @@ export const cases: CaseStudy[] = [
       loop("europa-fm", "marlena", "Marlena"),
       loop("europa-fm", "bombai", "Bombai"),
       loop("europa-fm", "palencia", "Palencia"),
-      ...[1, 2, 3, 4, 5, 6, 7].map((n) => photo("europa-fm", n, n === 1 ? "Paula Koops · fotografía" : undefined)),
+      ...[1, 2, 5, 7].map((n) => photo("europa-fm", n, n === 1 ? "Fotografía" : undefined)),
     ],
     cta: "¿Tienes un evento que merece contarse así?",
     metaDescription:
@@ -76,6 +85,12 @@ export const cases: CaseStudy[] = [
     heroPoster: "/work/jakob-schubert/jakob-hero-poster.jpg",
     intro:
       "Jakob Schubert es uno de los mejores escaladores del mundo. Para su contenido en redes buscábamos un montaje con ritmo, tensión y carácter, que se sostuviera al nivel de lo que hace en la pared.",
+    stats: [
+      { value: 150, label: "Visualizaciones", prefix: "+", suffix: "K" },
+      { value: 4, label: "Formatos para redes" },
+      { value: 9, label: "Engagement medio", suffix: "%" },
+      { value: 48, label: "Entrega del montaje", suffix: "h" },
+    ],
     whatWeDid: [
       "Montaje y edición del vídeo",
       "Color grading cinematográfico",
@@ -98,6 +113,12 @@ export const cases: CaseStudy[] = [
     heroPoster: "/work/leon-solo-musica/lsm-poster.jpg",
     intro:
       "Grabamos los conciertos de León Solo Música y montamos un aftermovie corto para redes que resume lo que se vivió encima y debajo del escenario.",
+    stats: [
+      { value: 8000, label: "Asistentes", prefix: "+" },
+      { value: 70, label: "Visualizaciones", prefix: "+", suffix: "K" },
+      { value: 2, label: "Formatos de vídeo" },
+      { value: 48, label: "Entrega del aftermovie", suffix: "h" },
+    ],
     whatWeDid: [
       "Grabación de los conciertos",
       "Entrega de todo el material en bruto",
@@ -121,6 +142,12 @@ export const cases: CaseStudy[] = [
     heroPoster: "/work/verdiago-vive/verdiago-poster.jpg",
     intro:
       "Verdiago Vive reúne hotel rural, casas rurales, spa y restaurante en Verdiago, en la montaña de León. Llevamos su contenido y sus redes para que la experiencia se entienda antes de reservar.",
+    stats: [
+      { value: 120, label: "Visualizaciones", prefix: "+", suffix: "K" },
+      { value: 300, label: "Crecimiento en seguidores", prefix: "+", suffix: "%" },
+      { value: 8, label: "Reels al mes" },
+      { value: 4, label: "Negocios en una marca" },
+    ],
     whatWeDid: [
       "Cuestionario de marca y estrategia de arranque",
       "Grabación de instalaciones, entorno y gastronomía",
@@ -141,6 +168,12 @@ export const cases: CaseStudy[] = [
     heroPoster: "/work/bodegas/bodegas-hero-poster.jpg",
     intro:
       "Para las bodegas San Cobate, Señorío de Nava, Fuentenebro y Vile la Finca producimos el contenido de redes en jornadas de grabación en finca: viñedo, bodega, proceso y producto, junto a Ciento Volando.",
+    stats: [
+      { value: 4, label: "Bodegas" },
+      { value: 15700, label: "Seguidores de Vile la Finca" },
+      { value: 1, label: "Visualizaciones", prefix: "+", suffix: "M" },
+      { value: 60, label: "Reels producidos", prefix: "+" },
+    ],
     whatWeDid: [
       "Jornadas de grabación en cada finca, también con dron",
       "Decenas de reels por jornada",
@@ -171,6 +204,12 @@ export const cases: CaseStudy[] = [
     heroPoster: "/work/marcela-brasa-y-vinos/marcela-hero-poster.jpg",
     intro:
       "Contenido mensual para Marcela Brasa y Vinos: platos, brasa, sala y bodega, contados con el ritmo que funciona en redes.",
+    stats: [
+      { value: 10, label: "Reels al mes" },
+      { value: 250, label: "Visualizaciones", prefix: "+", suffix: "K" },
+      { value: 10000, label: "Seguidores", prefix: "+" },
+      { value: 400, label: "Crecimiento", prefix: "+", suffix: "%" },
+    ],
     whatWeDid: [
       "Grabación de platos, cocina y sala",
       "Unos diez reels al mes",
@@ -201,6 +240,12 @@ export const cases: CaseStudy[] = [
     heroPoster: "/work/fele-leon-es-comercio/fele-poster.jpg",
     intro:
       "Para la campaña \"León es Comercio\" de la Federación Leonesa de Empresarios grabamos y editamos piezas de vídeo que ponen cara y voz al comercio local.",
+    stats: [
+      { value: 50, label: "Visualizaciones", prefix: "+", suffix: "K" },
+      { value: 20, label: "Comercios protagonistas", prefix: "+" },
+      { value: 3, label: "Formatos por pieza" },
+      { value: 100, label: "Alcance en la provincia", prefix: "+", suffix: "K" },
+    ],
     whatWeDid: [
       "Grabación de entrevistas y recursos",
       "Edición de los vídeos de campaña",
@@ -222,6 +267,12 @@ export const cases: CaseStudy[] = [
     heroPoster: "/work/leon-street-music/lstreet-poster.jpg",
     intro:
       "Cobertura del festival León Street Music en las plazas del centro de León: reels de los conciertos, vídeos promocionales de los grupos y fotografía de cada directo.",
+    stats: [
+      { value: 5000, label: "Asistentes", prefix: "+" },
+      { value: 80, label: "Visualizaciones", prefix: "+", suffix: "K" },
+      { value: 6, label: "Conciertos fotografiados", prefix: "+" },
+      { value: 20, label: "Fotos editadas por directo", prefix: "+" },
+    ],
     whatWeDid: [
       "Grabación de los conciertos en la calle",
       "Reels del festival para redes",

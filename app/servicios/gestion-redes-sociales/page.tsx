@@ -95,9 +95,10 @@ export default function GestionRedesSocialesPage() {
         <h2 className="title-display mb-12">Lo que consiguen nuestros clientes.</h2>
         <GestionRedesStats />
 
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
         <Link
           href="/trabajos/vermuteria-cervantes"
-          className="group hover-card block max-w-2xl border border-[var(--border)] bg-[var(--bg2)] p-8 transition-colors hover:border-[#F5E614]/25"
+          className="group hover-card block border border-[var(--border)] bg-[var(--bg2)] p-8 transition-colors hover:border-[#F5E614]/25"
         >
           <span className="mb-3 inline-block bg-[#F5E614]/10 px-2.5 py-1 text-[8px] uppercase tracking-[0.16em] text-[#F5E614]">
             Caso real
@@ -110,6 +111,22 @@ export default function GestionRedesSocialesPage() {
           </p>
           <p className="mt-5 text-[9px] uppercase tracking-[0.14em] text-[#F5E614]/70">Ver proyecto →</p>
         </Link>
+        <Link
+          href="/trabajos/camarote-hotel"
+          className="group hover-card block border border-[var(--border)] bg-[var(--bg2)] p-8 transition-colors hover:border-[#F5E614]/25"
+        >
+          <span className="mb-3 inline-block bg-[#F5E614]/10 px-2.5 py-1 text-[8px] uppercase tracking-[0.16em] text-[#F5E614]">
+            Caso real
+          </span>
+          <h3 className="font-[var(--font-syne)] text-xl font-semibold text-white transition-colors group-hover:text-[#F5E614]">
+            Camarote Hotel
+          </h3>
+          <p className="mt-3 text-[13px] leading-[1.75] text-[var(--muted)]">
+            Seguidores x6 en un año y reservas directas desde Instagram.
+          </p>
+          <p className="mt-5 text-[9px] uppercase tracking-[0.14em] text-[#F5E614]/70">Ver proyecto →</p>
+        </Link>
+        </div>
       </section>
 
       <section className="reveal border-t border-[var(--border)] bg-[var(--bg2)] px-6 py-20 md:px-[52px]">
