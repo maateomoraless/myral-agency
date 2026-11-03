@@ -3,6 +3,23 @@ import type { WorkCard } from "@/lib/works";
 const fillClassName = "absolute inset-0 h-full w-full object-cover";
 
 export default function WorkCardMedia({ work }: { work: WorkCard }) {
+  if (work.video) {
+    return (
+      <video
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="metadata"
+        poster={work.image}
+        aria-label={work.name}
+        className={fillClassName}
+      >
+        <source src={work.video} type="video/mp4" />
+      </video>
+    );
+  }
+
   if (work.image) {
     return (
       <img

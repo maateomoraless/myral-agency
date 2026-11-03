@@ -4,6 +4,7 @@ export type WorkCard = {
   name: string;
   desc: string;
   image?: string;
+  video?: string;
   placeholder?: string;
   featured?: boolean;
 };
@@ -23,6 +24,7 @@ export const works: WorkCard[] = [
     name: "Iziar Martínez",
     desc: "Cobertura de la escaladora española top 20 mundial en competiciones internacionales.",
     image: "/images/ichi-roca.png",
+    video: "/work/ichi/ichi-loop.mp4",
     featured: true,
   },
   {
@@ -40,6 +42,69 @@ export const works: WorkCard[] = [
     desc: "De 200 a 2.000 seguidores en menos de un año.",
     image: "/images/cervantes-mesa.png",
     featured: true,
+  },
+  {
+    href: "/trabajos/europa-fm",
+    badge: "Cobertura de Eventos",
+    name: "Europa FM · Conciertos",
+    desc: "Fangoria, Paula Koops, Marlena, Bombai y Palencia. Reel la misma noche, aftermovie al día siguiente.",
+    image: "/work/europa-fm/fangoria-poster.jpg",
+    video: "/work/europa-fm/fangoria-loop.mp4",
+  },
+  {
+    href: "/trabajos/jakob-schubert",
+    badge: "Contenido Deportivo",
+    name: "Jakob Schubert",
+    desc: "Edición de vídeo para uno de los mejores escaladores del mundo.",
+    image: "/work/jakob-schubert/still-2.jpg",
+  },
+  {
+    href: "/trabajos/leon-solo-musica",
+    badge: "Producción Audiovisual",
+    name: "León Solo Música",
+    desc: "Grabación de conciertos y aftermovie para redes.",
+    image: "/work/leon-solo-musica/lsm-poster.jpg",
+    video: "/work/leon-solo-musica/lsm-loop.mp4",
+  },
+  {
+    href: "/trabajos/verdiago-vive",
+    badge: "Social Media",
+    name: "Verdiago Vive",
+    desc: "Hotel rural, spa y restaurante en la montaña de León. Contenido y redes cada mes.",
+    image: "/work/verdiago-vive/verdiago-poster.jpg",
+    video: "/work/verdiago-vive/verdiago-loop.mp4",
+  },
+  {
+    href: "/trabajos/bodegas",
+    badge: "Producción de Contenido",
+    name: "Bodegas",
+    desc: "San Cobate, Señorío de Nava, Fuentenebro y Vile la Finca. Reels, dron y fotografía en viñedo y bodega.",
+    image: "/work/bodegas/sancobate-poster.jpg",
+    video: "/work/bodegas/sancobate-loop.mp4",
+  },
+  {
+    href: "/trabajos/marcela-brasa-y-vinos",
+    badge: "Social Media",
+    name: "Marcela Brasa y Vinos",
+    desc: "Contenido mensual para restaurante de brasa y vino.",
+    image: "/work/marcela-brasa-y-vinos/vino-poster.jpg",
+    video: "/work/marcela-brasa-y-vinos/vino-loop.mp4",
+  },
+  {
+    href: "/trabajos/fele-leon-es-comercio",
+    badge: "Producción Audiovisual",
+    name: "FELE · León es Comercio",
+    desc: "Vídeos de la campaña de la Federación Leonesa de Empresarios.",
+    image: "/work/fele-leon-es-comercio/fele-poster.jpg",
+    video: "/work/fele-leon-es-comercio/fele-loop.mp4",
+  },
+  {
+    href: "/trabajos/leon-street-music",
+    badge: "Producción Audiovisual",
+    name: "León Street Music",
+    desc: "Vídeo promocional grabado en las calles de León.",
+    image: "/work/leon-street-music/lstreet-poster.jpg",
+    video: "/work/leon-street-music/lstreet-loop.mp4",
   },
   {
     href: "/trabajos/leyendas-del-vallenato",
